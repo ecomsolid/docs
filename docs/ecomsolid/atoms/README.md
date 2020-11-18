@@ -1,5 +1,18 @@
 ## Hướng dẫn tạo một atom mới
 
+### Các trường dữ liệu
+
+#### Name
+#### Icon
+#### Keyword
+#### Snippets
+#### Html
+#### Style
+#### Script
+#### Libs
+#### Thumbnail
+#### Publish
+
 ## Danh sách atoms
 
 ### Row
