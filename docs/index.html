@@ -10,14 +10,31 @@
 </head>
 <body>
   <nav>
-    <a href="#/">Home</a>
-    <a href="#/ecomsolid/">EcomSolid</a>
-    <a href="#/gempages/">GemPages</a>
+    <ul>
+      <li>
+        <a href="#/">Home</a>
+      </li>
+      <li>
+        <a href="#/ecomsolid/">EcomSolid</a>
+        <ul>
+          <li>
+            <a href="#/ecomsolid/atoms/">Atoms</a>
+          </li>
+          <li>
+            <a href="#/ecomsolid/snippets/">Snippets</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#/gempages/">GemPages</a>
+      </li>
+    </ul>
   </nav>
   <div id="app"></div>
   <script>
     window.$docsify = {
       // loadSidebar: true,
+      // loadNavbar: true,
       name: 'Docs',
       repo: 'https://github.com/ecomsolid/docs.git',
       search: 'auto',
