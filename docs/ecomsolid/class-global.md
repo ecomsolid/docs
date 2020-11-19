@@ -1,16 +1,16 @@
 ## Class mở rộng
 ### Responsive Design
 ```css
-.gt_text {
+.gt_text { // Màn hình rộng
   font-size: 16px
 }
-.md:gt_text {
+.md:gt_text { // Laptop nhỏ
   font-size: 16px
 }
-.sm:gt_text {
+.sm:gt_text { // Máy tính bảng
   font-size: 16px
 }
-.xs:gt_text {
+.xs:gt_text { // Điện thoại
   font-size: 14px
 }
 ```
