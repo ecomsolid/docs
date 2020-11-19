@@ -16,7 +16,7 @@
   </Box>
 </section>
 ```
-#### HTML với snippets chưa clone
+#### HTML với snippets chứa clone
 ------------------------
 Định nghĩa snippets của tree có chứa clone:
 ```json
