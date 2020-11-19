@@ -689,43 +689,43 @@ gt_heading--large
 ### Backgrounds
 #### Background Color
 ```css
-.gt_background-color--brand {
+.gt_bg--brand {
   background-color: #{themeBrandColor};
 }
-.gt_background-color--highlight  {
+.gt_bg--highlight  {
   background-color: #{themeHighlightColor};
 }
-.gt_background-color--section  {
+.gt_bg--section  {
   background-color: #{themeSectionBackgroundColor};
 }
-.gt_background-color--transparent  {
+.gt_bg--transparent  {
   background-color: transparent;
 }
-.gt_background-color--current  {
+.gt_bg--current  {
   background-color: currentColor;
 }
 ```
 #### Background Position
 ```css
-.gt_background-position--center {
+.gt_bg-position--center {
   background-position: center;
 }
 ```
 #### Background Repeat
 ```css
-.gt_background-repeat--no-repeat {
+.gt_bg-repeat--no-repeat {
   background-repeat: no-repeat;
 }
 ```
 #### Background Size
 ```css
-.gt_background-size--auto {
+.gt_bg-size--auto {
   background-size: auto;
 }
-.gt_background-size--cover {
+.gt_bg-size--cover {
   background-size: cover;
 }
-.gt_background-size--contain {
+.gt_bg-size--contain {
   background-size: contain;
 }
 ```
