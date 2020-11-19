@@ -16,7 +16,7 @@
 ```
 
 ## Danh sách class global
-
+Có sự tham khảo và flow theo thư viện: <a href="https://tailwindcss.com/docs" target="_blank">Tailwindcss</a>
 ### Layout
 #### Container - v1.0
 ```css
