@@ -33,8 +33,11 @@
 - `gt_section-<%=id%>`: giúp định nghĩa class duy nhất của section.
 - `<%=extraClass%>`: Định nghĩa các class custom của section như: Animation, Visibility...
 - `data-name="<%=name%>"`: Hiển thị tên tương ứng trong Editor để giúp kiểm tra lỗi dễ dàng hơn.
-- `Box, Button`: Tên của các atoms (<a href="#" target="_blank">thông tin chi tiết</a>)
+- `Box, Button`: Tên của các atoms (<a href="#/ecomsolid/atoms?id=danh-sách-atoms" target="_blank">thông tin chi tiết</a>)
 - `attribute="contentWapper"`: Định nghĩa này sẽ ánh xạ tương ứng đến bên snippets
+
+>[!tip]
+> Tìm hiểu thêm về HTML kết nối với snippets (<a href="/#/ecomsolid/html?id=làm-việc-với-atoms" target="_blank">Hướng dẫn chi tiết</a>)
 
 #### Bước 2: Tạo base Snippets
 ------------------------
@@ -72,7 +75,7 @@
   }
 ]
 ```
-Bạn cần tìm hiểu cấu tạo của snippets (<a href="#" target="_blank">hướng dẫn chi tiết</a>)
+Bạn cần tìm hiểu cấu tạo của snippets (<a href="#/ecomsolid/snippets" target="_blank">hướng dẫn chi tiết</a>)
 
 #### Bước 3: Style cho bộ khung đã được tạo ra bằng HTML + Snippets
 ------------------------

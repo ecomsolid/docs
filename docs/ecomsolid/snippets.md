@@ -1,5 +1,3 @@
-# SNIPPETS
-
 ## Thuộc tính mở rộng
 ------------------------
 ### Định nghĩa plans
