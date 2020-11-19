@@ -1,7 +1,7 @@
 ## Class mở rộng
 ### Responsive Design
 ```css
-.lg:gt_text {
+.gt_text {
   font-size: 16px
 }
 .md:gt_text {
