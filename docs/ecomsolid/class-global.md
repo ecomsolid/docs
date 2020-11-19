@@ -42,22 +42,22 @@ gt_container--full
 ```
 #### Display
 ```css
-.gt_display--block {
+.gt_block {
   display: block;
 }
-.gt_display--inline-block {
+.gt_inline-block {
   display: inline-block;
 }
-.gt_display--inline {
+.gt_inline {
   display: inline;
 }
-.gt_display--inline-flex {
+.gt_inline-flex {
   display: inline-flex;
 }
-.gt_display--flex {
+.gt_flex {
   display: flex;
 }
-.gt_display--hidden {
+.gt_hidden {
   display: hidden;
 }
 ```
@@ -69,77 +69,59 @@ gt_container--full
 .gt_overflow--hidden {
   overflow: hidden;
 }
-.gt_overflow--visible {
-  overflow: visible;
-}
-.gt_overflow--scroll {
-  overflow: scroll;
-}
-.gt_overflow-x--auto {
-  overflow-x: auto;
-}
-.gt_overflow-y--auto {
-  overflow-y: auto;
-}
 .gt_overflow-x--hidden {
   overflow-x: hidden;
 }
 .gt_overflow-y--hidden {
   overflow-y: hidden;
 }
-.gt_overflow-x--visible {
-  overflow-x: visible;
-}
-.gt_overflow-y--visible {
-  overflow-y: visible;
-}
 ```
 #### Position
 ```css
-.gt_position--static {
+.gt_static {
   position: static;
 }
-.gt_position--fixed {
+.gt_fixed {
   position: fixed;
 }
-.gt_position--absolute {
+.gt_absolute {
   position: absolute;
 }
-.gt_position--relative {
+.gt_relative {
   position: relative;
 }
-.gt_position--sticky {
+.gt_sticky {
   position: sticky;
 }
 ```
 #### Visibility
 ```css
-.gt_visibility--visible {
+.gt_visible {
   visibility: visible;
 }
-.gt_visibility--hidden {
+.gt_invisible {
   visibility: hidden;
 }
 ```
 
 #### Z-Index
 ```css
-.gt_z-index--0 {
+.gt_z--0 {
   z-index: 0;
 }
-.gt_z-index--10 {
+.gt_z--10 {
   z-index: 10;
 }
-.gt_z-index--20 {
+.gt_z--20 {
   z-index: 20;
 }
-.gt_z-index--30 {
+.gt_z--30 {
   z-index: 30;
 }
-.gt_z-index--40 {
+.gt_z--40 {
   z-index: 40;
 }
-.gt_z-index--50 {
+.gt_z--50 {
   z-index: 50;
 }
 ```
@@ -159,56 +141,50 @@ gt_container--full
 ```
 #### Flex Direction
 ```css
-.gt_flex-direction--row {
+.gt_flex--row {
   flex-direction: row;
 }
-.gt_flex-direction--row-reverse {
+.gt_flex--row-reverse {
   flex-direction: row-reverse;
 }
-.gt_flex-direction--column {
+.gt_flex--column {
   flex-direction: column;
 }
-.gt_flex-direction--column-reverse {
+.gt_flex--column-reverse {
   flex-direction: column-reverse;
 }
 ```
 ### Box Alignment
 #### Justify Content
 ```css
-.gt_justify-content--start {
+.gt_justify--start {
   justify-content: flex-start;
 }
-.gt_justify-content--end {
+.gt_justify--end {
   justify-content: flex-end;
 }
-.gt_justify-content--center {
+.gt_justify--center {
   justify-content: center;
 }
-.gt_justify-content--space-between {
+.gt_justify--space-between {
   justify-content: space-between;
-}
-.gt_justify-content--space-around {
-  justify-content: space-around;
-}
-.gt_justify-content--space-evenly {
-  justify-content: space-evenly;
 }
 ```
 #### Align Items
 ```css
-.gt_align-items--start {
+.gt_items--start {
   align-items: flex-start;
 }
-.gt_align-items--end {
+.gt_items--end {
   align-items: flex-end;
 }
-.gt_align-items--center {
+.gt_items--center {
   align-items: center;
 }
-.gt_align-items--baseline {
+.gt_items--baseline {
   align-items: baseline;
 }
-.gt_align-items--stretch {
+.gt_items--stretch {
   align-items: stretch;
 }
 ```
@@ -231,6 +207,14 @@ gt_container--full
 .gt_mr--none {
   margin-right: 0px;
 }
+.gt_mx--none {
+  margin-right: 0px;
+  margin-left: 0px;
+}
+.gt_my--none {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
 ```
 ##### Extra Small ~ 8px - v1.0
 ```css
@@ -248,6 +232,14 @@ gt_container--full
 }
 .gt_mr--extra-small {
   margin-right: #{themeSpacingExtraSmall};
+}
+.gt_mx--extra-small {
+  margin-right: #{themeSpacingExtraSmall};
+  margin-left: #{themeSpacingExtraSmall};
+}
+.gt_my--extra-small {
+  margin-top: #{themeSpacingExtraSmall};
+  margin-bottom: #{themeSpacingExtraSmall};
 }
 ```
 Dùng cho những đoạn text với nhau ở khoảng cách nhỏ
@@ -286,6 +278,14 @@ gt_mr--extra-small
 }
 .gt_mr--small {
   margin-right: #{themeSpacingSmall};
+}
+.gt_mx--small {
+  margin-right: #{themeSpacingSmall};
+  margin-left: #{themeSpacingSmall};
+}
+.gt_my--small {
+  margin-top: #{themeSpacingSmall};
+  margin-bottom: #{themeSpacingSmall};
 }
 ```
 Dùng cho khoảng cách giữa các thành phần trong một box.
@@ -326,6 +326,14 @@ gt_mr--small
 .gt_mr--medium {
   margin-right: #{themeSpacingMedium};
 }
+.gt_mx--medium {
+  margin-right: #{themeSpacingMedium};
+  margin-left: #{themeSpacingMedium};
+}
+.gt_my--medium {
+  margin-top: #{themeSpacingMedium};
+  margin-bottom: #{themeSpacingMedium};
+}
 ```
 Dùng cho khoảng cách giữa các thành phần trong một section
 >[!note]
@@ -363,6 +371,14 @@ gt_mr--medium
 }
 .gt_mr--large {
   margin-right: #{themeSpacingLarge};
+}
+.gt_mx--large {
+  margin-right: #{themeSpacingLarge};
+  margin-left: #{themeSpacingLarge};
+}
+.gt_my--large {
+  margin-top: #{themeSpacingLarge};
+  margin-bottom: #{themeSpacingLarge};
 }
 ```
 Thường hay sử dụng cho khoảng cách giữa các section
@@ -403,6 +419,14 @@ gt_mr--large
 .gt_pr--none {
   padding-right: 0px;
 }
+.gt_px--none {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+.gt_py--none {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
 ```
 ##### Extra Small ~ 8px - v1.0
 ```css
@@ -420,6 +444,14 @@ gt_mr--large
 }
 .gt_pr--extra-small {
   padding-right: #{themeSpacingExtraSmall};
+}
+.gt_px--extra-small {
+  padding-right: #{themeSpacingExtraSmall};
+  padding-left: #{themeSpacingExtraSmall};
+}
+.gt_py--extra-small {
+  padding-top: #{themeSpacingExtraSmall};
+  padding-bottom: #{themeSpacingExtraSmall};
 }
 ```
 >[!note]
@@ -458,6 +490,14 @@ gt_pr--extra-small
 .gt_pr--small {
   padding-right: #{themeSpacingSmall};
 }
+.gt_px--small {
+  padding-right: #{themeSpacingSmall};
+  padding-left: #{themeSpacingSmall};
+}
+.gt_py--small {
+  padding-top: #{themeSpacingSmall};
+  padding-bottom: #{themeSpacingSmall};
+}
 ```
 >[!note]
 >Đã tự động hỗ trợ responsive
@@ -495,6 +535,14 @@ gt_pr--small
 .gt_pr--medium {
   padding-right: #{themeSpacingMedium};
 }
+.gt_px--medium {
+  padding-right: #{themeSpacingMedium};
+  padding-left: #{themeSpacingMedium};
+}
+.gt_py--medium {
+  padding-top: #{themeSpacingMedium};
+  padding-bottom: #{themeSpacingMedium};
+}
 ```
 >[!note]
 >Đã tự động hỗ trợ responsive
@@ -531,6 +579,14 @@ gt_pr--medium
 }
 .gt_pr--large {
   padding-right: #{themeSpacingLarge};
+}
+.gt_px--large {
+  padding-right: #{themeSpacingLarge};
+  padding-left: #{themeSpacingLarge};
+}
+.gt_py--large {
+  padding-top: #{themeSpacingLarge};
+  padding-bottom: #{themeSpacingLarge};
 }
 ```
 >[!note]
@@ -613,76 +669,76 @@ gt_heading--large
 ### Typography
 #### Font Style
 ```css
-.gt_font-style--italic {
+.gt_italic {
   font-style: italic;
 }
-.gt_font-style--normal {
+.gt_not-italic {
   font-style: normal;
 }
 ```
 #### Font Weight
 ```css
-.gt_font-weight--light {
+.gt_font--light {
   font-weight: light;
 }
-.gt_font-weight--normal {
+.gt_font--normal {
   font-weight: normal;
 }
-.gt_font-weight--medium {
+.gt_font--medium {
   font-weight: medium;
 }
-.gt_font-weight--bold {
+.gt_font--bold {
   font-weight: bold;
 }
 ```
 #### Text Alignment
 ```css
-.gt_text-align--left {
+.gt_text--left {
   text-align: left;
 }
-.gt_text-align--center {
+.gt_text--center {
   text-align: center;
 }
-.gt_text-align--right {
+.gt_text--right {
   text-align: right;
 }
-.gt_text-align--justify {
+.gt_text--justify {
   text-align: justify;
 }
 ```
 #### Text Color
 ```css
-.gt_text-color--brand {
+.gt_text--brand {
   color: #{themeBrandColor};
 }
-.gt_text-color--highlight {
+.gt_text--highlight {
   color: #{themeHighlightColor};
 }
 ```
 #### Text Decoration
 ```css
-.gt_text-decoration--underline {
+.gt_underline {
   text-decoration: underline;
 }
-.gt_text-decoration--line-through {
+.gt_line-through {
   text-decoration: line-through;
 }
-.gt_text-decoration--none {
+.gt_no-underline {
   text-decoration: none;
 }
 ```
 #### Text Transform
 ```css
-.gt_text-transform--uppercase {
+.gt_uppercase {
   text-transform: uppercase;
 }
-.gt_text-transform--lowercase {
+.gt_lowercase {
   text-transform: lowercase;
 }
-.gt_text-transform--capitalize {
+.gt_capitalize {
   text-transform: capitalize;
 }
-.gt_text-transform--none {
+.gt_normal-case {
   text-transform: none;
 }
 ``` 
@@ -707,25 +763,25 @@ gt_heading--large
 ```
 #### Background Position
 ```css
-.gt_bg-position--center {
+.gt_bg--center {
   background-position: center;
 }
 ```
 #### Background Repeat
 ```css
-.gt_bg-repeat--no-repeat {
+.gt_bg--no-repeat {
   background-repeat: no-repeat;
 }
 ```
 #### Background Size
 ```css
-.gt_bg-size--auto {
+.gt_bg--auto {
   background-size: auto;
 }
-.gt_bg-size--cover {
+.gt_bg--cover {
   background-size: cover;
 }
-.gt_bg-size--contain {
+.gt_bg--contain {
   background-size: contain;
 }
 ```
@@ -744,37 +800,37 @@ gt_heading--large
 ```
 #### Border Color
 ```css
-.gt_border-color--brand {
+.gt_border--brand {
   border-color: #{themeBrandColor};
 }
-.gt_border-color--highlight  {
+.gt_border--highlight  {
   border-color: #{themeHighlightColor};
 }
-.gt_border-color--section  {
+.gt_border--section  {
   border-color: #{themeSectionBackgroundColor};
 }
-.gt_border-color--transparent  {
+.gt_border--transparent  {
   border-color: transparent;
 }
-.gt_border-color--current  {
+.gt_border--current  {
   border-color: currentColor;
 }
 ```
 #### Border Style
 ```css
-.gt_border-style--solid {
+.gt_border--solid {
   border-style: solid;
 }
-.gt_border-style--dashed  {
+.gt_border--dashed  {
   border-style: dashed;
 }
-.gt_border-style--dotted  {
+.gt_border--dotted  {
   border-style: dotted;
 }
-.gt_border-style--double  {
+.gt_border--double  {
   border-style: double;
 }
-.gt_border-style--none  {
+.gt_border--none  {
   border-style: none;
 }
 ```
