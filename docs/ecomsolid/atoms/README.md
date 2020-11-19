@@ -3,6 +3,7 @@
 ### Các trường dữ liệu
 
 #### Name
+------------------------
 
 Định nghĩa HTML tag của atoms.
 
@@ -11,7 +12,9 @@
 - Các từ nối với nhau bằng chữ in hoa - (eg: ProductTitle).
 
 #### Icon
+
 #### Keyword
+------------------------
 
 Là định danh của atom, nó là duy nhất và sẽ được bảo toàn mãi mãi.
 
@@ -32,6 +35,7 @@ Là định danh của atom, nó là duy nhất và sẽ được bảo toàn m�
 #### Thumbnail
 
 #### Publish
+------------------------
 
 Trạng thái *"public - private"* sẽ giúp quyết định việc có sử dụng được atom này không
 
