@@ -33,6 +33,8 @@ Là định danh của atom, nó là duy nhất và sẽ được bảo toàn m�
 
 #### Publish
 
+Trạng thái *"public - private"* sẽ giúp quyết định việc có sử dụng được atom này không
+
 ## Danh sách atoms
 
 ### Row
