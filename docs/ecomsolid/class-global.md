@@ -715,6 +715,9 @@ gt_heading--large
   color: #{themeHighlightColor};
 }
 ```
+>[!warning]
+>Không hỗ trợ responsive
+
 #### Text Decoration
 ```css
 .gt_underline {
@@ -727,6 +730,9 @@ gt_heading--large
   text-decoration: none;
 }
 ```
+>[!warning]
+>Không hỗ trợ responsive
+
 #### Text Transform
 ```css
 .gt_uppercase {
@@ -742,6 +748,9 @@ gt_heading--large
   text-transform: none;
 }
 ``` 
+>[!warning]
+>Không hỗ trợ responsive
+
 ### Backgrounds
 #### Background Color
 ```css
@@ -761,18 +770,27 @@ gt_heading--large
   background-color: currentColor;
 }
 ```
+>[!warning]
+>Không hỗ trợ responsive
+
 #### Background Position
 ```css
 .gt_bg--center {
   background-position: center;
 }
 ```
+>[!warning]
+>Không hỗ trợ responsive
+
 #### Background Repeat
 ```css
 .gt_bg--no-repeat {
   background-repeat: no-repeat;
 }
 ```
+>[!warning]
+>Không hỗ trợ responsive
+
 #### Background Size
 ```css
 .gt_bg--auto {
@@ -785,6 +803,9 @@ gt_heading--large
   background-size: contain;
 }
 ```
+>[!warning]
+>Không hỗ trợ responsive
+
 ### Borders
 #### Border Radius
 ```css
@@ -798,6 +819,9 @@ gt_heading--large
   border-radius: 9999px;
 }
 ```
+>[!warning]
+>Không hỗ trợ responsive
+
 #### Border Color
 ```css
 .gt_border--brand {
@@ -816,6 +840,9 @@ gt_heading--large
   border-color: currentColor;
 }
 ```
+>[!warning]
+>Không hỗ trợ responsive
+
 #### Border Style
 ```css
 .gt_border--solid {
@@ -834,6 +861,9 @@ gt_heading--large
   border-style: none;
 }
 ```
+>[!warning]
+>Không hỗ trợ responsive
+
 ### Form
 ```css
 .gt_input--small {
@@ -862,6 +892,9 @@ gt_heading--large
 
 }
 ```
+>[!warning]
+>Không hỗ trợ responsive
+
 ### Interactivity
 #### Cursor
 ```css
@@ -881,6 +914,9 @@ gt_heading--large
   cursor: not-allowed;
 }
 ```
+>[!warning]
+>Không hỗ trợ responsive
+
 #### Resize
 ```css
 .gt_resize {
@@ -896,10 +932,15 @@ gt_heading--large
   resize: horizontal;
 }
 ```
+>[!warning]
+>Không hỗ trợ responsive
+
 #### User Select
 ```css
 .gt_user-select--none {
   user-select: none;
 }
 ```
+>[!warning]
+>Không hỗ trợ responsive
 
