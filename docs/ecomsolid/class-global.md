@@ -864,6 +864,26 @@ gt_heading--large
 >[!warning]
 >Không hỗ trợ responsive
 
+### Transition
+```css
+.gt_transition--none {
+  transition-property: none;
+}
+.gt_transition--all  {
+  transition-property: all;
+}
+.gt_transition  {
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+  transition-timing-function: ${data.themeAnimationTimingFunction};
+  transition-duration: #{data.themeAnimationDuration};
+}
+.gt_transition--colors  {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: ${data.themeAnimationTimingFunction};
+  transition-duration: #{data.themeAnimationDuration};
+}
+```
+
 ### Form
 ```css
 .gt_input--small {
