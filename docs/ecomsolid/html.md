@@ -55,7 +55,7 @@ HTML tương ứng với snippets:
 - `index="<%-i%>"`: Cần gắn index vào phần tử con bao ngoài cùng. Điều này là bắt buộc
 
 >[!tip]
->Để an toàn hơn bạn có thể kiểm tra `if (tabs && tabs.length) { for }` trước khi for
+>Để an toàn hơn bạn có thể kiểm tra `if (tabs && tabs > 0) { for }` trước khi for
 
 ### Quy tắc sử dụng class
 ------------------------
