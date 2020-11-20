@@ -52,7 +52,7 @@ HTML tương ứng với snippets:
 </Box>
 ```
 - `tabs`: Biến tabs ở vòng for ứng với số lượng con của `"attribute": "tabs"`. Eg: nếu có 3 phần tử con thì `tabs=3`
-- `index="<%-i%>"`: Cần gắn index vào phần tử con bao ngoài cùng. Điều này là bắt buộc
+- `index="<%-i%>"`: Cần gắn index vào phần tử con bao ngoài cùng. Giống như Vue luôn cần một Div để bao component. *(Điều này là bắt buộc)*
 
 >[!tip]
 >Để an toàn hơn bạn có thể kiểm tra `if (tabs && tabs > 0) { for }` trước khi for
