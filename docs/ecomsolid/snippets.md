@@ -247,13 +247,273 @@ CODE
 ###### ** Snippets **
 
 ```json
-CODE
+{
+  "id": "txtTypography",
+  "title": "Typography",
+  "extend": true,
+  "items": [
+    {
+      "id": "textSizeActive",
+      "attribute": "textSizeActive",
+      "title": "Font Size (on/off)",
+      "reference": "css",
+      "value": false,
+      "type": "switch",
+      "readonly": false,
+      "links": [
+        {
+          "value": true,
+          "snippet": {
+            "ids": [
+              "textSize"
+            ],
+            "hide": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "textSize",
+      "attribute": "textSize",
+      "title": "Font Size",
+      "reference": "css",
+      "value": "16px",
+      "type": "range:unit",
+      "min": 0,
+      "max": 100,
+      "changing": 1,
+      "units": [
+        "em",
+        "px"
+      ],
+      "initial": true,
+      "inherit": "themeTextFontSize",
+      "screens": [
+        {
+          "id": "lg",
+          "value": "16px"
+        },
+        {
+          "id": "md",
+          "value": "16px"
+        },
+        {
+          "id": "sm",
+          "value": "16px"
+        },
+        {
+          "id": "xs",
+          "value": "16px"
+        }
+      ]
+    },
+    {
+      "id": "textColorActive",
+      "attribute": "textColorActive",
+      "title": "Text (on/off)",
+      "reference": "css",
+      "value": false,
+      "type": "switch",
+      "readonly": false,
+      "links": [
+        {
+          "value": false,
+          "snippet": {
+            "ids": [
+              "textColor"
+            ],
+            "hide": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "textColor",
+      "attribute": "textColor",
+      "title": "Text",
+      "desc": "",
+      "reference": "css",
+      "value": "#ff00ff",
+      "type": "colorpicker",
+      "readonly": false,
+      "popup": true,
+      "initial": true,
+      "inherit": "themeTextColor"
+    },
+    {
+      "id": "textHoverColorActive",
+      "attribute": "textHoverColorActive",
+      "title": "Hover Text (on/off)",
+      "reference": "css",
+      "value": false,
+      "type": "switch",
+      "readonly": false,
+      "links": [
+        {
+          "value": false,
+          "snippet": {
+            "ids": [
+              "textHoverColor"
+            ],
+            "hide": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "textHoverColor",
+      "attribute": "textHoverColor",
+      "title": "Hover Text",
+      "reference": "css",
+      "value": "#ff00ff",
+      "type": "colorpicker",
+      "readonly": false,
+      "popup": true,
+      "initial": true,
+      "inherit": "themeTextColor"
+    },
+    {
+      "id": "textAlignActive",
+      "attribute": "textAlignActive",
+      "title": "Align (on/off)",
+      "reference": "css",
+      "value": true,
+      "type": "switch",
+      "readonly": false,
+      "links": [
+        {
+          "value": true,
+          "snippet": {
+            "ids": [
+              "textAlign"
+            ],
+            "hide": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "textAlign",
+      "attribute": "textAlign",
+      "title": "Align",
+      "reference": "css",
+      "value": "left",
+      "type": "select",
+      "options": [
+        {
+          "text": "Left",
+          "value": "left"
+        },
+        {
+          "text": "Right",
+          "value": "right"
+        },
+        {
+          "text": "Center",
+          "value": "center"
+        },
+        {
+          "text": "Justify",
+          "value": "justify"
+        }
+      ]
+    },
+    {
+      "id": "textDecorationActive",
+      "attribute": "textDecorationActive",
+      "title": "Decoration (on/off)",
+      "reference": "css",
+      "value": true,
+      "type": "switch",
+      "readonly": false,
+      "links": [
+        {
+          "value": true,
+          "snippet": {
+            "ids": [
+              "textDecoration"
+            ],
+            "hide": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "textDecoration",
+      "attribute": "textDecoration",
+      "title": "Decoration",
+      "reference": "underline",
+      "value": "left",
+      "type": "select",
+      "options": [
+        {
+          "text": "Overline",
+          "value": "overline"
+        },
+        {
+          "text": "Line Through",
+          "value": "line-through"
+        },
+        {
+          "text": "Underline",
+          "value": "underline"
+        },
+        {
+          "text": "Underline Overline",
+          "value": "underline overline"
+        }
+      ]
+    }
+  ]
+}
 ```
 
 ###### ** Styles **
 
 ```css
-CODE
+#a-<%-id%> {
+  <% if (textColorActive) { %>
+    color: <%-textColor%>;
+  <% } %>
+  <% if (textSizeActive) { %>
+    font-size: <%-textSize%>;
+  <% } %>
+  <% if (textAlignActive) { %>
+    text-align: <%-textAlign%>;
+  <% } %>
+  <% if (textDecorationActive) { %>
+    text-decoration: <%-textDecoration%>;
+  <% } %>
+}
+
+#a-<%-id%>:hover, #a-<%-id%>.gt_hover {
+  <% if (textHoverColorActive) { %>
+    color: <%-textHoverColor%>;
+  <% } %>
+}
+
+@media (max-width: 1200px) {
+  #a-<%-id%> {
+    <% if (textSizeActive) { %>
+      font-size: <%-textSize_md%>;
+    <% } %>
+  }
+}
+@media (max-width: 992px) {
+  #a-<%-id%> {
+    <% if (textSizeActive) { %>
+      font-size: <%-textSize_sm%>;
+    <% } %>
+  }
+}
+@media (max-width: 576px) {
+  #a-<%-id%> {
+    <% if (textSizeActive) { %>
+      font-size: <%-textSize_xs%>;
+    <% } %>
+  }
+}
+
 ```
 
 <!-- tabs:end -->
@@ -661,7 +921,7 @@ CODE
   <% } %>
 }
 
-#a-<%-id%>:hover {
+#a-<%-id%>:hover, #a-<%-id%>.gt_hover {
   <% if (backgroundTypeActive) { %>
     <% if (backgroundType == "color") { %>
       background-color: <%-hoverBackgroundColor%>;
@@ -677,12 +937,401 @@ CODE
 
 ###### ** Snippets **
 ```json
-CODE
+{
+  "id": "boxBorder",
+  "title": "Border",
+  "extend": true,
+  "items": [
+    {
+      "id": "borderRadiusActive",
+      "attribute": "borderRadiusActive",
+      "title": "Radius (on/off)",
+      "reference": "css",
+      "value": false,
+      "type": "switch",
+      "readonly": false,
+      "links": [
+        {
+          "value": true,
+          "snippet": {
+            "ids": [
+              "borderRadius"
+            ],
+            "hide": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "borderRadius",
+      "attribute": "borderRadius",
+      "title": "Radius",
+      "reference": "css",
+      "value": "0px",
+      "type": "input:unit",
+      "units": [
+        "px",
+        "%"
+      ],
+      "min": 0
+    },
+    {
+      "id": "turnOnBorder",
+      "attribute": "turnOnBorder",
+      "title": "Border (on/off)",
+      "reference": "css",
+      "value": false,
+      "type": "switch",
+      "readonly": false,
+      "links": [
+        {
+          "value": true,
+          "snippet": {
+            "ids": [
+              "borderWidth",
+              "borderColor",
+              "hoverBorderColor",
+              "borderStyle",
+              "borderDirection"
+            ],
+            "hide": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "borderWidth",
+      "attribute": "borderWidth",
+      "title": "Border Width",
+      "reference": "css",
+      "value": 1,
+      "type": "input:number",
+      "min": 0
+    },
+    {
+      "id": "borderColor",
+      "attribute": "borderColor",
+      "title": "Color",
+      "reference": "css",
+      "value": "unset",
+      "type": "colorpicker",
+      "readonly": false,
+      "popup": true
+    },
+    {
+      "id": "hoverBorderColor",
+      "attribute": "hoverBorderColor",
+      "title": "Hover Color",
+      "reference": "css",
+      "value": "unset",
+      "type": "colorpicker",
+      "readonly": false,
+      "popup": true
+    }
+  ],
+  "more": [
+    {
+      "id": "borderStyle",
+      "attribute": "borderStyle",
+      "title": "Style",
+      "reference": "css",
+      "value": "solid",
+      "type": "select",
+      "options": [
+        {
+          "text": "Solid",
+          "value": "solid"
+        },
+        {
+          "text": "Dashed",
+          "value": "dashed"
+        },
+        {
+          "text": "Dotted",
+          "value": "dotted"
+        },
+        {
+          "text": "Double",
+          "value": "double"
+        }
+      ]
+    },
+    {
+      "id": "borderDirection",
+      "attribute": "borderDirection",
+      "title": "Direction",
+      "reference": "css",
+      "value": "all",
+      "type": "select",
+      "options": [
+        {
+          "text": "All",
+          "value": "all"
+        },
+        {
+          "text": "Custom",
+          "value": "custom"
+        }
+      ],
+      "links": [
+        {
+          "value": "custom",
+          "snippet": {
+            "ids": [
+              "borderDirectionX",
+              "borderDirectionY"
+            ],
+            "hide": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "borderDirectionX",
+      "attribute": "borderDirectionX",
+      "title": "Direction X",
+      "reference": "css",
+      "value": "left",
+      "type": "select",
+      "options": [
+        {
+          "text": "Unset",
+          "value": "unset"
+        },
+        {
+          "text": "Left",
+          "value": "left"
+        },
+        {
+          "text": "Right",
+          "value": "right"
+        },
+        {
+          "text": "Left + Right",
+          "value": "left+right"
+        }
+      ]
+    },
+    {
+      "id": "borderDirectionY",
+      "attribute": "borderDirectionY",
+      "title": "Direction Y",
+      "reference": "css",
+      "value": "top",
+      "type": "select",
+      "options": [
+        {
+          "text": "Unset",
+          "value": "unset"
+        },
+        {
+          "text": "Top",
+          "value": "top"
+        },
+        {
+          "text": "Bottom",
+          "value": "bottom"
+        },
+        {
+          "text": "Top + Bottom",
+          "value": "top+bottom"
+        }
+      ]
+    }
+  ]
+}
 ```
 ###### ** Styles **
 
 ```css
-CODE
+#a-<%-id%> {
+  <% if (borderRadiusActive) { %>
+    border-radius: <%-borderRadius%>;
+  <% } %>
+
+  <% if (turnOnBorder) { %>
+    <% if (borderDirection == "all") { %>
+      border: <%-borderStyle%> <%-borderWidth%>px <%-borderColor%>;
+    <% } %>
+    <% if (borderDirection == "custom") { %>
+      <% if (borderDirectionX == "left") { %>
+        border-left: <%-borderStyle%> <%-borderWidth%>px <%-borderColor%>;
+      <% } else if (borderDirectionX == "right") { %>
+        border-right: <%-borderStyle%> <%-borderWidth%>px <%-borderColor%>;
+      <% } else if (borderDirectionX == "left+right") { %>
+        border-left: <%-borderStyle%> <%-borderWidth%>px <%-borderColor%>;
+        border-right: <%-borderStyle%> <%-borderWidth%>px <%-borderColor%>;
+      <% } %>
+      <% if (borderDirectionY == "top") { %>
+        border-top: <%-borderStyle%> <%-borderWidth%>px <%-borderColor%>;
+      <% } else if (borderDirectionY == "bottom") { %>
+        border-bottom: <%-borderStyle%> <%-borderWidth%>px <%-borderColor%>;
+      <% } else if (borderDirectionY == "top+bottom") { %>
+        border-top: <%-borderStyle%> <%-borderWidth%>px <%-borderColor%>;
+        border-bottom: <%-borderStyle%> <%-borderWidth%>px <%-borderColor%>;
+      <% } %>
+    <% } %>
+  <% } %>
+}
+
+#a-<%-id%>:hover, #a-<%-id%>.gt_hover {
+  <% if (turnOnBorder) { %>
+    border-color: <%-hoverBorderColor%>;
+  <% } %>
+}
+```
+
+<!-- tabs:end -->
+
+
+##### Spacing
+<!-- tabs:start -->
+###### ** Snippets **
+
+```json
+{
+  "id": "boxSpacing",
+  "title": "Spacing",
+  "extend": true,
+  "items": [
+    {
+      "id": "marginActive",
+      "attribute": "marginActive",
+      "title": "Margin (on/off)",
+      "reference": "css",
+      "value": false,
+      "type": "switch",
+      "readonly": false,
+      "links": [
+        {
+          "value": true,
+          "snippet": {
+            "ids": [
+              "margin"
+            ],
+            "hide": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "margin",
+      "attribute": "margin",
+      "title": "Margin",
+      "reference": "css",
+      "type": "margin",
+      "value": "0px 0px 0px 0px",
+      "screens": [
+        {
+          "id": "lg",
+          "value": "0px 0px 0px 0px"
+        },
+        {
+          "id": "md",
+          "value": "0px 0px 0px 0px"
+        },
+        {
+          "id": "sm",
+          "value": "0px 0px 0px 0px"
+        },
+        {
+          "id": "xs",
+          "value": "0px 0px 0px 0px"
+        }
+      ]
+    },
+    {
+      "id": "paddingActive",
+      "attribute": "paddingActive",
+      "title": "Padding (on/off)",
+      "reference": "css",
+      "value": false,
+      "type": "switch",
+      "readonly": false,
+      "links": [
+        {
+          "value": true,
+          "snippet": {
+            "ids": [
+              "padding"
+            ],
+            "hide": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "padding",
+      "attribute": "padding",
+      "title": "Padding",
+      "reference": "css",
+      "type": "padding",
+      "value": "0px 0px 0px 0px",
+      "screens": [
+        {
+          "id": "lg",
+          "value": "0px 0px 0px 0px"
+        },
+        {
+          "id": "md",
+          "value": "0px 0px 0px 0px"
+        },
+        {
+          "id": "sm",
+          "value": "0px 0px 0px 0px"
+        },
+        {
+          "id": "xs",
+          "value": "0px 0px 0px 0px"
+        }
+      ]
+    }
+  ]
+}
+```
+###### ** Styles **
+
+```css
+#a-<%-id%> {
+  <% if (marginActive) { %>
+    margin: <%-margin%>;
+  <% } %>
+
+  <% if (paddingActive) { %>
+    padding: <%-padding%>;
+  <% } %>
+}
+
+@media (max-width: 1200px) {
+  #a-<%-id%> {
+    <% if (marginActive) { %>
+      margin: <%-margin_md%>;
+    <% } %>
+    <% if (paddingActive) { %>
+      padding: <%-padding_md%>;
+    <% } %>
+  }
+}
+@media (max-width: 992px) {
+  #a-<%-id%> {
+    <% if (marginActive) { %>
+      margin: <%-margin_sm%>;
+    <% } %>
+    <% if (paddingActive) { %>
+      padding: <%-padding_sm%>;
+    <% } %>
+  }
+}
+@media (max-width: 576px) {
+  #a-<%-id%> {
+    <% if (marginActive) { %>
+      margin: <%-margin_xs%>;
+    <% } %>
+    <% if (paddingActive) { %>
+      padding: <%-padding_xs%>;
+    <% } %>
+  }
+}
 ```
 
 <!-- tabs:end -->
@@ -708,29 +1357,125 @@ CODE
 ###### ** Snippets **
 
 ```json
-CODE
+{
+  "id": "boxEffects",
+  "title": "Effects",
+  "extend": true,
+  "items": [
+    {
+      "id": "opacityActive",
+      "attribute": "opacityActive",
+      "title": "Opacity (on/off)",
+      "reference": "css",
+      "value": true,
+      "type": "switch",
+      "readonly": false,
+      "links": [
+        {
+          "value": true,
+          "snippet": {
+            "ids": [
+              "opacity"
+            ],
+            "hide": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "opacity",
+      "attribute": "opacity",
+      "title": "Opacity",
+      "reference": "css",
+      "value": 1,
+      "type": "range",
+      "min": 0,
+      "max": 1,
+      "changing": 0.1
+    },
+    {
+      "id": "boxShadowActive",
+      "attribute": "boxShadowActive",
+      "title": "Shadow (on/off)",
+      "reference": "css",
+      "value": false,
+      "type": "switch",
+      "readonly": false,
+      "links": [
+        {
+          "value": true,
+          "snippet": {
+            "ids": [
+              "boxShadow"
+            ],
+            "hide": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "boxShadow",
+      "attribute": "boxShadow",
+      "title": "Shadow",
+      "reference": "css",
+      "type": "shadow",
+      "value": "0px 0px 0px 0px #ccc",
+      "readonly": false
+    },
+    {
+      "id": "hoverBoxShadowActive",
+      "attribute": "hoverBoxShadowActive",
+      "title": "Hover Shadow (on/off)",
+      "reference": "css",
+      "value": false,
+      "type": "switch",
+      "readonly": false,
+      "links": [
+        {
+          "value": true,
+          "snippet": {
+            "ids": [
+              "hoverBoxShadow"
+            ],
+            "hide": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "hoverBoxShadow",
+      "attribute": "hoverBoxShadow",
+      "title": "Hover Shadow",
+      "reference": "css",
+      "type": "shadow",
+      "value": "0px 0px 0px 0px #ccc",
+      "readonly": false
+    }
+  ]
+}
 ```
 
 ###### ** Styles **
 
 ```css
-CODE
-```
+#a-<%-id%> {
+  <% if (opacityActive) { %>
+    opacity: <%-opacity%>;
+  <% } %>
+  <% if (boxShadowActive) { %>
+    <% if (boxShadow) { %>
+      box-shadow: <%-boxShadow%>;
+    <% } %>
+  <% } %>
+}
 
-<!-- tabs:end -->
-
-##### Spacing
-<!-- tabs:start -->
-###### ** Snippets **
-
-```json
-CODE
-```
-
-###### ** Styles **
-
-```css
-CODE
+#a-<%-id%>:hover, #a-<%-id%>.gt_hover {
+  <% if (hoverBoxShadowActive) { %>
+    <% if (hoverBoxShadow) { %>
+        box-shadow: <%-hoverBoxShadow%>;
+    <% } %>
+  <% } %>
+}
 ```
 
 <!-- tabs:end -->
