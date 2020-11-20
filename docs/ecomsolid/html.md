@@ -22,7 +22,7 @@
   "attribute": "tabs",
   "atom": "Box",
   "title": "Box",
-  "clone": true, // <- thuộc tính clone
+  "clone": true, // <- thuộc tính clone cho phép children cấp 1 có thể clone/remove...
   "children": [
     {
       "attribute": "itemTab",
