@@ -4,6 +4,44 @@
 
 ### Cấu trúc
 
+#### Wapper
+
+<!-- tabs:start -->
+
+
+##### ** HTML **
+
+```html
+<div class="gt_atom-<%-id%> gt_transition" id="a-<%-id%>" data-name="<%=name%>">
+  <slot></slot> 
+</div>
+
+```
+##### ** Snippets **
+
+```json
+[
+  {
+    "id": "content",
+    "settings": [
+
+    ]
+  },
+  {
+    "id": "design",
+    "settings": [
+
+    ]
+  }
+]
+```
+
+<!-- tabs:end -->
+
+>[!note]
+> Wapper là dạng chia tabs để chứa settings và design
+
+
 #### Settings
 
 >[!note]
@@ -12,7 +50,1504 @@
 #### Design
 Design sẽ cần flow theo chuẩn chung để giúp khách hàng quen thuộc hơn khi sử dụng Editor. Điều này cũng giúp việc code giảm thiểu hơn khi có thể copy code cũ đề đưa vào sections/atoms mới sau đó optimize lại cho phù hợp hơn.
 ##### Size
+<!-- tabs:start -->
+###### ** Snippets **
 
+```json
+CODE
+```
+
+###### ** Styles **
+
+```scss
+CODE
+```
+
+<!-- tabs:end -->
+
+##### Display
+<!-- tabs:start -->
+###### ** Snippets **
+
+```json
+{
+  "id": "boxDisplay",
+  "title": "Display",
+  "items": [
+    {
+      "id": "displayTypeActive",
+      "attribute": "displayTypeActive",
+      "title": "Type (on/off)",
+      "reference": "css",
+      "value": false,
+      "type": "switch",
+      "readonly": false,
+      "links": [
+        {
+          "value": true,
+          "snippet": {
+            "ids": [
+              "displayType",
+              "alignItemsActive",
+              "justifyContentActive",
+              "flexDirectionReverse"
+            ],
+            "hide": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "displayType",
+      "attribute": "displayType",
+      "title": "Type",
+      "reference": "css",
+      "value": "row",
+      "type": "segment",
+      "options": [
+        {
+          "text": "Row",
+          "value": "row"
+        },
+        {
+          "text": "Column",
+          "value": "column"
+        }
+      ]
+    },
+    {
+      "id": "flexDirectionReverse",
+      "attribute": "flexDirectionReverse",
+      "title": "Direction Reverse",
+      "reference": "css",
+      "value": false,
+      "type": "switch",
+      "readonly": false
+    },
+    {
+      "id": "alignItemsActive",
+      "attribute": "alignItemsActive",
+      "title": "Align Items (on/off)",
+      "reference": "css",
+      "value": false,
+      "type": "switch",
+      "readonly": false,
+      "links": [
+        {
+          "value": true,
+          "snippet": {
+            "ids": [
+              "alignItems"
+            ],
+            "hide": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "alignItems",
+      "attribute": "alignItems",
+      "title": "Align Items",
+      "reference": "css",
+      "value": "unset",
+      "type": "select",
+      "options": [
+        {
+          "text": "Start",
+          "value": "flex-start"
+        },
+        {
+          "text": "Center",
+          "value": "center"
+        },
+        {
+          "text": "End",
+          "value": "flex-end"
+        }
+      ]
+    },
+    {
+      "id": "justifyContentActive",
+      "attribute": "justifyContentActive",
+      "title": "Justify Content (on/off)",
+      "reference": "css",
+      "value": false,
+      "type": "switch",
+      "readonly": false,
+      "links": [
+        {
+          "value": true,
+          "snippet": {
+            "ids": [
+              "justifyContent"
+            ],
+            "hide": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "justifyContent",
+      "attribute": "justifyContent",
+      "title": "Justify Content",
+      "reference": "css",
+      "value": "unset",
+      "type": "select",
+      "options": [
+        {
+          "text": "Start",
+          "value": "flex-start"
+        },
+        {
+          "text": "Center",
+          "value": "center"
+        },
+        {
+          "text": "End",
+          "value": "flex-end"
+        },
+        {
+          "text": "Space Between",
+          "value": "space-between"
+        }
+      ]
+    }
+  ]
+}
+```
+
+###### ** Styles **
+
+```css
+#a-<%-id%> {
+  <% if (displayTypeActive) { %>
+    display: flex;
+
+    <% if (flexDirectionReverse) { %>
+      flex-direction: <%-displayType%>-reverse;
+    <% } else { %>
+      flex-direction: <%-displayType%>;
+    <% } %>
+
+    <% if (alignItemsActive) { %>
+      align-items: <%-alignItems%>;
+    <% } %>
+    
+    <% if (justifyContentActive) { %>
+      justify-content: <%-justifyContent%>;
+    <% } %>
+  <% } %>
+}
+```
+
+<!-- tabs:end -->
+
+##### Typography
+<!-- tabs:start -->
+###### ** Snippets **
+
+```json
+{
+  "id": "boxDisplay",
+  "title": "Display",
+  "items": [
+    {
+      "id": "displayTypeActive",
+      "attribute": "displayTypeActive",
+      "title": "Type (on/off)",
+      "reference": "css",
+      "value": false,
+      "type": "switch",
+      "readonly": false,
+      "links": [
+        {
+          "value": true,
+          "snippet": {
+            "ids": [
+              "displayType",
+              "alignItemsActive",
+              "justifyContentActive",
+              "flexDirectionReverse"
+            ],
+            "hide": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "displayType",
+      "attribute": "displayType",
+      "title": "Type",
+      "reference": "css",
+      "value": "row",
+      "type": "segment",
+      "options": [
+        {
+          "text": "Row",
+          "value": "row"
+        },
+        {
+          "text": "Column",
+          "value": "column"
+        }
+      ]
+    },
+    {
+      "id": "flexDirectionReverse",
+      "attribute": "flexDirectionReverse",
+      "title": "Direction Reverse",
+      "reference": "css",
+      "value": false,
+      "type": "switch",
+      "readonly": false
+    },
+    {
+      "id": "alignItemsActive",
+      "attribute": "alignItemsActive",
+      "title": "Align Items (on/off)",
+      "reference": "css",
+      "value": false,
+      "type": "switch",
+      "readonly": false,
+      "links": [
+        {
+          "value": true,
+          "snippet": {
+            "ids": [
+              "alignItems"
+            ],
+            "hide": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "alignItems",
+      "attribute": "alignItems",
+      "title": "Align Items",
+      "reference": "css",
+      "value": "unset",
+      "type": "select",
+      "options": [
+        {
+          "text": "Start",
+          "value": "flex-start"
+        },
+        {
+          "text": "Center",
+          "value": "center"
+        },
+        {
+          "text": "End",
+          "value": "flex-end"
+        }
+      ]
+    },
+    {
+      "id": "justifyContentActive",
+      "attribute": "justifyContentActive",
+      "title": "Justify Content (on/off)",
+      "reference": "css",
+      "value": false,
+      "type": "switch",
+      "readonly": false,
+      "links": [
+        {
+          "value": true,
+          "snippet": {
+            "ids": [
+              "justifyContent"
+            ],
+            "hide": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "justifyContent",
+      "attribute": "justifyContent",
+      "title": "Justify Content",
+      "reference": "css",
+      "value": "unset",
+      "type": "select",
+      "options": [
+        {
+          "text": "Start",
+          "value": "flex-start"
+        },
+        {
+          "text": "Center",
+          "value": "center"
+        },
+        {
+          "text": "End",
+          "value": "flex-end"
+        },
+        {
+          "text": "Space Between",
+          "value": "space-between"
+        }
+      ]
+    }
+  ]
+}
+```
+
+###### ** Styles **
+
+```css
+#a-<%-id%> {
+  <% if (displayTypeActive) { %>
+    display: flex;
+
+    <% if (flexDirectionReverse) { %>
+      flex-direction: <%-displayType%>-reverse;
+    <% } else { %>
+      flex-direction: <%-displayType%>;
+    <% } %>
+
+    <% if (alignItemsActive) { %>
+      align-items: <%-alignItems%>;
+    <% } %>
+    
+    <% if (justifyContentActive) { %>
+      justify-content: <%-justifyContent%>;
+    <% } %>
+  <% } %>
+}
+```
+
+<!-- tabs:end -->
+
+
+##### Background
+<!-- tabs:start -->
+###### ** Snippets **
+
+```json
+{
+  "id": "boxBackground",
+  "title": "Background",
+  "extend": true,
+  "items": [
+    {
+      "id": "backgroundTypeActive",
+      "attribute": "backgroundTypeActive",
+      "title": "Background (on/off)",
+      "reference": "css",
+      "value": false,
+      "type": "switch",
+      "readonly": false,
+      "links": [
+        {
+          "value": true,
+          "snippet": {
+            "ids": [
+              "backgroundType"
+            ],
+            "hide": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "backgroundType",
+      "attribute": "backgroundType",
+      "title": "Type",
+      "reference": "css",
+      "value": "color",
+      "type": "segment",
+      "options": [
+        {
+          "text": "Color",
+          "value": "color"
+        },
+        {
+          "text": "Image",
+          "value": "image"
+        }
+      ],
+      "links": [
+        {
+          "value": "color",
+          "snippet": {
+            "ids": [
+              "backgroundColor",
+              "hoverBackgroundColor"
+            ],
+            "hide": false
+          }
+        },
+        {
+          "value": "image",
+          "snippet": {
+            "ids": [
+              "backgroundImage",
+              "backgroundFixed",
+              "backgroundRepeat",
+              "backgroundPosition"
+            ],
+            "hide": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "backgroundColor",
+      "attribute": "backgroundColor",
+      "title": "Color",
+      "reference": "css",
+      "value": "#fff",
+      "type": "colorpicker",
+      "readonly": false,
+      "popup": true
+    },
+    {
+      "id": "hoverBackgroundColor",
+      "attribute": "hoverBackgroundColor",
+      "title": "Hover Color",
+      "reference": "css",
+      "value": "#fff",
+      "type": "colorpicker",
+      "readonly": false,
+      "popup": true
+    },
+    {
+      "id": "backgroundImage",
+      "attribute": "backgroundImage",
+      "title": "Image",
+      "reference": "css",
+      "type": "imageuploader",
+      "value": ""
+    }
+  ],
+  "more": [
+    {
+      "id": "backgroundFixedActive",
+      "attribute": "backgroundFixedActive",
+      "title": "Fixed (on/off)",
+      "reference": "css",
+      "value": false,
+      "type": "switch",
+      "readonly": false,
+      "links": [
+        {
+          "value": true,
+          "snippet": {
+            "ids": [
+              "backgroundFixed"
+            ],
+            "hide": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "backgroundFixed",
+      "attribute": "backgroundFixed",
+      "title": "Fixed",
+      "reference": "css",
+      "value": "fixed",
+      "type": "select",
+      "options": [
+        {
+          "text": "Fixed",
+          "value": "fixed"
+        },
+        {
+          "text": "Initial",
+          "value": "Initial"
+        }
+      ]
+    },
+    {
+      "id": "backgroundSizeActive",
+      "attribute": "backgroundSizeActive",
+      "title": "Size (on/off)",
+      "reference": "css",
+      "value": false,
+      "type": "switch",
+      "readonly": false,
+      "links": [
+        {
+          "value": true,
+          "snippet": {
+            "ids": [
+              "backgroundSize"
+            ],
+            "hide": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "backgroundSize",
+      "attribute": "backgroundSize",
+      "title": "Size",
+      "reference": "css",
+      "value": "cover",
+      "type": "select",
+      "options": [
+        {
+          "text": "Auto",
+          "value": "auto"
+        },
+        {
+          "text": "Cover",
+          "value": "cover"
+        },
+        {
+          "text": "Contain",
+          "value": "contain"
+        },
+        {
+          "text": "Custom",
+          "value": "custom"
+        }
+      ],
+      "links": [
+        {
+          "value": "custom",
+          "snippet": {
+            "ids": [
+              "backgroundSizeCustom"
+            ],
+            "hide": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "backgroundSizeCustom",
+      "attribute": "backgroundSizeCustom",
+      "title": "Custom Size",
+      "reference": "css",
+      "value": "100%",
+      "type": "input:unit",
+      "units": [
+        "px",
+        "%"
+      ],
+      "min": 0
+    },
+    {
+      "id": "backgroundRepeatActive",
+      "attribute": "backgroundRepeatActive",
+      "title": "Repeat (on/off)",
+      "reference": "css",
+      "value": false,
+      "type": "switch",
+      "readonly": false,
+      "links": [
+        {
+          "value": true,
+          "snippet": {
+            "ids": [
+              "backgroundRepeat"
+            ],
+            "hide": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "backgroundRepeat",
+      "attribute": "backgroundRepeat",
+      "title": "Repeat",
+      "reference": "css",
+      "value": "no-repeat",
+      "type": "select",
+      "options": [
+        {
+          "text": "No-repeat",
+          "value": "no-repeat"
+        },
+        {
+          "text": "Repeat",
+          "value": "repeat"
+        },
+        {
+          "text": "Repeat-x",
+          "value": "repeat-x"
+        },
+        {
+          "text": "Repeat-y",
+          "value": "repeat-y"
+        }
+      ]
+    },
+    {
+      "id": "backgroundPositionActive",
+      "attribute": "backgroundPositionActive",
+      "title": "Position (on/off)",
+      "reference": "css",
+      "value": false,
+      "type": "switch",
+      "readonly": false,
+      "links": [
+        {
+          "value": true,
+          "snippet": {
+            "ids": [
+              "backgroundPosition"
+            ],
+            "hide": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "backgroundPosition",
+      "attribute": "backgroundPosition",
+      "title": "Position",
+      "reference": "css",
+      "value": "center center",
+      "type": "select",
+      "options": [
+        {
+          "text": "Center Center",
+          "value": "center center"
+        },
+        {
+          "text": "Center Top",
+          "value": "center top"
+        },
+        {
+          "text": "Center Bottom",
+          "value": "center bottom"
+        },
+        {
+          "text": "Left Top",
+          "value": "left top"
+        },
+        {
+          "text": "Left Center",
+          "value": "left center"
+        },
+        {
+          "text": "Left Bottom",
+          "value": "left bottom"
+        },
+        {
+          "text": "Right Top",
+          "value": "right top"
+        },
+        {
+          "text": "Right Center",
+          "value": "right center"
+        },
+        {
+          "text": "Right Bottom",
+          "value": "right bottom"
+        },
+        {
+          "text": "Custom",
+          "value": "custom"
+        }
+      ],
+      "links": [
+        {
+          "value": "custom",
+          "snippet": {
+            "ids": [
+              "backgroundPositionX",
+              "backgroundPositionY"
+            ],
+            "hide": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "backgroundPositionX",
+      "attribute": "backgroundPositionX",
+      "title": "PositionX",
+      "reference": "css",
+      "value": "0%",
+      "type": "input:unit",
+      "units": [
+        "px",
+        "%"
+      ]
+    },
+    {
+      "id": "backgroundPositionY",
+      "attribute": "backgroundPositionY",
+      "title": "PositionY",
+      "reference": "css",
+      "value": "0%",
+      "type": "input:unit",
+      "units": [
+        "px",
+        "%"
+      ]
+    }
+  ]
+}
+```
+
+###### ** Styles **
+
+```css
+#a-<%-id%> {
+  <% if (backgroundTypeActive) { %>
+    <% if (backgroundType == "color") { %>
+      background-color: <%-backgroundColor%>;
+    <% } %>
+    <% if (backgroundType == "image") { %>
+      background-image: url("<%-backgroundImage%>");
+      <% if (backgroundFixedActive) { %>
+        background-attachment: <%-backgroundFixed%>;
+      <% } %>
+      <% if (backgroundSizeActive) { %>
+        <% if (backgroundSize && backgroundSize != "custom") { %>
+          background-size: <%-backgroundSize%>;
+        <% } %>
+        <% if (backgroundSize && backgroundSize == "custom") { %>
+          background-size: <%-backgroundSizeCustom%>;
+        <% } %>
+      <% } %>
+      <% if (backgroundRepeatActive) { %>
+        background-repeat: <%-backgroundRepeat%>;
+      <% } %>
+      <% if (backgroundPositionActive) { %>
+        <% if (backgroundPosition && backgroundPosition != "custom") { %>
+          background-position: <%-backgroundPosition%>;
+        <% } %>
+        <% if (backgroundPosition && backgroundPosition == "custom") { %>
+          background-position: <%-backgroundPositionX%> <%-backgroundPositionY%>;
+        <% } %>
+      <% } %>
+    <% } %>
+  <% } %>
+}
+
+#a-<%-id%>:hover {
+  <% if (backgroundTypeActive) { %>
+    <% if (backgroundType == "color") { %>
+      background-color: <%-hoverBackgroundColor%>;
+    <% } %>
+  <% } %>
+}
+```
+
+<!-- tabs:end -->
+
+
+##### Border
+<!-- tabs:start -->
+###### ** Snippets **
+
+```json
+{
+  "id": "boxDisplay",
+  "title": "Display",
+  "items": [
+    {
+      "id": "displayTypeActive",
+      "attribute": "displayTypeActive",
+      "title": "Type (on/off)",
+      "reference": "css",
+      "value": false,
+      "type": "switch",
+      "readonly": false,
+      "links": [
+        {
+          "value": true,
+          "snippet": {
+            "ids": [
+              "displayType",
+              "alignItemsActive",
+              "justifyContentActive",
+              "flexDirectionReverse"
+            ],
+            "hide": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "displayType",
+      "attribute": "displayType",
+      "title": "Type",
+      "reference": "css",
+      "value": "row",
+      "type": "segment",
+      "options": [
+        {
+          "text": "Row",
+          "value": "row"
+        },
+        {
+          "text": "Column",
+          "value": "column"
+        }
+      ]
+    },
+    {
+      "id": "flexDirectionReverse",
+      "attribute": "flexDirectionReverse",
+      "title": "Direction Reverse",
+      "reference": "css",
+      "value": false,
+      "type": "switch",
+      "readonly": false
+    },
+    {
+      "id": "alignItemsActive",
+      "attribute": "alignItemsActive",
+      "title": "Align Items (on/off)",
+      "reference": "css",
+      "value": false,
+      "type": "switch",
+      "readonly": false,
+      "links": [
+        {
+          "value": true,
+          "snippet": {
+            "ids": [
+              "alignItems"
+            ],
+            "hide": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "alignItems",
+      "attribute": "alignItems",
+      "title": "Align Items",
+      "reference": "css",
+      "value": "unset",
+      "type": "select",
+      "options": [
+        {
+          "text": "Start",
+          "value": "flex-start"
+        },
+        {
+          "text": "Center",
+          "value": "center"
+        },
+        {
+          "text": "End",
+          "value": "flex-end"
+        }
+      ]
+    },
+    {
+      "id": "justifyContentActive",
+      "attribute": "justifyContentActive",
+      "title": "Justify Content (on/off)",
+      "reference": "css",
+      "value": false,
+      "type": "switch",
+      "readonly": false,
+      "links": [
+        {
+          "value": true,
+          "snippet": {
+            "ids": [
+              "justifyContent"
+            ],
+            "hide": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "justifyContent",
+      "attribute": "justifyContent",
+      "title": "Justify Content",
+      "reference": "css",
+      "value": "unset",
+      "type": "select",
+      "options": [
+        {
+          "text": "Start",
+          "value": "flex-start"
+        },
+        {
+          "text": "Center",
+          "value": "center"
+        },
+        {
+          "text": "End",
+          "value": "flex-end"
+        },
+        {
+          "text": "Space Between",
+          "value": "space-between"
+        }
+      ]
+    }
+  ]
+}
+```
+
+###### ** Styles **
+
+```css
+#a-<%-id%> {
+  <% if (displayTypeActive) { %>
+    display: flex;
+
+    <% if (flexDirectionReverse) { %>
+      flex-direction: <%-displayType%>-reverse;
+    <% } else { %>
+      flex-direction: <%-displayType%>;
+    <% } %>
+
+    <% if (alignItemsActive) { %>
+      align-items: <%-alignItems%>;
+    <% } %>
+    
+    <% if (justifyContentActive) { %>
+      justify-content: <%-justifyContent%>;
+    <% } %>
+  <% } %>
+}
+```
+
+<!-- tabs:end -->
+
+
+
+##### Animations
+<!-- tabs:start -->
+###### ** Snippets **
+
+```json
+{
+  "id": "boxDisplay",
+  "title": "Display",
+  "items": [
+    {
+      "id": "displayTypeActive",
+      "attribute": "displayTypeActive",
+      "title": "Type (on/off)",
+      "reference": "css",
+      "value": false,
+      "type": "switch",
+      "readonly": false,
+      "links": [
+        {
+          "value": true,
+          "snippet": {
+            "ids": [
+              "displayType",
+              "alignItemsActive",
+              "justifyContentActive",
+              "flexDirectionReverse"
+            ],
+            "hide": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "displayType",
+      "attribute": "displayType",
+      "title": "Type",
+      "reference": "css",
+      "value": "row",
+      "type": "segment",
+      "options": [
+        {
+          "text": "Row",
+          "value": "row"
+        },
+        {
+          "text": "Column",
+          "value": "column"
+        }
+      ]
+    },
+    {
+      "id": "flexDirectionReverse",
+      "attribute": "flexDirectionReverse",
+      "title": "Direction Reverse",
+      "reference": "css",
+      "value": false,
+      "type": "switch",
+      "readonly": false
+    },
+    {
+      "id": "alignItemsActive",
+      "attribute": "alignItemsActive",
+      "title": "Align Items (on/off)",
+      "reference": "css",
+      "value": false,
+      "type": "switch",
+      "readonly": false,
+      "links": [
+        {
+          "value": true,
+          "snippet": {
+            "ids": [
+              "alignItems"
+            ],
+            "hide": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "alignItems",
+      "attribute": "alignItems",
+      "title": "Align Items",
+      "reference": "css",
+      "value": "unset",
+      "type": "select",
+      "options": [
+        {
+          "text": "Start",
+          "value": "flex-start"
+        },
+        {
+          "text": "Center",
+          "value": "center"
+        },
+        {
+          "text": "End",
+          "value": "flex-end"
+        }
+      ]
+    },
+    {
+      "id": "justifyContentActive",
+      "attribute": "justifyContentActive",
+      "title": "Justify Content (on/off)",
+      "reference": "css",
+      "value": false,
+      "type": "switch",
+      "readonly": false,
+      "links": [
+        {
+          "value": true,
+          "snippet": {
+            "ids": [
+              "justifyContent"
+            ],
+            "hide": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "justifyContent",
+      "attribute": "justifyContent",
+      "title": "Justify Content",
+      "reference": "css",
+      "value": "unset",
+      "type": "select",
+      "options": [
+        {
+          "text": "Start",
+          "value": "flex-start"
+        },
+        {
+          "text": "Center",
+          "value": "center"
+        },
+        {
+          "text": "End",
+          "value": "flex-end"
+        },
+        {
+          "text": "Space Between",
+          "value": "space-between"
+        }
+      ]
+    }
+  ]
+}
+```
+
+###### ** Styles **
+
+```css
+#a-<%-id%> {
+  <% if (displayTypeActive) { %>
+    display: flex;
+
+    <% if (flexDirectionReverse) { %>
+      flex-direction: <%-displayType%>-reverse;
+    <% } else { %>
+      flex-direction: <%-displayType%>;
+    <% } %>
+
+    <% if (alignItemsActive) { %>
+      align-items: <%-alignItems%>;
+    <% } %>
+    
+    <% if (justifyContentActive) { %>
+      justify-content: <%-justifyContent%>;
+    <% } %>
+  <% } %>
+}
+```
+
+<!-- tabs:end -->
+
+
+
+
+##### Effects
+<!-- tabs:start -->
+###### ** Snippets **
+
+```json
+{
+  "id": "boxDisplay",
+  "title": "Display",
+  "items": [
+    {
+      "id": "displayTypeActive",
+      "attribute": "displayTypeActive",
+      "title": "Type (on/off)",
+      "reference": "css",
+      "value": false,
+      "type": "switch",
+      "readonly": false,
+      "links": [
+        {
+          "value": true,
+          "snippet": {
+            "ids": [
+              "displayType",
+              "alignItemsActive",
+              "justifyContentActive",
+              "flexDirectionReverse"
+            ],
+            "hide": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "displayType",
+      "attribute": "displayType",
+      "title": "Type",
+      "reference": "css",
+      "value": "row",
+      "type": "segment",
+      "options": [
+        {
+          "text": "Row",
+          "value": "row"
+        },
+        {
+          "text": "Column",
+          "value": "column"
+        }
+      ]
+    },
+    {
+      "id": "flexDirectionReverse",
+      "attribute": "flexDirectionReverse",
+      "title": "Direction Reverse",
+      "reference": "css",
+      "value": false,
+      "type": "switch",
+      "readonly": false
+    },
+    {
+      "id": "alignItemsActive",
+      "attribute": "alignItemsActive",
+      "title": "Align Items (on/off)",
+      "reference": "css",
+      "value": false,
+      "type": "switch",
+      "readonly": false,
+      "links": [
+        {
+          "value": true,
+          "snippet": {
+            "ids": [
+              "alignItems"
+            ],
+            "hide": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "alignItems",
+      "attribute": "alignItems",
+      "title": "Align Items",
+      "reference": "css",
+      "value": "unset",
+      "type": "select",
+      "options": [
+        {
+          "text": "Start",
+          "value": "flex-start"
+        },
+        {
+          "text": "Center",
+          "value": "center"
+        },
+        {
+          "text": "End",
+          "value": "flex-end"
+        }
+      ]
+    },
+    {
+      "id": "justifyContentActive",
+      "attribute": "justifyContentActive",
+      "title": "Justify Content (on/off)",
+      "reference": "css",
+      "value": false,
+      "type": "switch",
+      "readonly": false,
+      "links": [
+        {
+          "value": true,
+          "snippet": {
+            "ids": [
+              "justifyContent"
+            ],
+            "hide": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "justifyContent",
+      "attribute": "justifyContent",
+      "title": "Justify Content",
+      "reference": "css",
+      "value": "unset",
+      "type": "select",
+      "options": [
+        {
+          "text": "Start",
+          "value": "flex-start"
+        },
+        {
+          "text": "Center",
+          "value": "center"
+        },
+        {
+          "text": "End",
+          "value": "flex-end"
+        },
+        {
+          "text": "Space Between",
+          "value": "space-between"
+        }
+      ]
+    }
+  ]
+}
+```
+
+###### ** Styles **
+
+```css
+#a-<%-id%> {
+  <% if (displayTypeActive) { %>
+    display: flex;
+
+    <% if (flexDirectionReverse) { %>
+      flex-direction: <%-displayType%>-reverse;
+    <% } else { %>
+      flex-direction: <%-displayType%>;
+    <% } %>
+
+    <% if (alignItemsActive) { %>
+      align-items: <%-alignItems%>;
+    <% } %>
+    
+    <% if (justifyContentActive) { %>
+      justify-content: <%-justifyContent%>;
+    <% } %>
+  <% } %>
+}
+```
+
+<!-- tabs:end -->
+
+
+
+##### Spacing
+<!-- tabs:start -->
+###### ** Snippets **
+
+```json
+{
+  "id": "boxDisplay",
+  "title": "Display",
+  "items": [
+    {
+      "id": "displayTypeActive",
+      "attribute": "displayTypeActive",
+      "title": "Type (on/off)",
+      "reference": "css",
+      "value": false,
+      "type": "switch",
+      "readonly": false,
+      "links": [
+        {
+          "value": true,
+          "snippet": {
+            "ids": [
+              "displayType",
+              "alignItemsActive",
+              "justifyContentActive",
+              "flexDirectionReverse"
+            ],
+            "hide": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "displayType",
+      "attribute": "displayType",
+      "title": "Type",
+      "reference": "css",
+      "value": "row",
+      "type": "segment",
+      "options": [
+        {
+          "text": "Row",
+          "value": "row"
+        },
+        {
+          "text": "Column",
+          "value": "column"
+        }
+      ]
+    },
+    {
+      "id": "flexDirectionReverse",
+      "attribute": "flexDirectionReverse",
+      "title": "Direction Reverse",
+      "reference": "css",
+      "value": false,
+      "type": "switch",
+      "readonly": false
+    },
+    {
+      "id": "alignItemsActive",
+      "attribute": "alignItemsActive",
+      "title": "Align Items (on/off)",
+      "reference": "css",
+      "value": false,
+      "type": "switch",
+      "readonly": false,
+      "links": [
+        {
+          "value": true,
+          "snippet": {
+            "ids": [
+              "alignItems"
+            ],
+            "hide": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "alignItems",
+      "attribute": "alignItems",
+      "title": "Align Items",
+      "reference": "css",
+      "value": "unset",
+      "type": "select",
+      "options": [
+        {
+          "text": "Start",
+          "value": "flex-start"
+        },
+        {
+          "text": "Center",
+          "value": "center"
+        },
+        {
+          "text": "End",
+          "value": "flex-end"
+        }
+      ]
+    },
+    {
+      "id": "justifyContentActive",
+      "attribute": "justifyContentActive",
+      "title": "Justify Content (on/off)",
+      "reference": "css",
+      "value": false,
+      "type": "switch",
+      "readonly": false,
+      "links": [
+        {
+          "value": true,
+          "snippet": {
+            "ids": [
+              "justifyContent"
+            ],
+            "hide": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "justifyContent",
+      "attribute": "justifyContent",
+      "title": "Justify Content",
+      "reference": "css",
+      "value": "unset",
+      "type": "select",
+      "options": [
+        {
+          "text": "Start",
+          "value": "flex-start"
+        },
+        {
+          "text": "Center",
+          "value": "center"
+        },
+        {
+          "text": "End",
+          "value": "flex-end"
+        },
+        {
+          "text": "Space Between",
+          "value": "space-between"
+        }
+      ]
+    }
+  ]
+}
+```
+
+###### ** Styles **
+
+```css
+#a-<%-id%> {
+  <% if (displayTypeActive) { %>
+    display: flex;
+
+    <% if (flexDirectionReverse) { %>
+      flex-direction: <%-displayType%>-reverse;
+    <% } else { %>
+      flex-direction: <%-displayType%>;
+    <% } %>
+
+    <% if (alignItemsActive) { %>
+      align-items: <%-alignItems%>;
+    <% } %>
+    
+    <% if (justifyContentActive) { %>
+      justify-content: <%-justifyContent%>;
+    <% } %>
+  <% } %>
+}
+```
+
+<!-- tabs:end -->
 
 ## Thuộc tính mở rộng
 ------------------------
