@@ -106,12 +106,65 @@ Nếu sử dụng hàm Text và hàm Html thì sẽ không cần sử dụng opt
 
 ### image
 ------------------------
+```html
+<div class="gt_herobanner-image">
+    <%-image({
+        src: imageBackground,
+        snippet: {
+            attribute: "imageBackground",
+            //index: i
+        },
+        class: "product_image gt_lazyload",
+        size: "100x",
+        attr: {
+            "alt": texHeading,
+        }
+    })%>
+</div>
+```
+
+> [!Tip]
+>  i chính là số thứ tự trong tabs. Nếu không có thì bỏ qua thuộc tính index
 
 ### bgImage
 ------------------------
+```html
+<div <%-bgImage({
+    src: imageBackground,
+    snippet: {
+        attribute: "imageBackground",
+        //index: i
+    },
+    class: "gt_herobanner-image gt_lazyload",
+    size: "100x"
+})%> >
+    <span></span>
+</div>
+```
+
+> [!Tip]
+>  i chính là số thứ tự trong tabs. Nếu không có thì bỏ qua thuộc tính index
 
 ### attr
 ------------------------
+```html
+<% if (headingText != ""){ %>
+   <a <%-attr([{
+        placeholder: placeholderText,
+        snippet: {
+            attribute: "placeholderText",
+            //index: i
+        },
+    },
+    {
+        title: titleText,
+        snippet: {
+            attribute: "titleText",
+            //index: i
+        },
+    }])%> ></a>
+<% } %>
+```
 
 ### icon
 ------------------------
