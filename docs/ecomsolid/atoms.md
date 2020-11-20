@@ -124,10 +124,10 @@ Trạng thái *"public - private"* sẽ giúp quyết định việc có sử d�
 > Cần thêm ID theo id của atom để có thể ghi đè style của section
 
 >[!tip]
-> Cần tìm hiểu thêm về cách viết HTML ở đây. (<a href="#" target="_blank">Hướng dẫn chi tiết</a>)
+> Cần tìm hiểu thêm về cách viết HTML ở đây. (<a href="#/ecomsolid/html" target="_blank">Hướng dẫn chi tiết</a>)
 
 >[!tip]
-> Cần tìm hiểu thêm về những class global ở đây. (<a href="#" target="_blank">Hướng dẫn chi tiết</a>)
+> Cần tìm hiểu thêm về những class global ở đây. (<a href="#/ecomsolid/class-global" target="_blank">Hướng dẫn chi tiết</a>)
 
 #### Bước 2: Định nghĩa Snippets
 ------------------------
@@ -144,11 +144,11 @@ Trạng thái *"public - private"* sẽ giúp quyết định việc có sử d�
 ]
 ```
 >[!warning]
-> Cần lưu ý snippets của design cần flow theo chuẩn chung (<a href="#" target="_blank">Hướng dẫn chi tiết</a>)
+> Cần lưu ý snippets của design cần flow theo chuẩn chung (<a href="#/ecomsolid/snippets" target="_blank">Hướng dẫn chi tiết</a>)
 
 
 >[!tip]
-> Cần tìm hiểu thêm về cách viết Snippets ở đây. (<a href="#" target="_blank">Hướng dẫn chi tiết</a>)
+> Cần tìm hiểu thêm về cách viết Snippets ở đây. (<a href="#/ecomsolid/snippets?id=tree" target="_blank">Hướng dẫn chi tiết</a>)
 #### Bước 3: Tạo Style
 ------------------------
 ```scss
