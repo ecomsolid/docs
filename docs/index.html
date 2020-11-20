@@ -13,6 +13,47 @@
     .app-nav {
       position: fixed;
     }
+    .sidebar ul, .sidebar ul li {
+      list-style: decimal;
+    }
+    .sidebar li {
+      margin: 0;
+    }
+    .markdown-section h2 {
+      font-weight: 700;
+      margin: 1em 0;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: .7em;
+    }
+    .markdown-section h3{
+      font-weight: 700;
+      margin: .6em 0;
+
+    }
+    .markdown-section h3:before{
+      content: "#";
+      color: #42b983;
+      font-size: 1em;
+      margin-right: 0.2em;
+    }
+    .markdown-section h4:before{
+      content: "#";
+      color: #ffdd59;
+      font-size: 1em;
+      margin-right: 0.2em;
+    }
+    .markdown-section h5:before{
+      content: "#";
+      color:#4bcffa;
+      font-size: 1em;
+      margin-right: 0.2em;
+    }
+    .markdown-section h6:before{
+      content: "#";
+      color:#ff3f34;
+      font-size: 1em;
+      margin-right: 0.2em;
+    }
   </style>
 </head>
 <body>
@@ -82,7 +123,7 @@
       },
       tabs: {
         sync: false // default
-      }
+      },
       // search: 'auto',
       // auto2top: true,
     }
