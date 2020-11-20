@@ -1,3 +1,19 @@
+## Cấu trúc chuẩn
+
+### Các lưu ý
+
+### Cấu trúc
+
+#### Settings
+
+>[!note]
+> Sections/widgets hoặc atoms đều có những setting riêng. Eg: Icon thì có pickIcon, Image thì có uploadImage
+
+#### Design
+Design sẽ cần flow theo chuẩn chung để giúp khách hàng quen thuộc hơn khi sử dụng Editor. Điều này cũng giúp việc code giảm thiểu hơn khi có thể copy code cũ đề đưa vào sections/atoms mới sau đó optimize lại cho phù hợp hơn.
+##### Size
+
+
 ## Thuộc tính mở rộng
 ------------------------
 ### Định nghĩa plans
