@@ -115,7 +115,7 @@ Trạng thái *"public - private"* sẽ giúp quyết định việc có sử d�
 #### Bước 1: Định nghĩa HTML
 ------------------------
 ```html
-<div class="gt_atom-<%-id%>" id="a-<%-id%>" data-name="<%=name%>">
+<div class="gt_atom-<%-id%> gt_transition" id="a-<%-id%>" data-name="<%=name%>">
   <slot></slot> 
 </div>
 ``` 
