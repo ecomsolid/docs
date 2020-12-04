@@ -149,7 +149,7 @@ destroy() {
 Đoạn code trên sẽ được render như sau: 
 
 ```js
-var unsubscribeDestroy = store.subscribe(id + "-destroy", function() {
+var unsubscribeDestroy = store.subscribe("component-" + id + "-destroy", function() {
 	console.log("destroy");
 	destroy();
 	unsubscribeDestroy();
@@ -208,9 +208,6 @@ export default {
 	var  elementClassName  =  ".gt_atom-<%=id%>";
 	var  $elements  =  document.querySelectorAll(elementClassName);
 	var  store  =  window.SOLID.store;
-	if (!$elements.length) {
-		return;
-	}
 	for (var  indexEl  =  0;  indexEl  <  $elements.length;  indexEl++) {
 		var  $element  =  $elements[indexEl];
 		/* data block script */
@@ -249,7 +246,7 @@ export default {
 		for (var  idxElEvent0  =  0;  idxElEvent0  <  $elements_2.length;  idxElEvent0++) {
 			$elements_2[idxElEvent0].addEventListener("click",  closeSearchPopup);
 		}
-		var  unsubscribeDestroy  =  store.subscribe(id  +  "-destroy",  function  ()  {
+		var  unsubscribeDestroy  =  store.subscribe("component-" + id  +  "-destroy",  function  ()  {
 			console.log("destroy");
 			destroy();
 			unsubscribeDestroy();
