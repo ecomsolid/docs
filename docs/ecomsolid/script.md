@@ -6,7 +6,7 @@ Trong script sẽ có sẵn các biến:
 - `$element` : element của script như atom, addon hoặc section được lấy từ elementClassName
 
 Syntax:  
-- Có keyword `export default` để khởi tạo script.
+- Có keyword `module.exports` để khởi tạo script.
 - Phải có đầy đủ dấu `,` và các `block` trong script .
 
 ### Cấu trúc
@@ -149,7 +149,7 @@ destroy() {
 Đoạn code trên sẽ được render như sau: 
 
 ```js
-var unsubscribeDestroy = store.subscribe(id + "-destroy", function() {
+var unsubscribeDestroy = store.subscribe("component-" + id + "-destroy", function() {
 	console.log("destroy");
 	destroy();
 	unsubscribeDestroy();
@@ -159,101 +159,113 @@ var unsubscribeDestroy = store.subscribe(id + "-destroy", function() {
 ### Ví dụ
 - Script
 ```js
-export default {
-	data() {
-		var id = "<%=id%>";
-		var elementClassName = ".gt_atom-<%=id%>";
-		var $popups;
-		var openPopupTimeout;
-	},
-	init() {
-		$popups = $element.querySelectorAll(".gt_atom-nav-search");
-	},
-	store:  {
-		getState:  {
-			cart: cart,
-		},
-		subscribe:  {
-			cart: openSearchPopup,
-			addToCartSuccess: openCartDrawer,
-		},
-	},
-	events:  {
-		".gt_main-icon-search":  {
-			click: openSearchPopup,
-		},
-		".gt_close":  {
-			click: closeSearchPopup,
-		},
-	},
-	methods:  {
-		openSearchPopup()  {
-			console.log("open search popup");
-		},
-		closeSearchPopup()  {
-			console.log("close search popup");
-		},
-		openCartDrawer()  {
-			console.log("open cart drawer");
-		},
-	},
-	destroy()  {},
-}
+module.exports = {
+  data() {
+    var id = "<%=id%>";
+    var elementClassName = ".gt_atom-<%=id%>";
+    var $popups;
+    var openPopupTimeout;
+  },
+  init() {
+    $popups = $element.querySelectorAll(".gt_atom-nav-search");
+  },
+  store: {
+    getState: {
+      cart: cart,
+    },
+    subscribe: {
+      cart: openSearchPopup,
+      addToCartSuccess: openCartDrawer,
+    },
+  },
+  events: {
+    ".gt_main-icon-search": {
+      click: openSearchPopup,
+    },
+    ".gt_close": {
+      click: closeSearchPopup,
+    },
+  },
+  methods: {
+    openSearchPopup() {
+      console.log("open search popup");
+    },
+    closeSearchPopup() {
+      console.log("close search popup");
+    },
+    openCartDrawer() {
+      console.log("open cart drawer");
+    },
+  },
+  destroy() {},
+};
 ```
 - Compile Script
 
 ```js
-(function  ()  {
-	var  id  =  "<%=id%>";
-	var  elementClassName  =  ".gt_atom-<%=id%>";
-	var  $elements  =  document.querySelectorAll(elementClassName);
-	var  store  =  window.SOLID.store;
-	if (!$elements.length) {
-		return;
-	}
-	for (var  indexEl  =  0;  indexEl  <  $elements.length;  indexEl++) {
-		var  $element  =  $elements[indexEl];
-		/* data block script */
-		var  $popups;
-		var  openPopupTimeout;
-		/* methods block script */
-		function  openSearchPopup()  {
-			console.log("opensearchpopup");
-		}
-		function  closeSearchPopup()  {
-			console.log("closesearchpopup");
-		}
-		function  openCartDrawer()  {
-			console.log("opencartdrawer");
-		}
-		/* init block script */
-		$popups  =  $element.querySelectorAll(".gt_atom-nav-search");
-		/* store block script */
-		var  unsubscribes  = [];
-		var  cart  =  store.getState("cart") ||  {};
-		var  unsubscribe_1  =  store.subscribe("cart",  openSearchPopup);
-		unsubscribes.push(unsubscribe_1);
-		var  unsubscribe_2  =  store.subscribe("addToCartSuccess",  openCartDrawer);
-		unsubscribes.push(unsubscribe_2);
-		function  destroy()  {
-			for (var  i  =  0;  i  <  unsubscribes.length;  i++) {
-				unsubscribes[i]();
-			}
-		}
-		/* events block script */
-		var  $elements_1  =  $element.querySelectorAll(".gt_main-icon-search");
-		for (var  idxElEvent0  =  0;  idxElEvent0  <  $elements_1.length;  idxElEvent0++) {
-			$elements_1[idxElEvent0].addEventListener("click",  openSearchPopup);
-		}
-		var  $elements_2  =  $element.querySelectorAll(".gt_close");
-		for (var  idxElEvent0  =  0;  idxElEvent0  <  $elements_2.length;  idxElEvent0++) {
-			$elements_2[idxElEvent0].addEventListener("click",  closeSearchPopup);
-		}
-		var  unsubscribeDestroy  =  store.subscribe(id  +  "-destroy",  function  ()  {
-			console.log("destroy");
-			destroy();
-			unsubscribeDestroy();
-		});
-	}
+(function () {
+  var elementClassName = ".gt_atom-<%=id%>";
+  var $elements = document.querySelectorAll(elementClassName);
+  var storeWindow = window.SOLID.store;
+  function script($target, storeWindow) {
+    var $element = $target;
+    var store = storeWindow;
+    /* data block script */
+    var $popups;
+    var openPopupTimeout;
+    var id = "<%=id%>"; /* methods block script */
+    function openSearchPopup() {
+      console.log("opensearchpopup");
+    }
+    function closeSearchPopup() {
+      console.log("closesearchpopup");
+    }
+    function openCartDrawer() {
+      console.log("opencartdrawer");
+    }
+    /* init block script */
+    $popups = $element.querySelectorAll(".gt_atom-nav-search");
+    /* store block script */
+    var unsubscribes = [];
+    var cart = store.getState("cart") || {};
+    var unsubscribe_1 = store.subscribe("cart", openSearchPopup);
+    unsubscribes.push(unsubscribe_1);
+    var unsubscribe_2 = store.subscribe("addToCartSuccess", openCartDrawer);
+    unsubscribes.push(unsubscribe_2);
+    function destroy() {
+      for (var i = 0; i < unsubscribes.length; i++) {
+        unsubscribes[i]();
+      }
+    }
+    /* events block script */
+    var $elements_1 = $element.querySelectorAll(".gt_main-icon-search");
+    for (
+      var idxElEvent0_1 = 0;
+      idxElEvent0_1 < $elements_1.length;
+      idxElEvent0_1++
+    ) {
+      $elements_1[idxElEvent0_1].addEventListener("click", openSearchPopup);
+    }
+    var $elements_2 = $element.querySelectorAll(".gt_close");
+    for (
+      var idxElEvent0_2 = 0;
+      idxElEvent0_2 < $elements_2.length;
+      idxElEvent0_2++
+    ) {
+      $elements_2[idxElEvent0_2].addEventListener("click", closeSearchPopup);
+    }
+    var unsubscribeDestroy = store.subscribe(
+      "component-" + id + "-destroy",
+      function () {
+        destroy();
+        unsubscribeDestroy();
+      }
+    );
+  }
+  /* run all script */
+  for (var indexEl = 0; indexEl < $elements.length; indexEl++) {
+    var $target = $elements[indexEl];
+    script($target, storeWindow);
+  }
 })();
 ```
