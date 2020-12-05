@@ -41,21 +41,26 @@
 }
 ```
 
-HTML tương ứng với snippets:
+#### HTML chứa data shopify (product, collection, aricle, blog)
+------------------------
+Việc thêm `data-cache` giúp editor hiểu dữ liệu này dùng các biến của shopify và từ đó render tốt hơn.
+`data-cache` có thể dùng cả với element
 ```html
-<Box attribute="tabs">
-  <% for(let i = 0; i < tabs; i++) { %>
-    <Box attribute="itemTab" index="<%-i%>">
-      <Button attribute="buttonItem"/>
-    </Box>
-  <% } %>
-</Box>
+<h1 class="gt_atom-<%-id%>" id="a-<%-id%>" data-name="<%-name%>" data-cache="{'shopify-product-id': '{{product.id}}'}">
+  {{product.title}}
+</h1>
 ```
-- `tabs`: Biến tabs ở vòng for ứng với số lượng con của `"attribute": "tabs"`. Eg: nếu có 3 phần tử con thì `tabs=3`
-- `index="<%-i%>"`: Cần gắn index vào phần tử con bao ngoài cùng. Giống như Vue luôn cần một Div để bao component. *(Điều này là bắt buộc)*
+>[!note]
+> Dữ liệu bên trong `data-cache` phải là một object
 
->[!tip]
->Để an toàn hơn bạn có thể kiểm tra `if (tabs && tabs > 0) { for }` trước khi for
+Ngoài ra chúng ta còn có thể sử dụng các thuộc tính khác như:
+```html
+shopify-product-id
+shopify-collection-id
+shopify-blog-id
+shopify-aricle-id
+...
+```
 
 ### Quy tắc sử dụng class
 ------------------------
