@@ -98,7 +98,7 @@ Atom được hiểu đơn giản là phần tử bé nhất của một website
 
 Định nghĩa HTML tag của atoms.
 
-<strong>Bắt buộc:</strong>
+**Bắt buộc:**
 - Viết in hoa chữ cái đầu.
 - Các từ nối với nhau bằng chữ in hoa - (eg: ProductTitle).
 
@@ -110,7 +110,7 @@ Atom được hiểu đơn giản là phần tử bé nhất của một website
 
 Là định danh của atom, nó là duy nhất và sẽ được bảo toàn mãi mãi.
 
-<strong>Bắt buộc:</strong>
+**Bắt buộc:**
 - Không viết in hoa
 - Các từ nối với nhau bằng ký tự - (eg: product-title).
 
