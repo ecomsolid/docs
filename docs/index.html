@@ -120,7 +120,15 @@
           "https://github.com/ecomsolid/docs/blob/master/docs/",
           null,
           "Edit on Github"
-        )
+        ),
+        function(hook, vm) {
+          hook.beforeEach(function(content) {
+            if (window.location.hostname == "localhost") {
+              return content;
+            }
+            return content.replace(new RegExp("/images/", 'ig'), "/docs/images/");
+          })
+        }
       ],
       'flexible-alerts': {
         style: 'flat'
