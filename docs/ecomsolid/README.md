@@ -11,3 +11,23 @@ EcomSolid giúp việc giải quyết việc đó bằng cách sinh ra một đ�
 
 <img width="49%" src="/images/ecomsolid/banner-left.png">
 <img width="49%" src="/images/ecomsolid/banner-right.png">
+
+#### Cài đặt công cụ
+
+**1, Cài đặt Git**
+
+```bash
+https://git-scm.com/downloads
+```
+
+> Bạn vào địa chỉ trên để tải git về máy rồi cài đặt. Nếu cảm thấy không cài được hãy xem video trước: <a href="https://www.youtube.com/watch?v=5KGY1OdhMIY" target="_blank">LINK VIDEO</a>
+
+**2, Cài đặt NodeJS**
+
+```bash
+https://nodejs.org/en/
+```
+
+#### Làm quen với việc tạo section đầu tiên
+
+> Ghé thăm và tìm hiểu về section: <a href="#/ecomsolid/sections?id=hướng-dẫn-tạo-một-section-mới">Tại đây</a>

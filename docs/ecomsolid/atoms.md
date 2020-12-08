@@ -1,9 +1,35 @@
+## Giới thiệu về Atoms
+
+Atom được hiểu đơn giản là phần tử bé nhất của một website. Nếu bạn đã nghe đến Atomic Design thì ở EcomSolid sẽ áp dụng nguyên lý này để trở thành nền tảng cho sections.
+
+*Tư tưởng về kiến trúc trong EcomSolid*
+
+<img src="/images/ecomsolid/atomicdesign.jpeg">
+
+- Atoms (nguyên tử): Là thành phần bé nhất. => **Atom cơ bản**
+- Molecules (phân tử): Là một dạng atom nâng cấp gồm nhiều atom hợp lại. => **Atom có thể chứa đươc atom khác**
+- Organisms (sinh vật): Là một thể thống nhất gồm nhiều phân tử và nguyên tử hợp lại => **Đây chính là Section**
+
+
 ## Danh sách atoms
+>[!tip]
+>Danh sách atom giúp bạn có thể chọn các atom phù hợp để sử dụng trong section. Nếu bạn cần thêm bất kỳ atom nào chuyên biệt thì có thể order thêm cho đội FrontEnd. Đội FrontEnd chính là những người tạo ra các atom.
+><br>Nếu bạn thích trải nghiệm: Có thể liên hệ với Leader để tạo cho mình một atom theo ý muốn, nó khá đơn giản và cách thực hiện gần giống section.
+### Box
 ------------------------
+> Box là một atom dạng Molecule nên có thể chứa được các Atom/HTML khác bên trong.
 
-### Row
-------------------------
-
+#### HTML cơ bản
+```html
+<Box attribute="boxWapper">
+  <h1>Heading</h1>
+</Box>
+```
+#### Settings cơ bản
+```json
+"settings: {
+}
+```
 ### Button
 ------------------------
 
@@ -58,8 +84,10 @@
 #### Article
 ------------------------
 
-## Hướng dẫn tạo một atom mới
-------------------------
+## Hướng dẫn tạo một atom mới (FrontEnd)
+
+>[!warning]
+>Nếu bạn không thuộc đội FrontEnd thì không nên đọc phần này.
 
 ### Các trường dữ liệu
 ------------------------

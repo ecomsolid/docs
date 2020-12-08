@@ -1,5 +1,82 @@
 ## Hướng dẫn tạo một section mới
+
+### Giới thiệu sơ lược
 ------------------------
+
+#### Section là gì?
+
+Một một thành phần hoạt động độc lập được gọi là section. Section bao gồm: HTML, CSS, JS, Snippets, Library, Atoms
+
+*Ví dụ về section: Banner, Feature Product, Header, Footer... chính là những section*
+
+<img width="50%" src="/images/ecomsolid/section.png">
+
+#### Sections trong Editor của EcomSolid trông như nào?
+
+<img width="50%" src="/images/ecomsolid/section-in-editor.png">
+
+> Bên tay trái còn rất nhiều sections khác, các sections sẽ được lặp ghép với nhau để tạo thành một templates hoàn thiện
+
+#### Cơ chế hoạt động của Sections
+
+<img width="50%" src="/images/ecomsolid/section-work.png">
+
+**Các bước render một sections:**
+
+**Bước 1:** Snippets sẽ được parse sang settings dạng
+```json
+{
+  "textHeading": "This is value text Heading",
+  "sizeHeading": "14px",
+}
+```
+**Bước 2:** Settings sẽ được render cùng HTML, CSS, JS bằng template engine EJS
+```js
+EJS.render(html: "<div style='font-size:<%-sizeHeading%>'><%-textHeading%></div>", settings: {
+  "textHeading": "This is value text Heading",
+  "sizeHeading": "14px",
+})
+```
+> Các biến `textHeading` và `sizeHeading` sẽ được replace vào vị trí mong muốn.
+> Và kết quả là: `<div style='font-size:14px'>This is value text Heading</div>`
+
+**Bước 3:** Thư viện(library) được thêm vào
+> Các Link của thư viện sẽ được thêm vào website để script có thể bắt đầu thực thi
+
+**Bước 4:** Append CSS/HTML/JS lần lượt theo thứ tự vào Editor
+> Đối với việc publish template lên shopify thì sẽ có sự thay đổi. Chúng ta sẽ đưa HTML/CSS/JS lên Shopify qua API
+
+#### Lập trình EJS cơ bản
+
+Trong EcomSolid chúng ta sử dụng template engine là EJS để code section.
+
+Tại sao tôi lại chọn EJS?
+
+- EJS là một template engine khá giống php, nó có thể viết linh hoạt lồng trong HTML, CSS, JS.
+- Nó có cú pháp của Javascript nên việc các bạn đã có sẵn kiến thức cơ bản dễ dàng tiếp cận.
+- Nó giúp bạn biết thêm về NodeJS để nếu có muốn học ở tương lai thì khá dễ dàng.
+- EJS là một template engine phổ biến ở NodeJS và khá thân thuộc với nhiều người nên đó là một lợi thế lớn khi có thành viên mới.
+
+**Cú pháp:**
+
+1, Câu lệnh điều kiện IF
+
+```js
+<% let name = "EcomSolid"  %>
+<% if (name) { %>
+  <h2><%- name %></h2>
+<% } %>
+```
+2, Vòng lặp For
+```js
+<% let users = ["Thành", "Vinh", "Trang"] %>
+<% for (let i = 0; i < users.length; i++) { %>
+  <h1><%- users[i] %></h1>
+<% } %>
+```
+
+>[!tip]
+>Chúng ta sẽ có một bài dài hơn về EJS tại đây.
 
 ### Sơ lược về quy trình
 ------------------------
