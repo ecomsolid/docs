@@ -1,5 +1,7 @@
 # Tài liệu dành cho đội phát triển sản phẩm
------------------------
+
+>[!warning]
+>Nếu bạn không phải là một người phát triển sản phẩm. Bạn không nên đọc tiếp ở đây.
 
 ## Hướng dẫn cách viết tài liệu
 
