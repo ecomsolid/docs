@@ -1482,10 +1482,366 @@ CODE
 
 ## Thuộc tính mở rộng
 ------------------------
-### Định nghĩa plans
-------------------------
+
+### AdvancedMode: Định nghĩa snippet nâng cao
+
+Thuộc tính này giúp xác định đây là một control nâng cao, chỉ khi khách hàng bật chức năng **Advanced Mode** trong editor thì control này mới xuất hiện
+
+```json
+"advancedMode": true
+```
+
+
+### PlanId: Định nghĩa snippet cho các plan khác nhau
+
+Thuộc tính này giúp xác định đây là một control cho một plan nào đó. Khi khách hàng nâng cấp plan thì control sẽ xuất hiện
+
+```json
+"planId": 2
+```
+- Nếu không có thuộc tính này thì tất cả plan đều được sử dụng
+- `2` nếu control này cho plan Professional trở nên
+- `3` nếu control này cho plan Premium trở nên
+
+### Plans: Định nghĩa sự thay đổi thuộc tính theo plan
+
+Thuộc tính này giúp khóa một tính năng hoặc giới hạn tính năng cho từng plan cụ thể:
+```json
+"plans": [
+  {
+    "plan": "free",
+    "max": 1
+  },
+  {
+    "plan": "professional",
+    "max": 99999999
+  }
+],
+```
+Nhìn vào  đoạn code trên ta hiểu:
+
+- Với plan "free" giới hạn là 1
+
+- Với plan "professional" không giới hạn
+
+Thuộc tính *max* được định nghĩa bởi control tương ứng. Nên bạn có thể custom rất nhiều thứ như sau:
+
+```json
+"plans": [
+  {
+    "plan": "free",
+    "lock": true,
+    "title": "Feature for Free"
+  },
+  {
+    "plan": "professional",
+    "lock": false,
+    "title": "Feature for Pro"
+  }
+],
+```
+
 ### Chia Tabs ở Settings
-------------------------
+
+Trong setting của một section chúng ta có thể chia rõ ràng 2 tab là content và design để phục vụ hiện thị rõ ràng hơn
+```json
+[
+  {
+    "id": "content",
+    "settings": [
+      {
+        "id": "textHeading",
+        "title": "Text Heading",
+        "desc": "",
+        "attribute": "textHeading",
+        "reference": "html",
+        "value": "GIVE US YOUR BEST SHOT",
+        "type": "input"
+      }
+    ]
+  },
+  {
+    "id": "design",
+    "settings": [
+      {
+        "id": "bgOverlay",
+        "attribute": "bgOverlay",
+        "title": "Background Overlay",
+        "desc": "",
+        "reference": "css",
+        "value": "0.4",
+        "type": "range",
+        "min": 0,
+        "max": 1,
+        "changing": 0.01
+      }
+    ]
+  }
+]
+```
+
+### Kế thừa value từ global
+
+Chúng ta có thể lấy dữ liệu global làm value mặc định cho snipepts. Điều này sẽ giúp màu sắc, font chữ được đồng bộ hơn với theme.
+```json
+{
+  "id": "topbarFontFamily",
+  "title": "Font",
+  "attribute": "topbarFontFamily",
+  "reference": "css",
+  "value": "Montserrat",
+  "type": "font",
+  "initial": true,
+  "inherit": "themeFontFamilySecondary"
+}
+```
+
+- Thuộc tính: `"initial": true` thể hiện nó là dữ liệu ban đầu chưa bị thay đổi.
+- Thuộc tính: `"inherit": "themeFontFamilySecondary"` nói rằng nó đang kế thừa dữ liệu ở attribute `themeFontFamilySecondary`
+
+### Hide: Ẩn hiện control
+
+Thuộc tính `"hide": true` giúp ẩn một control nào đó.
+```json
+{
+  "id": "labelPrice",
+  "attribute": "labelPrice",
+  "reference": "html",
+  "title": "Label Price",
+  "type": "input",
+  "value": "Price",
+  "hide": true
+}
+```
+
+Thuộc tính `hideOnScreens` giúp ẩn một control nào đó trên các màn hình cụ thể.
+
+```json
+{
+  "id": "labelPrice",
+  "attribute": "labelPrice",
+  "reference": "html",
+  "title": "Label Price",
+  "type": "input",
+  "value": "Price",
+  "hideOnScreens": {
+    "xs": true
+  }
+}
+
+"hideOnScreens": {
+  "lg": true,
+  "md": true,
+  "sm": true,
+  "xs": true
+}
+```
+
+### Links: Lập trình điều kiện cho control
+
+Tại sao cần thuộc tính "links"?
+
+Thuộc tính links giúp chúng ta liên kết các snippets với nhau một cách dễ dàng.
+
+*Ví dụ: Ta có một nút Switch bật tắt trạng thái hiển thị text và một input điền nội dung text. Ta có thể dùng links để ẩn hiện input theo switch. Điều đó làm người dùng dễ hiểu hơn.*
+
+<img width="20%" src="/images/ecomsolid/snippets/links-turn-off.png">
+<img width="20%" src="/images/ecomsolid/snippets/links-turn-on.png">
+
+```json
+[
+  {
+    "id": "turnOnText",
+    "attribute": "turnOnText",
+    "title": "Switch",
+    "reference": "html",
+    "value": true,
+    "type": "switch",
+    "links": [
+      {
+        "value": true,
+        "snippet": {
+          "ids": [
+            "contentText",
+            "contentText2"
+          ],
+          "hide": false
+        }
+      },
+      {
+        "value": "auto",
+        "snippet": {
+          "id": "paddingProduct",
+          "inherit": "themeFontFamilySecondary"
+        }
+      },
+      {
+        "value": "auto",
+        "snippet": {
+          "id": "paddingProduct",
+          "value": "10px 10px 10px 10px"
+        }
+      },
+      {
+        "value": "auto",
+        "snippet": {
+          "id": "paddingProduct",
+          "screens": [
+            {
+              "id": "lg",
+              "value": "Xin chao"
+            },
+            {
+              "id": "md",
+              "value": "Xin chao"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "contentText",
+    "attribute": "contentText",
+    "title": "Content Text",
+    "reference": "html",
+    "value": "Hello",
+    "type": "input"
+  }
+]
+```
+
+
+### No Apply: Không ảnh hưởng đến iframe
+
+Thuộc tính `"noApply": true` sẽ giúp control không apply sang iframe của người dùng.
+
+Nó kết hợp với thuộc tính `links` giúp tạo các trường hợp đóng mở khác nhau phục vụ ẩn/hiện control.
+
+```json
+{
+  "id": "labelPrice",
+  "attribute": "labelPrice",
+  "reference": "html",
+  "title": "Label Price",
+  "type": "input",
+  "value": "Price",
+  "noApply": true
+}
+```
+
+### Reference: Định nghĩa phạm vị ảnh hưởng
+
+reference giúp cho editor biết phạm vị ảnh hưởng của control này đến các vùng code khác nhau.
+
+reference có thể là một chuỗi: "html", "css", "js"
+```json
+{
+    "reference": "html"
+}
+```
+
+**reference** cũng có thể là mảng
+```json
+{
+    "reference": [
+        "html",
+        "css",
+        "js"
+    ]
+}
+```
+
+### Items: Tạo nhóm snippets
+
+Giúp việc nhóm các snippets có liên quan lại với nhau.
+
+Thuộc tính `"items": []` trong đó sẽ chứa nhiều snippets.
+```json
+[
+  {
+    "id": "box1",
+    "title": "Box 1",
+    "items": [
+      {
+        "id": "height",
+        "title": "Height",
+        "attribute": "height",
+        "reference": "css",
+        "value": "24px",
+        "units": [
+          "px"
+        ],
+        "type": "input:unit"
+      }
+    ]
+  }
+]
+```
+
+### Collapse/extend: Chế độ đóng mở nhóm snippets
+```json
+{
+    "id": "themeNotifiColors",
+    "title": "Notifi Colors",
+    "collapse": true,
+}
+```
+or
+```json
+{
+    "id": "themeNotifiColors",
+    "title": "Notifi Colors",
+    "extend": true,
+}
+```
+
+### More/advanced: Tạo nhóm snippets nâng cao
+
+Thuộc tính này giúp việc đưa các snippets phức tạp giấu vào trong để user cơ bản không cần quan tâm đến. Việc này vừa làm đơn giản hoá cũng như giúp phân cấp khách hàng tốt hơn
+
+```json
+{
+  "id": "promo",
+  "title": "Title Promo Bar",
+  "items": [
+    {
+      "id": "textPromoBar",
+      "title": "Heading",
+      "desc": "",
+      "attribute": "textPromoBar",
+      "reference": "html",
+      "value": "Get FREE SHIPPING on all orders over $50",
+      "type": "input"
+    }
+  ],
+  "more": [
+    {
+      "id": "bgColor",
+      "title": "Background Color",
+      "desc": "",
+      "attribute": "bgColor",
+      "reference": "css",
+      "value": "#209a9a",
+      "type": "colorpicker",
+      "popup": true,
+      "initial": true,
+      "inherit": "themePrimaryColor"
+    }
+  ],
+  "advanced": [
+    {
+      "id": "padding",
+      "title": "Padding",
+      "desc": "",
+      "attribute": "padding",
+      "reference": "css",
+      "value": "10px 0",
+      "type": "padding"
+    }
+  ]
+}
+```
 
 ## Danh sách control
 ------------------------
@@ -1557,11 +1913,120 @@ Snippet định nghĩa:
 }
 ```
 
+##### Input number
+##### Input unit
+##### Input fix content
+
+#### Switch
+#### Menu
+#### Textarera
+#### Select
+#### Segment
+#### Range slider
+#### Range uint slider
+#### Color picker
+#### Padding
+#### Margin
+#### Box Shadow
+#### Icon
+#### Tabs
+#### Pick currency
+#### Code editor HTML
+#### Code editor CSS
+#### Description
+#### Animation Atom
+
 ### Shopify
 ------------------------
 
+#### Pick product
+#### Pick collection
+#### Pick blog
+#### Pick article
+#### Pick article
+#### Pick link
+#### Upload image
+#### Campaigns
+#### Campaigns
 ### Customize
-------------------------
 
 ## Thuộc tính tối ưu
-------------------------
+
+### Lazy Update
+
+>Khi change giá trị thì iframe mới thay đổi. Thuộc tính này hay đi cùng range slider
+
+```json
+{
+    "id": "textCenter",
+    "title": "Text Center",
+    "attribute": "textCenter",
+    "reference": "html",
+    "value": "FREE SHIPPING ON ORDER OVER 75$",
+    "type": "input",
+    "minHeight": 80,
+    "maxHeight": 100,
+    "lazyUpdate": true
+}
+```
+### Replace HTML
+```json
+"optimize": {
+    "type": "html:text",
+    "target": ".gf_topbar-text span"
+}
+```
+### Change Data
+```json
+"optimize": {
+    "type": "html:data",
+    "target": ".gf_topbar-text span",
+    "attribute": "src"
+}
+```
+### Display
+
+```json
+"optimize": {
+    "type": "html:display",
+    "target": ".gf_topbar-text span"
+}
+```
+### Trigger Javascript
+
+**1, Thêm ở Snippets**
+
+```json
+"attribute": "changeTypeCart",
+"optimize": {
+    "type": "js:trigger"
+}
+```
+
+**2, Thêm ở code Javascript**
+
+```json
+/*Comment*/
+store.change("optimize-<%=id%>-changeTypeCart", function(value) {
+    console.log(value);
+})
+store.change("optimize-<%=id%>-numberCart", function(value) {
+    console.log(value);
+})
+/*End_Comment*/
+```
+
+### Multi Optimize
+```json
+"optimize": [
+    {
+        "type": "html:text",
+        "target": ".gf_topbar-text span"
+    },
+    {
+        "type": "html:data",
+        "target": ".gf_topbar-text span",
+        "attribute": "src"
+    }
+]
+```
