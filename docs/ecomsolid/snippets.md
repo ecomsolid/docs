@@ -1892,13 +1892,12 @@ Value của tree là một mảng định nghĩa các atom bên HTML.
 - `"advanced": true`: chỉ xuất hiện atom khi khách bật Advaced Mode
 
 
+
 #### Input
-------------------------
 ##### Input text
-------------------------
 Ảnh hiển thị:
 
-<img src="https://gemthemes.s3.amazonaws.com/docs/production/521fa9dd-2947-4765-8dba-2686938ea112.png" alt="screen shot 2019-07-22 at 08.30.25.png">
+<img src="/images/ecomsolid/snippets/input.png">
 
 Snippet định nghĩa:
 
@@ -1914,40 +1913,876 @@ Snippet định nghĩa:
 ```
 
 ##### Input number
+Ảnh hiển thị:
+
+<img src="/images/ecomsolid/snippets/input.png">
+
+Snippet định nghĩa:
+
+```json
+{
+  "id": "fontSize",
+  "attribute": "fontSize",
+  "title": "Font Medium",
+  "reference": "css",
+  "value": 24,
+  "type": "input:number",
+  "min": 0 
+}
+```
+
 ##### Input unit
+Ảnh hiển thị:
+
+<img src="/images/ecomsolid/snippets/input-unit.png">
+
+Snippet định nghĩa:
+
+```json
+{
+  "id": "fontSize",
+  "attribute": "fontSize",
+  "title": "Font Medium",
+  "reference": "css",
+  "value": "24px",
+  "type": "input:unit",
+  "units": [
+    "em",
+    "px",
+    "rem",
+    "%"
+  ],
+  "min": 0
+}
+```
 ##### Input fix content
+Ảnh hiển thị:
+
+<img src="/images/ecomsolid/snippets/input-fixcontent.png">
+
+Snippet định nghĩa:
+
+```json
+{
+  "id": "productSaleOff",
+  "attribute": "productSaleOff",
+  "title": "Product Sale Off",
+  "type": "input:fixContent",
+  "reference": "html",
+  "value": "Sale off [!Profit!] %",
+  "screens": [
+    {
+      "id": "lg",
+      "value": "Sale off [!Profit!] %"
+    },
+    {
+      "id": "md",
+      "value": "[!Profit!] % Off"
+    },
+    {
+      "id": "sm",
+      "value": "[!Profit!] % Off"
+    },
+    {
+      "id": "xs",
+      "value": "[!Profit!] % Off"
+    }
+  ]
+}
+```
 
 #### Switch
+
+Ảnh hiển thị:
+
+<img src="/images/ecomsolid/snippets/switch.png">
+
+Snippet định nghĩa:
+
+```json
+{
+  "id": "componentId",
+  "attribute": "componentId",
+  "title": "Components title",
+  "reference": "css",
+  "value": true,
+  "type": "switch"
+}
+```
+
+#### Radio
+
+Ảnh hiển thị:
+
+<img src="/images/ecomsolid/snippets/radio.png">
+
+Snippet định nghĩa:
+
+```json
+{
+  "id": "themeProductImageRadio",
+  "attribute": "themeProductImageRadio",
+  "title": "Image Ratio",
+  "desc": "Chose the ratio that suits your image library",
+  "reference": "css",
+  "value": "square",
+  "type": "radioGroup",
+  "options": [
+    {
+      "text": "Square 1 : 1",
+      "desc": "Used for images with equal ratio",
+      "value": "square"
+    },
+    {
+      "text": "Landscape 4 : 3",
+      "desc": "Used for horizontal images",
+      "value": "landscape"
+    },
+    {
+      "text": "Portrait 3 : 4",
+      "desc": "Used for vertical images",
+      "value": "portrait"
+    }
+  ]
+}
+```
+
 #### Menu
+Ảnh hiển thị:
+
+<img src="/images/ecomsolid/snippets/menu.png">
+
+Snippet định nghĩa:
+
+```json
+{
+  "id": "dataMenu",
+  "title": "Menu",
+  "attribute": "dataMenu",
+  "type": "megamenu",
+  "definedSettings": [
+    {
+      "level": 0,
+      "settings": [
+        {
+          "id": "typeMenu",
+          "attribute": "typeMenu",
+          "title": "Type",
+          "value": "mega",
+          "type": "segment",
+          "options": [
+            {
+              "text": "Mega",
+              "value": "mega"
+            },
+            {
+              "text": "Normal",
+              "value": "Normal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "settings": [
+        {
+          "id": "badgeMenu",
+          "attribute": "badgeMenu",
+          "title": "Badge",
+          "value": "sale",
+          "type": "segment",
+          "options": [
+            {
+              "text": "Normal",
+              "value": "normal"
+            },
+            {
+              "text": "Sale",
+              "value": "Sale"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "settings": [
+        {
+          "id": "picklink",
+          "attribute": "picklink",
+          "title": "Link",
+          "type": "picklink",
+          "value": "#"
+        }
+      ]
+    }
+  ],
+  "value": [
+    {
+      "title": "Mega Menu",
+      "settings": [
+        {
+          "id": "typeMenu",
+          "attribute": "typeMenu",
+          "title": "Type",
+          "value": "mega",
+          "type": "segment",
+          "options": [
+            {
+              "text": "Mega",
+              "value": "mega"
+            },
+            {
+              "text": "Normal",
+              "value": "Normal"
+            }
+          ]
+        }
+      ],
+      "items": [
+        {
+          "title": "New Arrivals",
+          "settings": [
+            {
+              "id": "badgeMenu",
+              "attribute": "badgeMenu",
+              "title": "Badge",
+              "value": "sale",
+              "type": "segment",
+              "options": [
+                {
+                  "text": "Normal",
+                  "value": "normal"
+                },
+                {
+                  "text": "Sale",
+                  "value": "Sale"
+                }
+              ]
+            }
+          ],
+          "items": [
+            {
+              "title": "Sweatshirt",
+              "settings": [
+                {
+                  "id": "picklink",
+                  "attribute": "picklink",
+                  "title": "Link",
+                  "type": "picklink",
+                  "value": "#"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```
+
+Mặc định level tối đã là 3. Bạn có thể thêm setting để tăng giới hạn này lên:
+
+```json
+{
+  "levelMax": 3
+}
+```
+>[!warning]
+>Bạn cần định nghĩa `definedSettings` để menu có thể hoạt động tốt
 #### Textarera
+Ảnh hiển thị:
+
+<img src="/images/ecomsolid/snippets/textarera.png">
+
+Snippet định nghĩa:
+
+```json
+{
+  "id": "componentId",
+  "attribute": "componentId",
+  "title": "Components title",
+  "reference": "css",
+  "value": "a string value",
+  "type": "textarea",
+  "minHeight": 50,
+  "maxHeight": 500
+}
+```
+
 #### Select
+Ảnh hiển thị:
+
+<img src="/images/ecomsolid/snippets/select.png">
+
+Snippet định nghĩa:
+
+```json
+{
+  "id": "componentId",
+  "attribute": "componentId",
+  "title": "Components title",
+  "reference": "css",
+  "value": "value1",
+  "type": "select",
+  "options": [
+    {
+      "text": "Option 1",
+      "value": "value1"
+    },
+    {
+      "text": "Option 2",
+      "value": "value2"
+    }
+  ]
+}
+```
 #### Segment
+Ảnh hiển thị:
+
+<img src="/images/ecomsolid/snippets/segment.png">
+
+Snippet định nghĩa:
+
+```json
+{
+  "id": "componentId",
+  "attribute": "componentId",
+  "title": "Components title",
+  "reference": "css",
+  "value": "inset",
+  "type": "segment",
+  "options": [
+    {
+      "text": "Inset",
+      "value": "inset"
+    },
+    {
+      "text": "Outset",
+      "value": "outset"
+    }
+  ]
+}
+```
 #### Range slider
+Ảnh hiển thị:
+
+<img src="/images/ecomsolid/snippets/range.png">
+
+Snippet định nghĩa:
+
+```json
+{
+  "id": "componentId",
+  "attribute": "componentId",
+  "title": "Components title",
+  "reference": "css",
+  "value": 0.5,
+  "type": "range",
+  "min": 0,
+  "max": 1,
+  "changing": 0.01
+}
+```
 #### Range uint slider
+Ảnh hiển thị:
+
+<img src="/images/ecomsolid/snippets/range-unit.png">
+
+Snippet định nghĩa:
+
+```json
+{
+  "id": "componentId",
+  "attribute": "componentId",
+  "title": "Components title",
+  "reference": "css",
+  "value": "45px",
+  "type": "range:unit",
+  "min": 0,
+  "max": 100,
+  "changing": 1,
+  "units": [
+    "em",
+    "px"
+  ]
+}
+```
 #### Color picker
+Ảnh hiển thị:
+
+<img src="/images/ecomsolid/snippets/colorpicker.png">
+
+Snippet định nghĩa:
+
+```json
+{
+  "id": "componentId",
+  "attribute": "componentId",
+  "title": "Components title",
+  "reference": "css",
+  "value": "#ff00ff",
+  "type": "colorpicker",
+  "popup": true
+}
+```
 #### Padding
+Ảnh hiển thị:
+
+<img src="/images/ecomsolid/snippets/padding.png">
+
+Snippet định nghĩa:
+
+```json
+{
+  "id": "componentId",
+  "attribute": "componentId",
+  "title": "Components title",
+  "reference": "css",
+  "type": "padding",
+  "value": "0px 0px 0px 0px"
+}
+```
 #### Margin
+Ảnh hiển thị:
+
+<img src="/images/ecomsolid/snippets/margin.png">
+
+Snippet định nghĩa:
+
+```json
+{
+  "id": "componentId",
+  "attribute": "componentId",
+  "title": "Components title",
+  "reference": "css",
+  "type": "margin",
+  "value": "0px 0px 0px 0px"
+}
+```
 #### Box Shadow
+Ảnh hiển thị:
+
+<img src="/images/ecomsolid/snippets/shadow.png">
+
+Snippet định nghĩa:
+
+```json
+{
+  "id": "componentId",
+  "attribute": "componentId",
+  "title": "Components title",
+  "reference": "css",
+  "type": "shadow",
+  "value": "0px 0px 0px 0px #ccc"
+}
+```
 #### Icon
+Ảnh hiển thị:
+
+<img src="/images/ecomsolid/snippets/iconuploader.png">
+
+Snippet định nghĩa:
+
+```json
+{
+  "id": "sectionIcon",
+  "attribute": "sectionIcon",
+  "title": "Icon",
+  "reference": "html",
+  "type": "iconuploader",
+  "value": {
+    "content": "<svg width=\"100%\" viewBox=\"0 0 640 512\"><path fill=\"currentColor\" d=\"M400 96a48 48 0 1 0-48-48 48 48 0 0 0 48 48zm-4 121a31.9 31.9 0 0 0 20 7h64a32 32 0 0 0 0-64h-52.78L356 103a31.94 31.94 0 0 0-40.81.68l-112 96a32 32 0 0 0 3.08 50.92L288 305.12V416a32 32 0 0 0 64 0V288a32 32 0 0 0-14.25-26.62l-41.36-27.57 58.25-49.92zm116 39a128 128 0 1 0 128 128 128 128 0 0 0-128-128zm0 192a64 64 0 1 1 64-64 64 64 0 0 1-64 64zM128 256a128 128 0 1 0 128 128 128 128 0 0 0-128-128zm0 192a64 64 0 1 1 64-64 64 64 0 0 1-64 64z\"></path></svg>",
+    "type": "svg",
+    "name": "check"
+  }
+}
+```
 #### Tabs
+Ảnh hiển thị:
+
+<!-- <img src="/images/ecomsolid/snippets/iconuploader.png"> -->
+
+Snippet định nghĩa:
+
+```json
+{
+  "id": "tabs",
+  "title": "Tabs",
+  "attribute": "tabs",
+  "reference": "html",
+  "type": "tabs",
+  "value": [
+    {
+      "title": "Tablet",
+      "settings": [
+        {
+          "id": "name",
+          "attribute": "name",
+          "title": "Name",
+          "reference": "css",
+          "value": "100% SATISFACTION",
+          "type": "input"
+        }
+      ]
+    }
+  ]
+}
+```
 #### Pick currency
+Ảnh hiển thị:
+
+<img src="/images/ecomsolid/snippets/pickCurrency.png">
+
+Snippet định nghĩa:
+
+```json
+{
+  "id": "currency",
+  "attribute": "currency",
+  "title": "Select Currency",
+  "value": [],
+  "type": "pickCurrency"
+}
+```
 #### Code editor HTML
+Ảnh hiển thị:
+
+<!-- <img src="/images/ecomsolid/snippets/pickCurrency.png"> -->
+
+Snippet định nghĩa:
+
+```json
+{
+  "id": "codeHTML",
+  "attribute": "codeHTML",
+  "title": "Code HTML",
+  "reference": "html",
+  "value": "Custom code",
+  "type": "codeEditor:html"
+}
+```
+
+Các thuộc tính mở rộng:
+
+```json
+{
+  "width": "100%",
+  "height": "200px",
+  "checkingSyntax": true
+}
+```
 #### Code editor CSS
+Ảnh hiển thị:
+
+<!-- <img src="/images/ecomsolid/snippets/pickCurrency.png"> -->
+
+Snippet định nghĩa:
+
+```json
+{
+  "id": "codeCSS",
+  "attribute": "codeCSS",
+  "title": "Code CSS",
+  "desc": "",
+  "reference": "html",
+  "value": "Custom code",
+  "type": "codeEditor:css"
+}
+```
+
+Các thuộc tính mở rộng:
+
+```json
+{
+  "width": "100%",
+  "height": "200px",
+  "checkingSyntax": true
+}
+```
+
 #### Description
+Ảnh hiển thị:
+
+<img src="/images/ecomsolid/snippets/description.png">
+
+Snippet định nghĩa:
+
+```json
+{
+  "id": "description",
+  "attribute": "description",
+  "type": "description",
+  "desc": "To change favicon you can do as the image below. You can access the settings faster via the following link: <a href='/theme/settings' target='_blank'>Go to Setting Favicon</a>.<br><br><img width='100%' src='https://d3dfaj4bukarbm.cloudfront.net/production/tutorial/change-favicon.png' />"
+}
+```
 #### Animation Atom
 
 ### Shopify
-------------------------
 
 #### Pick product
+Ảnh hiển thị:
+
+<img src="/images/ecomsolid/snippets/pickproduct.png">
+
+Snippet định nghĩa:
+
+```json
+{
+  "id": "productHandle",
+  "attribute": "productHandle",
+  "title": "Product",
+  "reference": "html",
+  "type": "pickproduct",
+  "value": {
+    "id": "auto",
+    "handle": "auto",
+    "title": "auto"
+  }
+}
+```
+
+Cách sử dụng trong HTML:
+
+```html
+<% if(productHandle.handle == "auto") { %>
+    {%- assign product = collections.all.products | first -%}
+<% } else { %>
+    {%- assign product = all_products["<%=productHandle.handle%>"] -%} 
+<% }%>
+```
+
 #### Pick collection
+Ảnh hiển thị:
+
+<img src="/images/ecomsolid/snippets/pickcollection.png">
+
+Snippet định nghĩa:
+
+```json
+{
+  "id": "collectionHandle",
+  "attribute": "collectionHandle",
+  "title": "Collection",
+  "reference": "html",
+  "type": "pickcollection",
+  "value": {
+    "id": "auto",
+    "handle": "auto",
+    "title": "auto"
+  },
+ "shopify": [
+     "collections[collectionHandle].products",
+     "collections.all.products"
+  ]
+}
+```
+
+Cách sử dụng trong HTML:
+
+```html
+<% if (collectionHandle.handle == "auto") { %>
+  {% for product in collections.all.products limit:<%=limit%> %}
+<% } else { %>
+  {% for product in collections["<%=collectionHandle.handle%>"].products limit:<%=limit%> %}
+<% } %>
+    <div class="gf_productlist-item">
+      <% include "product" %>
+    </div>
+{% endfor %}
+```
+
 #### Pick blog
+Ảnh hiển thị:
+
+<img src="/images/ecomsolid/snippets/pickblog.png">
+
+Snippet định nghĩa:
+
+```json
+{
+  "id": "blogHandle",
+  "attribute": "blogHandle",
+  "title": "Blog",
+  "reference": "html",
+  "type": "pickblog",
+  "value": {
+    "id": "auto",
+    "handle": "auto",
+    "title": "auto"
+  }
+}
+```
+
+Cách sử dụng trong HTML:
+
+```html
+{% for article in blog.articles limit:6 %}
+    <h4>{{ article.title }}</h4>
+{% endfor %}
+```
+
+Nếu bạn làm với feature blog thì cần thêm thuộc tính "disableAuto" và nó sẽ giúp tự động lấy blog đầu tiên:
+```json
+{
+  "disableAuto": true,
+}
+```
+
 #### Pick article
-#### Pick article
+Ảnh hiển thị:
+
+<img src="/images/ecomsolid/snippets/pickarticle.png">
+
+Snippet định nghĩa:
+
+```json
+{
+  "id": "articleHandle",
+  "attribute": "articleHandle",
+  "title": "Article",
+  "reference": "html",
+  "type": "pickarticle",
+  "value": {
+    "id": "auto",
+    "handle": "auto",
+    "title": "auto",
+    "blog_id": "auto"
+  }
+}
+```
+
+Cách sử dụng trong HTML:
+
+```html
+<h2>{{ article.title }}</h2>
+```
+
 #### Pick link
+Ảnh hiển thị:
+
+<img src="/images/ecomsolid/snippets/picklink.png">
+
+Snippet định nghĩa:
+
+```json
+{
+  "id": "linkButton",
+  "attribute": "linkButton",
+  "title": "Components title",
+  "reference": "html",
+  "type": "picklink",
+  "value": "https://ecomsolid.com"
+}
+```
+
 #### Upload image
+Ảnh hiển thị:
+
+<img src="/images/ecomsolid/snippets/imageuploader.png">
+
+Snippet định nghĩa:
+
+```json
+{
+  "id": "componentId",
+  "attribute": "componentId",
+  "title": "Component's title",
+  "reference": "html",
+  "type": "imageuploader",
+  "value": "https://gggg.com/abc.jpg"
+}
+```
+>[!warning]
+>Nếu bạn muốn set value default là một ảnh thì bạn cần Upload lên UploadCare để đạt tốc độ tốt hơn và được support lazyload
+><br>Hướng dẫn upload image lên UploadCare: <a href="#/ecomsolid/html" target="_blank">Tại đây</a>
+
 #### Campaigns
-#### Campaigns
+Ảnh hiển thị:
+
+<!-- <img src="/images/ecomsolid/snippets/pickproduct.png"> -->
+
+Snippet định nghĩa:
+
+```json
+{
+  "id": "campaignSettings",
+  "attribute": "campaignSettings",
+  "type": "campaignSettings",
+  "value": [],
+  "title": "Campaigns Setting",
+  "plans": [
+    {
+      "plan": "free",
+      "max": 1
+    },
+    {
+      "plan": "professional",
+      "max": 99999999
+    }
+  ],
+  "max": 1,
+  "definedSetting": {
+    "id": "defaultCampaign",
+    "name": "New Campaign",
+    "settings": [
+      {
+        "id": "campaignType",
+        "attribute": "campaignType",
+        "title": "Campaign type",
+        "value": "products",
+        "type": "select",
+        "options": [
+          {
+            "text": "All",
+            "value": "all"
+          },
+          {
+            "text": "Products",
+            "value": "products"
+          }
+        ],
+        "links": [
+          {
+            "value": "products",
+            "snippet": {
+              "id": "campaignPickProducts",
+              "hide": false
+            }
+          }
+        ]
+      },
+      {
+        "id": "campaignPickProducts",
+        "attribute": "campaignPickProducts",
+        "title": "Pick products",
+        "type": "pickProductList",
+        "hide": true,
+        "value": []
+      },
+      {
+        "id": "campaignDateTime",
+        "attribute": "campaignDateTime",
+        "title": "Pick a time",
+        "type": "datetime:date",
+        "value": []
+      }
+    ]
+  }
+}
+```
+
+Cách sử dụng trong HTML:
+
+```html
+<% if(productHandle.handle == "auto") { %>
+    {%- assign product = collections.all.products | first -%}
+<% } else { %>
+    {%- assign product = all_products["<%=productHandle.handle%>"] -%} 
+<% }%>
+```
 ### Customize
 
 ## Thuộc tính tối ưu

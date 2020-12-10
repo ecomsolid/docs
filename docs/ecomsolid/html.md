@@ -173,3 +173,14 @@ Nếu sử dụng hàm Text và hàm Html thì sẽ không cần sử dụng opt
 
 ### icon
 ------------------------
+```html
+<h1 class="wapper">
+  <%-icon({
+    iconData: sectionIcon,
+    snippet: {
+        attribute: "sectionIcon",
+        //index: i
+    },
+  })%>
+</h1>
+```
