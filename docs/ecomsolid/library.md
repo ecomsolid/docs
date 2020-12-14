@@ -1,6 +1,6 @@
 ## Cơ chế load thư viện mới
-
-Các sections, atom, widget dùng thư viện bên ngoài thì các thư viện đó sẽ được gọi khi init trong các libs dùng các thư viện này.
+Các sections, atom, widget dùng thư viện bên ngoài thì các thư viện đó sẽ được gọi khi init trong các libs dùng các thư viện này. 
+Tức là khi nào dùng thì mới load.
 
 ### Syntax
 
@@ -8,14 +8,13 @@ Các sections, atom, widget dùng thư viện bên ngoài thì các thư viện 
 window.SOLID.library.loadSource(sources, callback);
 ```
 
-Trong đó:
-
+Trong đó: 
 - `sources` : array đường link khi load nhiều thư viện hoặc string đường link khi load 1 thư viện
-- `callback` : function sẽ được thực thi khi load xong sources
+- `callback` : function sẽ được thực thi khi load xong sources  
 
 ### Ví dụ
 
-- Load nhiều thư viện
+- Load nhiều thư viện 
 
 ```js
 window.SOLID.library.loadSource(
@@ -118,7 +117,7 @@ class GtBuyNow {
 
   /* public method */
   public buyNow() {
-    $element
+    this.$element
         .find(this.settings.classBuyNow)
         .off("click.addToCart.ByNow")
         .on("click.addToCart.ByNow", function(e) {
