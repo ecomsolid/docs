@@ -2108,15 +2108,19 @@ Snippet định nghĩa:
     "bold",
     "italic",
     "underline",
-    "justifyLeft",
-    "justifyCenter",
-    "justifyRight",
-    "createlink",
-    "insertOrderedList",
-    "insertUnorderedList",
     "foreColor"
   ]
 }
+```
+
+Các thuộc tính khác:
+```json
+"createlink",
+"insertOrderedList",
+"insertUnorderedList",
+"justifyLeft",
+"justifyCenter",
+"justifyRight",
 ```
 
 #### Switch
