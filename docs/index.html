@@ -96,7 +96,36 @@
             }
             return content.replace(new RegExp("/images/", 'ig'), "/docs/images/");
           })
-        }
+        },
+        function (hook, vm) {
+          hook.ready(function () {
+              // true = show debug log
+              let dd = false 
+              let TARGET_QUERY = 'id'
+              let SCROLL_DELAY = 0 // in milisecond
+              let location = window.location
+
+              dd&&console.log('custom scroll plugin called!')
+              let currentUrlWithoutHash = new URL(
+                  location.origin+location.pathname+
+                  location.search+location.hash.substring(1)
+              )
+              let urlQueryParam = currentUrlWithoutHash.searchParams
+              let isUrlHasIdQuery = urlQueryParam.has(TARGET_QUERY)
+              if(isUrlHasIdQuery){
+                  dd&&console.log('url has id, will scroll to element')
+                  let urlId = urlQueryParam.get(TARGET_QUERY)
+                  // run delayed, to make sure everything loaded
+                  setTimeout(function() {
+                      dd&&console.log('will scroll now!')
+                      try{
+                          document.querySelector('#'+urlId)
+                              .scrollIntoView()
+                      } catch(e){ dd&&console.log('custom scroll failed',e) }
+                  }, SCROLL_DELAY);
+              }
+          })
+      },
       ],
       'flexible-alerts': {
         style: 'flat'
@@ -110,6 +139,7 @@
   </script>
   <!-- Docsify v4 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  <script src="https://cdn.jsdelivr.net/gh/rizdaprasetya/docsify-fix-pageload-scroll@master/index.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-json.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-scss.min.js"></script>
   <script src="https://unpkg.com/docsify-copy-code@2"></script>
