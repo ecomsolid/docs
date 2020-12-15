@@ -41,8 +41,74 @@
 >[!note]
 > Wapper là dạng chia tabs để chứa settings và design
 
+#### Sticky Settings
+>[!note]
+> Một số Sections/widgets sẽ có sự thay đổi từ trạng thái position *relative -> absolute/sticky* nên trong Atom cần có các setting cho trạng thái việc chuyển đổi trạng thái đó (Quy đinh là: *stickySettings*) và cần cho phép ẩn hiện tuỳ vào Section/Widgets.
+
+Mặc định các stickySettings trong Atom cần được ẩn, truyền settings qua snippet gọi Atom trong Section để hiện stickySettings 
+<!-- tabs:start -->
+###### ** Snippets Atom **
+
+```json
+[
+  {
+    "id": "content",
+    "settings": [],
+  },
+  {
+    "id": "design",
+    "settings": [
+      {
+        "id": "stickySettings",
+        "attribute": "stickySettings",
+        "value": false,
+        "type": "switch",
+        "readonly": false,
+        "hide": false,
+        "links": [
+          {
+            "value": true,
+            "snippet": {
+              "ids": [
+                "attribute1",
+                "attribute2"
+              ],
+              "hide": false
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
+```
+
+###### ** Snippets Section (Enable Sticky Settings)**
+
+```scss
+{
+  "attribute": "headerMenu",
+  "atom": "Menu",
+  "title": "Menu",
+  "value": [],
+  "settings": {
+    "stickySettings": true
+  }
+}
+
+```
+
 
 #### Settings
+
+````json
+{
+  "id": "boxSettings",
+  "title": "Settings",
+  "extend": true,
+  "items": []
+}
+````
 
 >[!note]
 > Sections/widgets hoặc atoms đều có những setting riêng. Eg: Icon thì có pickIcon, Image thì có uploadImage
