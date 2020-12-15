@@ -47,7 +47,7 @@
 
 Mặc định các stickySettings trong Atom cần được ẩn, truyền settings qua snippet gọi Atom trong Section để hiện stickySettings 
 <!-- tabs:start -->
-###### ** Snippets Atom **
+###### ** Snippets Atom Menu **
 
 ```json
 [
@@ -73,10 +73,23 @@ Mặc định các stickySettings trong Atom cần được ẩn, truyền setti
                 "attribute1",
                 "attribute2"
               ],
-              "hide": false
+              "hide": false,
             }
           }
         ]
+      },
+      {
+        "id": "attribute1",
+        "attribute": "attribute1",
+        "value": "value",
+        ...
+      },
+      ,
+      {
+        "id": "attribute2",
+        "attribute": "attribute2",
+        "value": "value",
+        ...
       }
     ]
   }
@@ -85,17 +98,16 @@ Mặc định các stickySettings trong Atom cần được ẩn, truyền setti
 
 ###### ** Snippets Section (Enable Sticky Settings)**
 
-```scss
+```json
 {
   "attribute": "headerMenu",
   "atom": "Menu",
   "title": "Menu",
   "value": [],
   "settings": {
-    "stickySettings": true
+    "stickySettings": true,
   }
 }
-
 ```
 
 
