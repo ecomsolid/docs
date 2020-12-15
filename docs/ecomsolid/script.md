@@ -1,6 +1,10 @@
 
 ## Cấu trúc chuẩn
 ### Lưu ý
+>[!note]
+> Mọi người tạo file `es-script.ejs.js` và viết script kiểu mới ở trong đó
+> Code được biên dịch ra sẽ được tự động lưu trong file `script-backup.ejs.js` để backup lại script sau khi đã được dịch
+
 Trong script sẽ có sẵn các biến: 
 - `store` : window.SOLID.store
 - `$element` : element của script như atom, addon hoặc section được lấy từ elementClassName
