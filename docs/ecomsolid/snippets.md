@@ -1991,6 +1991,56 @@ Snippet định nghĩa:
 }
 ```
 
+#### Textarera
+Ảnh hiển thị:
+
+<img src="/images/ecomsolid/snippets/textarera.png">
+
+Snippet định nghĩa:
+
+```json
+{
+  "id": "componentId",
+  "attribute": "componentId",
+  "title": "Components title",
+  "reference": "css",
+  "value": "a string value",
+  "type": "textarea",
+  "minHeight": 50,
+  "maxHeight": 500
+}
+```
+
+#### Text editor
+Ảnh hiển thị:
+
+<img src="/images/ecomsolid/snippets/textarera.png">
+
+Snippet định nghĩa:
+
+```json
+{
+  "id": "componentId",
+  "attribute": "componentId",
+  "title": "Text Editor",
+  "reference": "html",
+  "value": "This is content",
+  "type": "texteditor",
+  "options": [
+    "bold",
+    "italic",
+    "underline",
+    "justifyLeft",
+    "justifyCenter",
+    "justifyRight",
+    "createlink",
+    "insertOrderedList",
+    "insertUnorderedList",
+    "foreColor"
+  ]
+}
+```
+
 #### Switch
 
 Ảnh hiển thị:
@@ -2192,25 +2242,6 @@ Mặc định level tối đã là 3. Bạn có thể thêm setting để tăng 
 ```
 >[!warning]
 >Bạn cần định nghĩa `definedSettings` để menu có thể hoạt động tốt
-#### Textarera
-Ảnh hiển thị:
-
-<img src="/images/ecomsolid/snippets/textarera.png">
-
-Snippet định nghĩa:
-
-```json
-{
-  "id": "componentId",
-  "attribute": "componentId",
-  "title": "Components title",
-  "reference": "css",
-  "value": "a string value",
-  "type": "textarea",
-  "minHeight": 50,
-  "maxHeight": 500
-}
-```
 
 #### Select
 Ảnh hiển thị:
