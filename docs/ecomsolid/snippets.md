@@ -109,7 +109,7 @@ Mặc định các stickySettings trong Atom cần được ẩn, truyền setti
   }
 }
 ```
-
+<!-- tabs:end -->
 
 #### Settings
 
@@ -121,7 +121,6 @@ Mặc định các stickySettings trong Atom cần được ẩn, truyền setti
   "items": []
 }
 ````
-<!-- tabs:end -->
 
 >[!note]
 > Sections/widgets hoặc atoms đều có những setting riêng. Eg: Icon thì có pickIcon, Image thì có uploadImage
