@@ -13,7 +13,7 @@ Syntax:
 Cấu trúc của script sẽ gồm các block: data, init, store, events, methods, destroy được sắp xếp đúng thứ tự
 
 ```js
-export  default  {
+module.exports = {
 	data()  {},
 	init()  {},
 	store:  {},
@@ -35,10 +35,10 @@ data() {
 ```
 
 >[!note]
-> Trong Data Block luôn phải có 2 biến id và elementClassName
+> Trong Data Block luôn có sẵn 2 biến id = "<%=id%>" và elementClassName =".gt_atom-<%=id%>" hoặc  ".gt_widget-<%=id%>" hoặc  ".gt_section-<%=id%>" tùy từng repo
 
 #### Init Block
-Init Block bao gồm các câu lệnh khởi tạo có trong script như khởi tạo biến, khởi tạo carousel
+Init Block bao gồm các câu lệnh khởi tạo có trong script như khởi tạo biến, khởi tạo carousel, khởi tạo event cho window, .....
 
 ```js
 init()  {
@@ -54,7 +54,8 @@ Store Block có cấu trúc như code bên dưới, bao gồm:
 ```js
 store:  {
 	getState:  {
-		cart: cart
+    cart: cart,
+    discount: discount,
 	},
 	subscribe:  {
 		cart: openSearchPopup,
@@ -85,10 +86,12 @@ Events	 Block có cấu trúc như code bên dưới, dùng để tạo ra các 
 ```js
 events:  {
 	".gt_main-icon-search":  {
-		click: openSearchPopup,
+    click: openSearchPopup,
+    change: inputChange,
 	},
 	".gt_close":  {
-		click: closeSearchPopup,
+    click: closeSearchPopup,
+    input: textareaChange,
 	},
 },
 ```
@@ -97,11 +100,13 @@ events:  {
 ```js
 var $elements_1 = $element.querySelectorAll(".gt_main-icon-search");
 for(var idxElEvent0 = 0; idxElEvent0 < $elements_1.length; idxElEvent0++) {
-	$elements_1[idxElEvent0].addEventListener("click",openSearchPopup);
+  $elements_1[idxElEvent0].addEventListener("click",openSearchPopup);
+	$elements_1[idxElEvent0].addEventListener("change",inputChange);
 }
 var $elements_2 = $element.querySelectorAll(".gt_close");
 for(var idxElEvent0 = 0; idxElEvent0 < $elements_2.length; idxElEvent0++) {
-	$elements_2[idxElEvent0].addEventListener("click", closeSearchPopup);
+  $elements_2[idxElEvent0].addEventListener("click", closeSearchPopup);
+	$elements_2[idxElEvent0].addEventListener("input", textareaChange);
 }
 ```
 
@@ -206,14 +211,14 @@ module.exports = {
 (function () {
   var elementClassName = ".gt_atom-<%=id%>";
   var $elements = document.querySelectorAll(elementClassName);
-  var storeWindow = window.SOLID.store;
-  function script($target, storeWindow) {
+  var store = window.SOLID.store;
+  var id = "<%=id%>"; 
+  function script($target) {
     var $element = $target;
-    var store = storeWindow;
     /* data block script */
     var $popups;
     var openPopupTimeout;
-    var id = "<%=id%>"; /* methods block script */
+    /* methods block script */
     function openSearchPopup() {
       console.log("opensearchpopup");
     }
@@ -265,7 +270,7 @@ module.exports = {
   /* run all script */
   for (var indexEl = 0; indexEl < $elements.length; indexEl++) {
     var $target = $elements[indexEl];
-    script($target, storeWindow);
+    script($target);
   }
 })();
 ```
