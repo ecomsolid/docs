@@ -64,7 +64,7 @@ Mặc định các stickySettings trong Atom cần được ẩn, truyền setti
         "value": false,
         "type": "switch",
         "readonly": false,
-        "hide": false,
+        "noRender": true, // Thuộc tính này cho phép control sẽ không được hiển thị trên sidebar
         "links": [
           {
             "value": true,
