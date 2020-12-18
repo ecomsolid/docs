@@ -326,7 +326,7 @@ CODE
 
 ```json
 {
-  "id": "txtTypography",
+  "id": "boxTypography",
   "title": "Typography",
   "extend": true,
   "items": [
