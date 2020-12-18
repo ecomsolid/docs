@@ -1808,6 +1808,36 @@ Nó kết hợp với thuộc tính `links` giúp tạo các trường hợp đ�
 }
 ```
 
+
+### No Render: Không render control bên left side bar
+
+Thuộc tính `"noRender": true` sẽ giúp control không được hiển thị ra ở left side bar.
+
+Nó kết hợp với thuộc tính `links` giúp tạo các trường hợp ẩn hiện các trạng thái setting `hover`, `sticky`.
+
+```json
+{
+  "id": "stickySetting",
+  "attribute": "stickySetting",
+  "value": false,
+  "type": "switch",
+  "readonly": false,
+  "noRender": true,
+  "links": [
+    {
+      "value": true,
+      "snippet": {
+        "ids": [
+          "iconMenuSizeStickyActive",
+          "iconMenuSizeSticky"
+        ],
+        "hide": false
+      }
+    }
+  ]
+}
+```
+
 ### Reference: Định nghĩa phạm vị ảnh hưởng
 
 reference giúp cho editor biết phạm vị ảnh hưởng của control này đến các vùng code khác nhau.
