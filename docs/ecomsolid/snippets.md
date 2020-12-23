@@ -1582,7 +1582,7 @@ Thuộc tính này giúp xác định đây là một control cho một plan nà
 - `3` nếu control này cho plan Premium trở nên
 
 >[!note]
->Bạn có thể dụng planId với tab design để khoá toàn bộ tab design đối với khách hàng `free`
+>Bạn có thể dụng planId với tab **design** để khoá toàn bộ tab design đối với khách hàng `free`
 
 ### Plans: Định nghĩa sự thay đổi thuộc tính theo plan
 
