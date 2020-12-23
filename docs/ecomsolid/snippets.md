@@ -1581,6 +1581,9 @@ Thuộc tính này giúp xác định đây là một control cho một plan nà
 - `2` nếu control này cho plan Professional trở nên
 - `3` nếu control này cho plan Premium trở nên
 
+>[!note]
+>Bạn có thể dụng planId với tab design để khoá toàn bộ tab design đối với khách hàng `free`
+
 ### Plans: Định nghĩa sự thay đổi thuộc tính theo plan
 
 Thuộc tính này giúp khóa một tính năng hoặc giới hạn tính năng cho từng plan cụ thể:
