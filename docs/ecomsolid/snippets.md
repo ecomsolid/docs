@@ -1677,6 +1677,24 @@ Chúng ta có thể lấy dữ liệu global làm value mặc định cho snipep
 - Thuộc tính: `"initial": true` thể hiện nó là dữ liệu ban đầu chưa bị thay đổi.
 - Thuộc tính: `"inherit": "themeFontFamilySecondary"` nói rằng nó đang kế thừa dữ liệu ở attribute `themeFontFamilySecondary`
 
+> Ngoài ra chúng ta có thể sử dụng cú pháp EJS để thêm global style vào value của snippet như sau:
+
+```json
+{
+  "id": "marginHeading",
+  "title": "Margin",
+  "attribute": "marginHeading",
+  "reference": "css",
+  "value": "<%-themeSpacingMedium_lg%>px 0px <%-themeSpacingMedium_lg%>px 0px",
+  "type": "margin",
+  "screens":{
+    "lg": "<%-themeSpacingMedium_lg%>px 0px <%-themeSpacingMedium_lg%>px 0px",
+    "md": "<%-themeSpacingMedium_md%>px 0px <%-themeSpacingMedium_md%>px 0px",
+    "sm": "<%-themeSpacingMedium_sm%>px 0px <%-themeSpacingMedium_sm%>px 0px",
+    "xs": "<%-themeSpacingMedium_xs%>px 0px <%-themeSpacingMedium_xs%>px 0px"
+  }
+}
+```
 ### Hide: Ẩn hiện control
 
 Thuộc tính `"hide": true` giúp ẩn một control nào đó.
