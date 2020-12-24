@@ -62,6 +62,21 @@ shopify-aricle-id
 ...
 ```
 
+#### Thêm code trên dưới một atom
+------------------------
+
+Bạn có thể viết `liquid` `html` hoặc bất cứ thứ gì bạn muốn vào trong thẻ `Before` và `After`
+
+```html
+<Before>
+  Code Here
+</Before>
+<ProductPrice />
+<After>
+  Code Here
+</After>
+```
+
 ### Quy tắc sử dụng class
 ------------------------
 ```html
