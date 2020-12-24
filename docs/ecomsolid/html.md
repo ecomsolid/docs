@@ -71,7 +71,7 @@ Bạn có thể viết `liquid` `html` hoặc bất cứ thứ gì bạn muốn 
 <Before>
   Code Here
 </Before>
-<ProductPrice />
+<ProductPrice attribute="productPrice" />
 <After>
   Code Here
 </After>
