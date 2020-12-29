@@ -34,7 +34,11 @@ Atom được hiểu đơn giản là phần tử bé nhất của một website
   "atom": "Box",
   "title": "Box",
   "settings": {
-    "displayType": "row"  // row,column,unset
+    "displayType": "row",  // row,column,unset
+    "displayType_ld": "row",
+    "displayType_md": "row",
+    "displayType_sm": "row",
+    "displayType_xs": "row"
   }
 }
 ```
