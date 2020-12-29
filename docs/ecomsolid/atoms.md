@@ -25,22 +25,124 @@ Atom được hiểu đơn giản là phần tử bé nhất của một website
   <h1>Heading</h1>
 </Box>
 ```
-#### Settings cơ bản
+#### Snippets
+>[!note]
+> Khi khai báo trong section cần quy định trạng thái hiển thị của Box thông qua setting **"displayType"**. Mặc định Box sẽ có css **display: block !important;**
 ```json
-"settings: {
+{
+  "attribute": "boxWapper",
+  "atom": "Box",
+  "title": "Box",
+  "settings": {
+    "displayType": "row"  // row,column,unset
+  }
 }
 ```
-### Button
+### Box Absolute
 ------------------------
+> Là atom hoạt động tương tự atom Box nhưng ở chế độ absolute.
+#### HTML cơ bản
+```html
+<BoxAbsolute attribute="boxAbsolute">
+  <h1>Heading</h1>
+</BoxAbsolute>
+```
+#### Snippets
+```json
+{
+  "attribute": "boxAbsolute",
+  "atom": "BoxAbsolute",
+  "title": "Box Absolute"
+}
+```
+
+### Button Link
+------------------------
+#### HTML cơ bản
+```html
+<ButtonLink attribute="buttonLink"></ButtonLink>
+```
+#### Snippets
+```json
+{
+  "attribute": "buttonLink",
+  "atom": "ButtonLink",
+  "title": "Button Link",
+  "value": "Get It Now!"
+}
+```
 
 ### Text
 ------------------------
+#### HTML cơ bản
+```html
+<Text attribute="text"></Text>
+```
+#### Snippets
+```json
+{
+  "attribute": "text",
+  "atom": "Text",
+  "title": "Text",
+  "value": "Wellcome to Ecomsolid"
+}
+```
 
 ### Icon
 ------------------------
+#### HTML cơ bản
+```html
+<Icon attribute="icon"></Icon>
+```
+#### Snippets
+```json
+{
+  "attribute": "icon",
+  "atom": "Icon",
+  "title": "Icon",
+  "value": {
+    "content": "<svg></svg>",
+    "type": "svg",
+    "name": "check"
+  }
+}
+```
 
 ### Image
 ------------------------
+#### HTML cơ bản
+```html
+<Image attribute="image"></Image>
+```
+#### Snippets
+```json
+{
+  "attribute": "image",
+  "atom": "Image",
+  "title": "Image",
+  "value": "https://d3dfaj4bukarbm.cloudfront.net/staging/images/admin/36e00baf-fa3e-415b-ae10-de7160a67323.png",
+  "settings": {
+    "imageAlt": "",
+    "imageTitle": ""
+  }
+}
+```
+
+### Rating
+------------------------
+#### HTML cơ bản
+```html
+<Rating attribute="image"></Rating>
+```
+#### Snippets
+```json
+{
+  "attribute": "image",
+  "atom": "Rating",
+  "title": "Rating",
+  "value": 5 // from 1 to 5
+}
+```
 
 ### Shopify
 ------------------------
