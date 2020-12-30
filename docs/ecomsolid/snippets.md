@@ -132,13 +132,128 @@ Design sẽ cần flow theo chuẩn chung để giúp khách hàng quen thuộc 
 ###### ** Snippets **
 
 ```json
-CODE
+{
+  "id": "boxSize",
+  "title": "Size",
+  "extend": true,
+  "items": [
+    {
+      "id": "widthActive",
+      "attribute": "widthActive",
+      "title": "Width (On/Off)",
+      "reference": "css",
+      "value": false,
+      "type": "switch",
+      "readonly": false,
+      "links": [
+        {
+          "value": true,
+          "snippet": {
+            "ids": [
+              "width"
+            ],
+            "hide": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "width",
+      "attribute": "width",
+      "title": "Width",
+      "reference": "css",
+      "value": "100%",
+      "type": "input:unit",
+      "units": [
+        "px",
+        "%"
+      ],
+      "min": 0,
+      "screens": [
+        {
+          "id": "lg",
+          "value": "100%"
+        },
+        {
+          "id": "md",
+          "value": "100%"
+        },
+        {
+          "id": "sm",
+          "value": "100%"
+        },
+        {
+          "id": "xs",
+          "value": "100%"
+        }
+      ]
+    },
+    {
+      "id": "heightActive",
+      "attribute": "heightActive",
+      "title": "Height (On/Off)",
+      "reference": "css",
+      "value": false,
+      "type": "switch",
+      "readonly": false,
+      "links": [
+        {
+          "value": true,
+          "snippet": {
+            "ids": [
+              "height"
+            ],
+            "hide": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "height",
+      "attribute": "height",
+      "title": "Height",
+      "reference": "css",
+      "value": "100%",
+      "type": "input:unit",
+      "units": [
+        "px",
+        "%"
+      ],
+      "min": 0,
+      "screens": [
+        {
+          "id": "lg",
+          "value": "100%"
+        },
+        {
+          "id": "md",
+          "value": "100%"
+        },
+        {
+          "id": "sm",
+          "value": "100%"
+        },
+        {
+          "id": "xs",
+          "value": "100%"
+        }
+      ]
+    }
+  ]
+}
 ```
 
 ###### ** Styles **
 
 ```scss
-CODE
+#gt_atom-1 {
+  /*<% if(widthActive) { %>*/
+    /*width: <%-width%>;*/
+  /*<% } %>*/
+  /*<% if(heightActive) { %>*/
+    /*height: <%-height%>;*/
+  /*<% } %>*/
+}
 ```
 
 <!-- tabs:end -->
@@ -297,7 +412,7 @@ CODE
 ###### ** Styles **
 
 ```css
-#a-<%-id%> {
+#gt_atom-1 {
   <% if (displayTypeActive) { %>
     display: flex;
 
@@ -549,7 +664,7 @@ CODE
 ###### ** Styles **
 
 ```css
-#a-<%-id%> {
+#gt_atom-1 {
   <% if (textColorActive) { %>
     color: <%-textColor%>;
   <% } %>
@@ -564,28 +679,28 @@ CODE
   <% } %>
 }
 
-#a-<%-id%>:hover, #a-<%-id%>.gt_hover {
+#gt_atom-1:hover, #gt_atom-1.gt_hover {
   <% if (textHoverColorActive) { %>
     color: <%-textHoverColor%>;
   <% } %>
 }
 
 @media (max-width: 1200px) {
-  #a-<%-id%> {
+  #gt_atom-1 {
     <% if (textSizeActive) { %>
       font-size: <%-textSize_md%>;
     <% } %>
   }
 }
 @media (max-width: 992px) {
-  #a-<%-id%> {
+  #gt_atom-1 {
     <% if (textSizeActive) { %>
       font-size: <%-textSize_sm%>;
     <% } %>
   }
 }
 @media (max-width: 576px) {
-  #a-<%-id%> {
+  #gt_atom-1 {
     <% if (textSizeActive) { %>
       font-size: <%-textSize_xs%>;
     <% } %>
@@ -966,7 +1081,7 @@ CODE
 ###### ** Styles **
 
 ```css
-#a-<%-id%> {
+#gt_atom-1 {
   <% if (backgroundTypeActive) { %>
     <% if (backgroundType == "color") { %>
       background-color: <%-backgroundColor%>;
@@ -999,7 +1114,7 @@ CODE
   <% } %>
 }
 
-#a-<%-id%>:hover, #a-<%-id%>.gt_hover {
+#gt_atom-1:hover, #gt_atom-1.gt_hover {
   <% if (backgroundTypeActive) { %>
     <% if (backgroundType == "color") { %>
       background-color: <%-hoverBackgroundColor%>;
@@ -1222,7 +1337,7 @@ CODE
 ###### ** Styles **
 
 ```css
-#a-<%-id%> {
+#gt_atom-1 {
   <% if (borderRadiusActive) { %>
     border-radius: <%-borderRadius%>;
   <% } %>
@@ -1252,7 +1367,7 @@ CODE
   <% } %>
 }
 
-#a-<%-id%>:hover, #a-<%-id%>.gt_hover {
+#gt_atom-1:hover, #gt_atom-1.gt_hover {
   <% if (turnOnBorder) { %>
     border-color: <%-hoverBorderColor%>;
   <% } %>
@@ -1370,7 +1485,7 @@ CODE
 ###### ** Styles **
 
 ```css
-#a-<%-id%> {
+#gt_atom-1 {
   <% if (marginActive) { %>
     margin: <%-margin%>;
   <% } %>
@@ -1381,7 +1496,7 @@ CODE
 }
 
 @media (max-width: 1200px) {
-  #a-<%-id%> {
+  #gt_atom-1 {
     <% if (marginActive) { %>
       margin: <%-margin_md%>;
     <% } %>
@@ -1391,7 +1506,7 @@ CODE
   }
 }
 @media (max-width: 992px) {
-  #a-<%-id%> {
+  #gt_atom-1 {
     <% if (marginActive) { %>
       margin: <%-margin_sm%>;
     <% } %>
@@ -1401,7 +1516,7 @@ CODE
   }
 }
 @media (max-width: 576px) {
-  #a-<%-id%> {
+  #gt_atom-1 {
     <% if (marginActive) { %>
       margin: <%-margin_xs%>;
     <% } %>
@@ -1536,7 +1651,7 @@ CODE
 ###### ** Styles **
 
 ```css
-#a-<%-id%> {
+#gt_atom-1 {
   <% if (opacityActive) { %>
     opacity: <%-opacity%>;
   <% } %>
@@ -1547,7 +1662,7 @@ CODE
   <% } %>
 }
 
-#a-<%-id%>:hover, #a-<%-id%>.gt_hover {
+#gt_atom-1:hover, #gt_atom-1.gt_hover {
   <% if (hoverBoxShadowActive) { %>
     <% if (hoverBoxShadow) { %>
         box-shadow: <%-hoverBoxShadow%>;
