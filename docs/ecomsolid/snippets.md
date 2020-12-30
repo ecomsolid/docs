@@ -253,6 +253,30 @@ Design sẽ cần flow theo chuẩn chung để giúp khách hàng quen thuộc 
   /*<% if(heightActive) { %>*/
     /*height: <%-height%>;*/
   /*<% } %>*/
+  @media (max-width: 1200px) {
+    /*<% if(widthActive) { %>*/
+      /*width: <%-width_md%>;*/
+    /*<% } %>*/
+    /*<% if(heightActive) { %>*/
+      /*height: <%-height_md%>;*/
+    /*<% } %>*/
+  }
+  @media (max-width: 992px) {
+    /*<% if(widthActive) { %>*/
+      /*width: <%-width_sm%>;*/
+    /*<% } %>*/
+    /*<% if(heightActive) { %>*/
+      /*height: <%-height_sm%>;*/
+    /*<% } %>*/
+  }
+  @media (max-width: 576px) {
+    /*<% if(widthActive) { %>*/
+      /*width: <%-width_xs%>;*/
+    /*<% } %>*/
+    /*<% if(heightActive) { %>*/
+      /*height: <%-height_xs%>;*/
+    /*<% } %>*/
+  }
 }
 ```
 
