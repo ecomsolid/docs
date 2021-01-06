@@ -132,6 +132,22 @@ Atom được hiểu đơn giản là phần tử bé nhất của một website
 }
 ```
 
+### Video
+------------------------
+#### HTML cơ bản
+```html
+<Video attribute="video"></Video>
+```
+#### Snippets
+```json
+{
+  "attribute": "video",
+  "atom": "Video",
+  "title": "Video",
+  "value": "https://www.youtube.com/watch?v=BxIlVNC11R4"
+}
+```
+
 ### Rating
 ------------------------
 #### HTML cơ bản
@@ -145,6 +161,37 @@ Atom được hiểu đơn giản là phần tử bé nhất của một website
   "atom": "Rating",
   "title": "Rating",
   "value": 5 // from 1 to 5
+}
+```
+
+### Slider
+------------------------
+#### HTML cơ bản
+```html
+<Slider attribute="slider">
+  <% if (slider && slider > 0) { %>
+    <% for(let i = 0; i < slider; i++) { %>
+    <Box attribute="sliderItemBox" index="<%-i%>">
+      ...
+    </Box>
+    <% } %>
+  <% } %>
+</Slider>
+```
+#### Snippets
+```json
+{
+  "attribute": "slider",
+  "atom": "Slider",
+  "title": "Slider",
+  "clone": true,
+  "children": [
+    {
+      "attribute": "sliderItemBox",
+      "atom": "Box",
+      "title": "sliderItemBox"
+    }
+  ]
 }
 ```
 
