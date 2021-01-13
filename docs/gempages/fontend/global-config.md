@@ -2,8 +2,9 @@
 Một object dạng
 ```json
 {
-  "atomHeading": ["tr","ch","gm"],
-  "atomTextBlock": [],
+  "atomButton": ["g","hungdinh.myshopify.com"],
+  "atomImage": ["tr"],
+  "atomHeading": ["tr"],
   "atomHeroBanner":["g"],
   "upgradePImage": ["*"],
   "upgradeHeroBanner": ["v"],
@@ -18,14 +19,16 @@ Thông tin này được gắn vào `store` khi khi load `Editor`.
 1. <a href="https://gempagesv5.web.app/gp_configs/" target="_blank">Vào đường dẫn</a>, chọn mục **Global Config**
 <img width="80%" src="/images/gempages/global-config-link.png">
 2. Thêm `Objec item` với ý nghĩa:
-  - `key`: định danh
-  - `value`: Tên các shop muốn áp dụng
+  - `key`: định danh (*camelCase*)
+  - `value`: Tên các shop muốn áp dụng (*`Array<string>`*)
+    - ký tự `*` được hiểu là áp dụng cho tất cả (`["*"]`)
+    - ký tự rỗng (`""`) được hiểu là không áp dụng (`[""]`)
 
 *Ví dụ*
-> Áp dụng `Atom Button` cho các shop bắt đầu bằng chữ cái `g` hoặc shop có tên là `hungdinhmyshopify.com`.
+> Áp dụng `Atom Button` cho các shop bắt đầu bằng chữ cái `g` và shop có tên là `hungdinh.myshopify.com`.
 Ta sẽ tạo 1 `Objec item` như sau:
 ```json
-"atomTextBlock": ["g","hungdinhmyshopify.com"]
+"atomButton": ["g","hungdinh.myshopify.com"]
 ```
 
 >[!note]
