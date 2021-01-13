@@ -22,7 +22,7 @@ Thông tin này được gắn vào `store` khi khi load `Editor`.
   - `key`: định danh (*camelCase*)
   - `value`: Tên các shop muốn áp dụng (*`Array<string>`*)
     - ký tự `*` được hiểu là áp dụng cho tất cả (`["*"]`)
-    - ký tự rỗng (`""`) được hiểu là không áp dụng (`[""]`)
+    - mảng rỗng (`[]`) được hiểu là không áp dụng
 
 *Ví dụ*
 > Áp dụng `Atom Button` cho các shop bắt đầu bằng chữ cái `g` và shop có tên là `hungdinh.myshopify.com`.
