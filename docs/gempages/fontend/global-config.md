@@ -33,11 +33,11 @@ Ta sẽ tạo 1 `Objec item` như sau:
 ### Đọc dữ liệu từ API
 1. Import utility function 
 ```javascript
-import gfUpgradeAtom from "@/app/editor/iframe/atom/gfUpgradeAtom"
+import { checkKeyValid } from "@/app/utils/checkRoleApply.ts";
 ```
 2. Kiểm tra điều kiện áp dụng:
 ```javascript
-if( gfUpgradeAtom("keyName") ){
+if( checkKeyValid("keyName") ){
   // do something 1
 } else{
   // do something 2
