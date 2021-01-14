@@ -19,7 +19,7 @@ Thông tin này được gắn vào `store` khi khi load `Editor`.
 1. <a href="https://gempagesv5.web.app/gp_configs/" target="_blank">Vào đường dẫn</a>, chọn mục **Global Config**
 <img width="80%" src="/images/gempages/global-config-link.png">
 2. Thêm `Objec item` với ý nghĩa:
-  - `key`: định danh (*camelCase*)
+  - `key`: định danh (*`camelCase`*)
   - `value`: Tên các shop muốn áp dụng (*`Array<string>`*)
     - ký tự `*` được hiểu là áp dụng cho tất cả (`["*"]`)
     - mảng rỗng (`[]`) được hiểu là không áp dụng
@@ -50,4 +50,4 @@ Function này trả về `true/false` tức là chức năng muốn áp dụng c
 ## Lợi ích
 - Kiểm soát rủi do đối với những tính năng mới.
 - Tăng tốc độ phát triển sản phẩm.
-- Dễ dàng phản ứng với lỗi trong quá trình phát triển. (*Thay đổi thông tin config từ phí serve mà không cần update lại code phía client*)
+- Dễ dàng phản ứng với lỗi trong quá trình phát triển. (*Thay đổi thông tin config từ phí server mà không cần update lại code client*)
