@@ -1,5 +1,5 @@
 - # Frontend
   - ## Editor
-    - [Global config](/gempages/fontend/global-config.md)
+    - [Global config](/gempages/editor/global-config.md)
   - ## Dashboard
 - # Backend
