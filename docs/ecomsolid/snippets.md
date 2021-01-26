@@ -2905,28 +2905,28 @@ script để chạy animation
 
 ```js
 /* Variables */
-const interactionHover = <%-JSON.stringify(interactionButtonHover)%>;
-const interactionNormal = <%-JSON.stringify(interactionButton)%>;
-const interactionWhilePress = <%-JSON.stringify(interactionButtonWhitePress)%>;
-const interactionScrollIntoView = <%-JSON.stringify(interactionScrollIntoView)%>;
+const interactionHover = '<%-JSON.stringify(interactionButtonHover)%>';
+const interactionNormal = '<%-JSON.stringify(interactionButton)%>';
+const interactionWhilePress = '<%-JSON.stringify(interactionButtonWhitePress)%>';
+const interactionScrollIntoView = '<%-JSON.stringify(interactionScrollIntoView)%>';
 // animation
 window.SOLID.library.animation({
   elementId: "<%=id%>",
   $doms: $atoms,
   interactionNormal: {
-    value: interactionNormal,
+    value: JSON.parse(interactionNormal),
     previewAttr: "interactionButton"
   },
   interactionHover: {
-    value: interactionHover,
+    value: JSON.parse(interactionHover),
     previewAttr: "interactionButtonHover"
   },
   interactionWhilePress: {
-    value: interactionWhilePress,
+    value: JSON.parse(interactionWhilePress),
     previewAttr: "interactionButtonWhitePress"
   },
   interactionScrollIntoView: {
-    value: interactionScrollIntoView,
+    value: JSON.parse(interactionScrollIntoView),
     previewAttr: "interactionScrollIntoView"
   },
   animationType: "block",
@@ -2979,14 +2979,14 @@ script để chạy animation
 
 ```js
 /* Variables */
-var clientInteractionScrollIntoView = <%-JSON.stringify(interactionScrollIntoView)%>;
+var clientInteractionScrollIntoView = '<%-JSON.stringify(interactionScrollIntoView)%>';
 
 window.SOLID.library.animation({
   $doms: $atoms,
   elementId: "<%=id%>",
   animationType: "text",
   interactionScrollIntoView: {
-    value: clientInteractionScrollIntoView,
+    value: JSON.parse(clientInteractionScrollIntoView),
     previewAttr: "interactionScrollIntoView"
   },
   mode: "<%=mode%>"
