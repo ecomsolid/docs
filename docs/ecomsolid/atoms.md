@@ -208,6 +208,20 @@ Atom được hiểu đơn giản là phần tử bé nhất của một website
 ------------------------
 
 ##### Product Quantity
+#### HTML cơ bản
+```html
+<ProductQuantity attribute="productQuantity"></ProductQuantity>
+```
+#### Snippets
+> value là loại quantity sẽ hiển thị. Có 2 loại là vertical và horizontal
+```json
+{
+  "attribute": "productQuantity",
+  "atom": "ProductQuantity",
+  "title": "Product Quantity",
+  "value": "horizontal" // horizontal or vertical
+}
+```
 ------------------------
 
 ##### Product Swatches
