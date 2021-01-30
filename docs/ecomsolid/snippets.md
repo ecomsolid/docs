@@ -2843,6 +2843,26 @@ Snippet định nghĩa:
   }
 }
 ```
+hoặc nếu muốn full setting như duration, delay cho scroll into view thì dùng: 
+```json
+{
+  "id": "interactionScrollIntoView",
+  "attribute": "interactionScrollIntoView",
+  "title": "Interaction",
+  "type": "animationAtom",
+  "value": {
+    "name": "none",
+    "duration": "1",
+    "delay": 0,
+    "iterationCount": 1
+  },
+  "animationIn": true,
+  "reference": ["js"],
+  "optimize": {
+  "type": "js:trigger"
+  }
+}
+```
 - Normal
 ```js
 {
