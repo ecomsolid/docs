@@ -2852,9 +2852,9 @@ hoặc nếu muốn full setting như duration, delay cho scroll into view thì 
   "type": "animationAtom",
   "value": {
     "name": "none",
-    "duration": "1.5",
+    "duration": "1",
     "delay": 0,
-    "iterationCount": "infinite"
+    "iterationCount": 1
   },
   "animationIn": true,
   "reference": ["js"],
