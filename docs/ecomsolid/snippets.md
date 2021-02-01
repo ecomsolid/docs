@@ -2946,7 +2946,200 @@ Snippet định nghĩa:
   "desc": "To change favicon you can do as the image below. You can access the settings faster via the following link: <a href='/theme/settings' target='_blank'>Go to Setting Favicon</a>.<br><br><img width='100%' src='https://d3dfaj4bukarbm.cloudfront.net/production/tutorial/change-favicon.png' />"
 }
 ```
-#### Animation Atom
+#### Animation Atom (Button, Box, ...)
+
+Ảnh hiển thị:
+
+<img src="/images/ecomsolid/snippets/animationAtom.png">
+
+Snippet định nghĩa:
+
+- Scroll into view
+```json
+{
+  "id": "interactionScrollIntoView",
+  "attribute": "interactionScrollIntoView",
+  "title": "Interaction",
+  "type": "animation",
+  "value": "",
+  "reference": ["js"],
+  "optimize": {
+  "type": "js:trigger"
+  }
+}
+```
+hoặc nếu muốn full setting như duration, delay cho scroll into view thì dùng: 
+```json
+{
+  "id": "interactionScrollIntoView",
+  "attribute": "interactionScrollIntoView",
+  "title": "Interaction",
+  "type": "animationAtom",
+  "value": {
+    "name": "none",
+    "duration": "1",
+    "delay": 0,
+    "iterationCount": 1
+  },
+  "animationType": "scrollIntoView",
+  "reference": ["js"],
+  "optimize": {
+  "type": "js:trigger"
+  }
+}
+```
+- Normal
+```js
+{
+  "id": "interactionButton",
+  "attribute": "interactionButton",
+  "title": "Interaction",
+  "reference": ["css", "js"],
+  "value": {
+    "name": "none",
+    "duration": "1.5",
+    "delay": 0,
+    "iterationCount": "infinite"
+  },
+  "type": "animationAtom",
+  "optimize": {
+    "type": "js:trigger"
+  }
+}
+```
+- Hover
+```json
+{
+  "id": "interactionButtonHover",
+  "attribute": "interactionButtonHover",
+  "title": "Interaction",
+  "reference": "js",
+  "value": {
+    "name": "none",
+    "duration": "1.5",
+    "delay": 0,
+    "iterationCount": 1
+  },
+  "type": "animationAtom",
+  "optimize": {
+    "type": "js:trigger"
+  }
+}
+```
+- While Press
+```json
+{
+  "id": "interactionButtonWhitePress",
+  "attribute": "interactionButtonWhitePress",
+  "title": "Interaction",
+  "reference": "js",
+  "value": {
+    "name": "none",
+    "duration": "1.5",
+    "delay": 0,
+    "iterationCount": 1
+  },
+  "type": "animationAtom",
+  "optimize": {
+    "type": "js:trigger"
+  }
+}
+```
+
+script để chạy animation
+
+```js
+/* Variables */
+const interactionHover = '<%-JSON.stringify(interactionButtonHover)%>';
+const interactionNormal = '<%-JSON.stringify(interactionButton)%>';
+const interactionWhilePress = '<%-JSON.stringify(interactionButtonWhitePress)%>';
+const interactionScrollIntoView = '<%-JSON.stringify(interactionScrollIntoView)%>';
+// animation
+window.SOLID.library.animation({
+  elementId: "<%=id%>",
+  $doms: $atoms,
+  interactionNormal: {
+    value: JSON.parse(interactionNormal),
+    previewAttr: "interactionButton"
+  },
+  interactionHover: {
+    value: JSON.parse(interactionHover),
+    previewAttr: "interactionButtonHover"
+  },
+  interactionWhilePress: {
+    value: JSON.parse(interactionWhilePress),
+    previewAttr: "interactionButtonWhitePress"
+  },
+  interactionScrollIntoView: {
+    value: JSON.parse(interactionScrollIntoView),
+    previewAttr: "interactionScrollIntoView"
+  },
+  animationType: "block",
+  mode: "<%=mode%>",
+})
+``` 
+Chú thích: 
+- `value` : Giá trị của animation 
+- `previewAttr` : tên attribute của snippet
+- Các animation có thể không cần đủ 4 cái. Chỉ cần những cái nào dùng là được. Ví dụ chỉ dùng `scrollIntoView` thì chỉ cân truyền vào thư viện `interactionScrollIntoView`
+- `animationType` : kiểu animation, có thể là block hoặc text 
+
+CSS cần thêm vào cho animation normal
+>[!note]
+> với animation normal thì cần thêm css vào element đó
+> ```css
+>.gt_atom-1 {
+>  /*
+>   <% if (mode === "production") {%>
+>     <%-animationAtomCSS(interactionButton)%>
+>   <% } %>
+> */
+> }
+> ```
+
+#### Animation Text
+
+Ảnh hiển thị:
+
+<img src="/images/ecomsolid/snippets/animationText.png">
+
+Snippet định nghĩa:
+
+- Scroll into view
+```json
+{
+  "id": "interactionScrollIntoView",
+  "attribute": "interactionScrollIntoView",
+  "type": "animationSwitch",
+  "value": "",
+  "reference": ["js"],
+  "animationType": "text",
+  "optimize": {
+    "type": "js:trigger"
+  }
+}
+```
+
+script để chạy animation
+
+```js
+/* Variables */
+var clientInteractionScrollIntoView = '<%-JSON.stringify(interactionScrollIntoView)%>';
+
+window.SOLID.library.animation({
+  $doms: $atoms,
+  elementId: "<%=id%>",
+  animationType: "text",
+  interactionScrollIntoView: {
+    value: JSON.parse(clientInteractionScrollIntoView),
+    previewAttr: "interactionScrollIntoView"
+  },
+  mode: "<%=mode%>"
+});
+``` 
+Chú thích: 
+- `value` : Giá trị của animation 
+- `previewAttr` : tên attribute của snippet
 
 ### Shopify
 

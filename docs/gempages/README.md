@@ -1,1 +1,6 @@
-# GemPages
+- # Frontend
+  - ## Editor
+    - [Ý tưởng testing code](/gempages/editor/testing-code.md)
+    - [Global config](/gempages/editor/global-config.md)
+  - ## Dashboard
+- # Backend
