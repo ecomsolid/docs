@@ -1558,13 +1558,138 @@ Design sẽ cần flow theo chuẩn chung để giúp khách hàng quen thuộc 
 ###### ** Snippets **
 
 ```json
-CODE
+{
+  "id": "boxAnimation",
+  "title": "Animation",
+  "planId": 2,
+  "extend": true,
+  "items": [
+    {
+      "id": "scrollIntoViewActive",
+      "attribute": "scrollIntoViewActive",
+      "title": "Scroll Into View (On/Off)",
+      "reference": "js",
+      "value": false,
+      "type": "switch",
+      "readonly": false,
+      "links": [
+        {
+          "value": true,
+          "snippet": {
+            "ids": [
+              "scrollIntoView"
+            ],
+            "hide": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "scrollIntoView",
+      "attribute": "scrollIntoView",
+      "title": "Scroll Into View",
+      "reference": [
+        "js"
+      ],
+      "value": {
+        "name": "none",
+        "duration": "1.5",
+        "delay": 0,
+        "iterationCount": 1
+      },
+      "type": "animationAtom",
+      "animationType": "scrollIntoView",
+      "optimize": {
+        "type": "js:trigger"
+      }
+    },
+    {
+      "id": "animationActive",
+      "attribute": "animationActive",
+      "title": "Animation (On/Off)",
+      "reference": "js",
+      "value": false,
+      "type": "switch",
+      "readonly": false,
+      "links": [
+        {
+          "value": true,
+          "snippet": {
+            "ids": [
+              "animation"
+            ],
+            "hide": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "animation",
+      "attribute": "animation",
+      "title": "Animation",
+      "desc": "The Infinite option just works on your live page",
+      "reference": [
+        "js",
+        "css"
+      ],
+      "value": {
+        "name": "none",
+        "duration": "1.5",
+        "delay": 0,
+        "iterationCount": 1
+      },
+      "type": "animationAtom",
+      "animationType": "normal",
+      "optimize": {
+        "type": "js:trigger"
+      }
+    }
+  ]
+}
 ```
 
 ###### ** Styles **
 
-```css
-CODE
+```js
+module.exports = {
+  data() {
+    const scrollIntoViewActive = "<%=scrollIntoViewActive%>" == "true";
+    const animationActive = "<%=animationActive%>" == "true";
+    const scrollIntoView = '<%-JSON.stringify(scrollIntoView)%>';
+    const animation = '<%-JSON.stringify(animation)%>';
+  },
+  init() {
+    addInteraction();
+  },
+  store: {},
+  events: {},
+  methods: {
+    addInteraction() {
+      if (animationActive || scrollIntoViewActive) {
+        var settings = {
+          elementId: "<%=id%>",
+          $doms: $element,
+          animationType: "block",
+          mode: "<%=mode%>",
+        }
+        if (scrollIntoViewActive) {
+          settings.interactionScrollIntoView = {
+            value: JSON.parse(scrollIntoView),
+            previewAttr: "scrollIntoView"
+          }
+        }
+        if (animationActive) {
+          settings.interactionNormal = {
+            value: JSON.parse(animation),
+            previewAttr: "animation"
+          }
+        }
+        window.SOLID.library.animation(settings)
+      }
+    },
+  },
+  destroy() {},
+};
 ```
 
 <!-- tabs:end -->
