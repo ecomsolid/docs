@@ -1691,6 +1691,14 @@ module.exports = {
   destroy() {},
 };
 ```
+###### ** Style **
+```css
+.gt_atom-1 {
+  /*<% if (animationActive && mode == "production") { %> */
+    /* <%-animationAtomCSS(animation)%> */
+  /*<% } %> */
+}
+```
 
 <!-- tabs:end -->
 
