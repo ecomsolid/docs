@@ -2856,7 +2856,7 @@ hoặc nếu muốn full setting như duration, delay cho scroll into view thì 
     "delay": 0,
     "iterationCount": 1
   },
-  "animationIn": true,
+  "animationType": "scrollIntoView",
   "reference": ["js"],
   "optimize": {
   "type": "js:trigger"
@@ -2988,7 +2988,7 @@ Snippet định nghĩa:
   "type": "animationSwitch",
   "value": "",
   "reference": ["js"],
-  "isTextAtom": true,
+  "animationType": "text",
   "optimize": {
     "type": "js:trigger"
   }
