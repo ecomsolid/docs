@@ -1648,7 +1648,7 @@ Design sẽ cần flow theo chuẩn chung để giúp khách hàng quen thuộc 
 }
 ```
 
-###### ** Styles **
+###### ** Js **
 
 ```js
 module.exports = {
