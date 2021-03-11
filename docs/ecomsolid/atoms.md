@@ -218,6 +218,20 @@ Atom được hiểu đơn giản là phần tử bé nhất của một website
 
 ##### Product Add To Cart
 ------------------------
+#### HTML cơ bản
+```html
+<ProductButtonAddToCart attribute="productButtonAddToCart"></ProductButtonAddToCart>
+```
+#### Snippets
+
+```json
+{
+  "attribute": "productButtonAddToCart",
+  "atom": "ProductButtonAddToCart",
+  "title": "Product Button Add To Cart",
+  "value": "Submit"
+},
+```
 
 ##### Product Buy Now
 ------------------------
