@@ -516,3 +516,38 @@ Trạng thái *"public - private"* sẽ giúp quyết định việc có sử d�
 
 >[!tip]
 > Tìm hiểu về responsive. (<a href="#" target="_blank">Hướng dẫn chi tiết</a>)
+
+
+### Data Cache
+------------------------
+[!note]
+Sử dụng để lấy lại Data Liquid Global của Section. Để cache data bạn cần thêm attribute data-cache = "{ 'name1': '{{ variable_liquid1 }}', 'name2': '{{ variable_liquid2 }}' ...  }"
+
+#### Cache data Product
+
+```html
+<div class="gt_atom-<%-id%>" data-cache="{'shopify-product-id': '{{product.id}}'}">
+  {{product | json}}
+</div>
+```
+
+#### Cache data Product Variant Selected
+>[!warning]
+> Trong html Section cần sử dụng biến Liquid **gtCurrentVariant**
+
+```html
+<div class="gt_atom-<%-id%>" data-cache="{'shopify-product-id': '{{product.id}}', 'current-variant-id': '{{gtCurrentVariant.id}}'}">
+  {{gtCurrentVariant | json }}
+</div>
+```
+
+#### Cache data Cart Item
+>[!warning]
+> Trong html Section cần sử dụng biến Liquid **cart_item**
+
+```html
+<div class="gt_atom-<%-id%>" data-cache="{'shopify-cart-item': '{{cart_item.id}}'}">
+  {{cart_item | json }}
+</div>
+```
+
