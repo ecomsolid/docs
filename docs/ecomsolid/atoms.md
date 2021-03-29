@@ -215,6 +215,20 @@ Atom được hiểu đơn giản là phần tử bé nhất của một website
 
 ##### Product Variants
 ------------------------
+#### HTML cơ bản
+```html
+<ProductVariant attribute="productVariant"></ProductVariant>
+```
+#### Snippets
+> value là loại variant option sẽ hiển thị. Có 2 loại là segment và select
+```json
+{
+  "attribute": "productVariant",
+  "atom": "ProductVariant",
+  "title": "Product Variant",
+  "value": "segment" // select hoac segment
+}
+```
 
 ##### Product Add To Cart
 ------------------------
