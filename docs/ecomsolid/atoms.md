@@ -520,13 +520,17 @@ Trạng thái *"public - private"* sẽ giúp quyết định việc có sử d�
 
 ### Data Cache
 ------------------------
-[!note]
-Sử dụng để lấy lại Data Liquid Global của Section. Để cache data bạn cần thêm attribute data-cache = "{ 'name1': '{{ variable_liquid1 }}', 'name2': '{{ variable_liquid2 }}' ...  }"
-
+>[!note]
+Sử dụng để lấy lại Data Liquid Global của Section sử dụng data attribute. Hiện tại đang hỗ trợ các attr sau:
+data-product-id
+data-variant-id
+data-card-item-id
+data-collection-id
+data-blog-id
 #### Cache data Product
 
 ```html
-<div class="gt_atom-<%-id%>" data-cache="{'shopify-product-id': '{{product.id}}'}">
+<div class="gt_atom-<%-id%>" data-product-id="{{product.id}}">
   {{product | json}}
 </div>
 ```
@@ -536,7 +540,7 @@ Sử dụng để lấy lại Data Liquid Global của Section. Để cache data
 > Trong html Section cần sử dụng biến Liquid **gtCurrentVariant**
 
 ```html
-<div class="gt_atom-<%-id%>" data-cache="{'shopify-product-id': '{{product.id}}', 'current-variant-id': '{{gtCurrentVariant.id}}'}">
+<div class="gt_atom-<%-id%>" data-product-id="{{product.id}}" data-variant-id="{{gtCurrentVariant.id}}">
   {{gtCurrentVariant | json }}
 </div>
 ```
@@ -546,8 +550,27 @@ Sử dụng để lấy lại Data Liquid Global của Section. Để cache data
 > Trong html Section cần sử dụng biến Liquid **cart_item**
 
 ```html
-<div class="gt_atom-<%-id%>" data-cache="{'shopify-cart-item': '{{cart_item.id}}'}">
+<div class="gt_atom-<%-id%>" data-card-item-id="{{cart_item.id}}">
   {{cart_item | json }}
+</div>
+```
+
+#### Cache data collection
+>[!warning]
+> Trong html Section cần sử dụng biến Liquid **collection**
+
+```html
+<div class="gt_atom-<%-id%>" data-collection-id="{{collection.id}}">
+  {{collection | json }}
+</div>
+```
+#### Cache data article
+>[!warning]
+> Trong html Section cần sử dụng biến Liquid **article**
+
+```html
+<div class="gt_atom-<%-id%>" data-article-id="{{article.id}}">
+  {{article | json }}
 </div>
 ```
 
