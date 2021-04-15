@@ -566,7 +566,7 @@ Trạng thái *"public - private"* sẽ giúp quyết định việc có sử d�
 Sử dụng để lấy lại Data Liquid Global của Section sử dụng data attribute. Hiện tại đang hỗ trợ các attr sau:
 **data-product-id**,
 **data-variant-id**,
-**data-card-item-id**,
+**data-cart-item-id**,
 **data-collection-id**,
 **data-blog-id**
 #### Cache data Product
@@ -592,7 +592,7 @@ Sử dụng để lấy lại Data Liquid Global của Section sử dụng data 
 > Trong html Section cần sử dụng biến Liquid **cart_item**
 
 ```html
-<div class="gt_atom-<%-id%>" data-card-item-id="{{cart_item.id}}">
+<div class="gt_atom-<%-id%>" data-cart-item-id="{{cart_item.id}}">
   {{cart_item | json }}
 </div>
 ```
