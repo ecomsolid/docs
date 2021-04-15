@@ -564,11 +564,11 @@ Trạng thái *"public - private"* sẽ giúp quyết định việc có sử d�
 ------------------------
 >[!note]
 Sử dụng để lấy lại Data Liquid Global của Section sử dụng data attribute. Hiện tại đang hỗ trợ các attr sau:
-data-product-id
-data-variant-id
-data-card-item-id
-data-collection-id
-data-blog-id
+**data-product-id**,
+**data-variant-id**,
+**data-card-item-id**,
+**data-collection-id**,
+**data-blog-id**
 #### Cache data Product
 
 ```html
