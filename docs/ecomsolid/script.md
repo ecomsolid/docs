@@ -278,3 +278,84 @@ module.exports = {
   }
 })();
 ```
+### Khu vực dev cho mỗi block 
+
+Trong mỗi block sẽ có 1 khu vực code chỉ hiện thị trong editor và sẽ được split đi khi update live 
+
+#### data block 
+
+```js
+data() {
+	var a = 1;
+	dev: {
+		var devA = 1;
+	}
+}
+```
+
+#### init block 
+
+```js
+init() {
+	function();
+	dev: {
+		function1();
+	}
+}
+```
+
+
+#### events block 
+
+```js
+events: {
+	".gt_main-icon-search":  {
+		  click: openSearchPopup,
+		  change: inputChange,
+	 },
+	 dev: {
+	 	".gt_main-icon-search-dev":  {
+			  click: openSearchPopup1,
+		 },
+	 }
+}
+```
+
+#### store block 
+
+```js
+store: {
+	getState:  {
+		cart: cart,
+		discount: discount,
+	},
+	subscribe:  {
+		cart: openSearchPopup,
+		addToCartSuccess: openCartDrawer,
+	},
+	dev: {
+		getState:  {
+			cart: cart,
+		},
+		subscribe:  {
+			cart: openSearchPopup,
+		},
+	}
+}
+```
+
+#### methods block 
+
+```js
+methods: {
+	getState()  {
+		console.log("hello dev");
+	},
+	dev: {
+		helloDev() {
+			console.log("welcome");
+		}
+	}
+}
+```
+
