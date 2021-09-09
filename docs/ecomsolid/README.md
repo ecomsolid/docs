@@ -103,6 +103,7 @@ https://nodejs.org/en/
     ```go
     db.Set("gorm:query_option", "FOR UPDATE").First(&user, 10)
     ```
+- Dùng package <a href="https://github.com/elliotchance/pie" target="_blank">pie</a> để đơn giản hóa thao tác với slice
 - Dùng .editorconfig file để đồng bộ indent
   ```yml
   root = true
