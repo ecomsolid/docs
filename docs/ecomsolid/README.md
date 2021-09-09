@@ -79,34 +79,41 @@ https://nodejs.org/en/
 - Sử dụng db session thay vì cookie session. API được thiết kế để tất cả các bên đều có thể sử dụng, nên việc dùng cookie là không hợp lý
 - Hạn chế tối đa viết SQL trong code:
   - Sử dụng filter query bằng struct khi có thể (tìm hiểu thêm trên doc của gorm <a href="http://v1.gorm.io/docs/query.html#Query" target="_blank">v1</a>/<a href="https://gorm.io/docs/query.html" target="_blank">v2</a>):
-  ```go
-  // Inline
-  db.First(&user, User{Name: "jinzhu", Age: 20})
-  db.Find(&users, User{Name: "jinzhu", Age: 20})
-  // AND conditions
-  db.Where(User{Name: "jinzhu", Age: 20}).Find(&users)
-  // NOT conditions
-  db.Not(User{Name: "jinzhu", Age: 20}).Find(&users)
-  ```
+    ```go
+    // Inline
+    db.First(&user, User{Name: "jinzhu", Age: 20})
+    db.Find(&users, User{Name: "jinzhu", Age: 20})
+    // AND conditions
+    db.Where(User{Name: "jinzhu", Age: 20}).Find(&users)
+    // NOT conditions
+    db.Not(User{Name: "jinzhu", Age: 20}).Find(&users)
+    ```
   - Trong trường hợp phải query với các toán tử khác `=` và `<>` thì vẫn phải viết where query do gorm chưa hỗ trợ
   - Dùng `FirstOrInit` khi cần query 1 row cho trường hợp có thì update, chưa có thì tạo mới
-  ```go
-  // Nếu không có user tên jinzhu tuổi 20 trong db thì khởi tạo biến user với Name = "jinzhu" và Age = 20
-  db.FirstOrInit(&user, User{Name: "jinzhu", Age: 20})
-  ```
+    ```go
+    // Nếu không có user tên jinzhu tuổi 20 trong db thì khởi tạo biến user với Name = "jinzhu" và Age = 20
+    db.FirstOrInit(&user, User{Name: "jinzhu", Age: 20})
+    ```
   - Dùng `FirstOrCreate` khi cần query 1 row và auto tạo nếu chưa có (cú pháp tương tự `FirstOrInit`)
+  - Dùng `Update` cùng struct để update đúng field cần update, tránh overwrite khi có nhiều goroutine chạy song song:
+    ```go
+    db.Model(&user).Update(User{Name: "jinzhu", Age: 20})  // Lưu ý: user phải có ID > 0, nếu không sẽ update cả table
+    ```
+  - Dùng `FOR UPDATE` option để lock row trong trường hợp không muốn bị goroutine khác overwrite:
+    ```go
+    db.Set("gorm:query_option", "FOR UPDATE").First(&user, 10)
+    ```
 - Dùng .editorconfig file để đồng bộ indent
+  ```yml
+  root = true
 
-```yml
-root = true
-
-[*]
-indent_style = space
-indent_size = 4
-charset = utf-8
-trim_trailing_whitespace = true
-insert_final_newline = true
-```
+  [*]
+  indent_style = space
+  indent_size = 4
+  charset = utf-8
+  trim_trailing_whitespace = true
+  insert_final_newline = true
+  ```
 
 #### Test API bằng Postman
 
