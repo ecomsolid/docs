@@ -76,6 +76,7 @@ https://nodejs.org/en/
   - Cần lưu ý việc khi nào gọi API, trước hay sau db transaction
   - Tránh gọi API trong db transaction, vì sau khi gọi mà transaction bị rollback thì khó xử lý
   - Nếu phải gọi API trong db transaction thì phải có cơ chế rollback lệnh gọi API
+  - Dùng hàm `db.Transaction()` để sử dụng db transaction thay vì khởi tạo transaction manually bằng `db.Begin()`
 - Sử dụng db session thay vì cookie session. API được thiết kế để tất cả các bên đều có thể sử dụng, nên việc dùng cookie là không hợp lý
 - Hạn chế tối đa viết SQL trong code:
   - Sử dụng filter query bằng struct khi có thể (tìm hiểu thêm trên doc của gorm <a href="http://v1.gorm.io/docs/query.html#Query" target="_blank">v1</a>/<a href="https://gorm.io/docs/query.html" target="_blank">v2</a>):
