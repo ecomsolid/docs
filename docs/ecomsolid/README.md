@@ -50,7 +50,7 @@ https://nodejs.org/en/
 - Chia nhỏ file, nhóm các hàm vào file theo tính chất từng hàm
 - Tách nhỏ hàm, hàm làm đúng chức năng. Ví dụ hàm GetShop thì chỉ get shop, không thêm code tạo shop trong hàm
 - Luôn check error hàm trả ra (nếu có)
-- Lỗi có thể xử lý bằng code thì xử lý bằng code, không thì bắt lỗi bằng hàm `sentry.CaptureException()`
+- Lỗi có thể xử lý bằng code thì xử lý bằng code, không thì bắt lỗi bằng <a href="https://docs.sentry.io/platforms/go/" target="_blank">Sentry</a>
 - Viết doc trên mỗi hàm, mô tả mục đích, logic xử lý trong hàm và ý nghĩa các tham số đầu vào
 - Viết comment trên các block code mô tả block làm cái gì, tại sao phải làm như thế (tùy độ phức tạp)
 - Gắn function vào struct type khi có thể, nhằm dễ xác định scope và quản lý hàm
