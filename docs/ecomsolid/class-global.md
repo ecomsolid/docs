@@ -216,7 +216,57 @@ gt_container--full
   margin-bottom: 0px;
 }
 ```
-##### Extra Small ~ 8px - v1.0
+##### Extra Small
+
+##### v2.0: 8px
+```css
+.gt_m2--extra-small {
+  margin: #{themeSpacingExtraSmall2};
+}
+.gt_mt2--extra-small {
+  margin-top: #{themeSpacingExtraSmall2};
+}
+.gt_mb2--extra-small {
+  margin-bottom: #{themeSpacingExtraSmall2};
+}
+.gt_ml2--extra-small {
+  margin-left: #{themeSpacingExtraSmall2};
+}
+.gt_mr2--extra-small {
+  margin-right: #{themeSpacingExtraSmall2};
+}
+.gt_mx2--extra-small {
+  margin-right: #{themeSpacingExtraSmall2};
+  margin-left: #{themeSpacingExtraSmall2};
+}
+.gt_my2--extra-small {
+  margin-top: #{themeSpacingExtraSmall2};
+  margin-bottom: #{themeSpacingExtraSmall2};
+}
+```
+Dùng cho những đoạn text với nhau ở khoảng cách nhỏ và Margin bottom subheading
+>[!note]
+>Đã tự động hỗ trợ responsive
+
+![themeSpacingExtraSmall](https://d3dfaj4bukarbm.cloudfront.net/staging/images/admin/0ef7d4e0-4efa-420f-bb55-f00bba2b284e.png)
+
+Danh sách class:
+```html
+gt_m2--extra-small
+```
+```html
+gt_mt2--extra-small
+```
+```html
+gt_mb2--extra-small
+```
+```html
+gt_ml2--extra-small
+```
+```html
+gt_mr2--extra-small
+```
+##### v1.0: 8px
 ```css
 .gt_m--extra-small {
   margin: #{themeSpacingExtraSmall};
@@ -262,7 +312,57 @@ gt_ml--extra-small
 ```html
 gt_mr--extra-small
 ```
-##### Small ~ 16px - v1.0
+##### Small
+
+##### v2.0: 16px
+```css
+.gt_m2--small {
+  margin: #{themeSpacingSmall2};
+}
+.gt_mt2--small {
+  margin-top: #{themeSpacingSmall2};
+}
+.gt_mb2--small {
+  margin-bottom: #{themeSpacingSmall2};
+}
+.gt_ml2--small {
+  margin-left: #{themeSpacingSmall2};
+}
+.gt_mr2--small {
+  margin-right: #{themeSpacingSmall2};
+}
+.gt_mx2--small {
+  margin-right: #{themeSpacingSmall2};
+  margin-left: #{themeSpacingSmall2};
+}
+.gt_my2--small {
+  margin-top: #{themeSpacingSmall2};
+  margin-bottom: #{themeSpacingSmall2};
+}
+```
+>[!note]
+>Đã tự động hỗ trợ responsive
+
+![themeSpacingSmall](https://d3dfaj4bukarbm.cloudfront.net/staging/images/admin/d76e77ff-cde1-4b58-8383-525e51126998.png)
+
+Danh sách class:
+```html
+gt_m2--small
+```
+```html
+gt_mt2--small
+```
+```html
+gt_mb2--small
+```
+```html
+gt_ml2--small
+```
+```html
+gt_mr2--small
+```
+
+##### v1.0: 16px
 ```css
 .gt_m--small {
   margin: #{themeSpacingSmall};
@@ -309,7 +409,56 @@ gt_ml--small
 ```html
 gt_mr--small
 ```
-##### Medium ~ 32px - v1.0
+##### Medium
+
+##### v2.0: 32px
+```css
+.gt_m2--medium {
+  margin: #{themeSpacingMedium2};
+}
+.gt_mt2--medium {
+  margin-top: #{themeSpacingMedium2};
+}
+.gt_mb--medium {
+  margin2-bottom: #{themeSpacingMedium2};
+}
+.gt_ml--medium {
+  margin2-left: #{themeSpacingMedium2};
+}
+.gt_mr--medium {
+  margin2-right: #{themeSpacingMedium2};
+}
+.gt_mx2--medium {
+  margin-right: #{themeSpacingMedium2};
+  margin-left: #{themeSpacingMedium2};
+}
+.gt_my2--medium {
+  margin-top: #{themeSpacingMedium2};
+  margin-bottom: #{themeSpacingMedium2};
+}
+```
+>[!note]
+>Đã tự động hỗ trợ responsive
+
+![themeSpacingMedium](https://d3dfaj4bukarbm.cloudfront.net/staging/images/admin/f7d969e5-8009-4778-be07-5caf18142e99.png)
+
+Danh sách class:
+```html
+gt_m2--medium
+```
+```html
+gt_mt2--medium
+```
+```html
+gt_mb2--medium
+```
+```html
+gt_ml2--medium
+```
+```html
+gt_mr2--medium
+```
+##### v1.0: 32px
 ```css
 .gt_m--medium {
   margin: #{themeSpacingMedium};
@@ -355,7 +504,56 @@ gt_ml--medium
 ```html
 gt_mr--medium
 ```
-##### Large ~ 64px - v1.0
+##### Large
+###### v2.0: 56px
+```css
+.gt_m2--large {
+  margin: #{themeSpacingLarge2};
+}
+.gt_mt2--large {
+  margin-top: #{themeSpacingLarge2};
+}
+.gt_mb2--large {
+  margin-bottom: #{themeSpacingLarge2};
+}
+.gt_ml2--large {
+  margin-left: #{themeSpacingLarge2};
+}
+.gt_mr2--large {
+  margin-right: #{themeSpacingLarge2};
+}
+.gt_mx2--large {
+  margin-right: #{themeSpacingLarge2};
+  margin-left: #{themeSpacingLarge2};
+}
+.gt_my2--large {
+  margin-top: #{themeSpacingLarge2};
+  margin-bottom: #{themeSpacingLarge2};
+}
+```
+Thường hay sử dụng cho khoảng cách giữa các thành phần trong mỗi section
+>[!note]
+>Đã tự động hỗ trợ responsive
+
+![themeSpacingLarge](https://d3dfaj4bukarbm.cloudfront.net/staging/images/admin/1fa7f0d0-eab3-4ea3-8431-4b666d8a3708.png)
+
+Danh sách class:
+```html
+gt_m2--large
+```
+```html
+gt_mt2--large
+```
+```html
+gt_mb2--large
+```
+```html
+gt_ml2--large
+```
+```html
+gt_mr2--large
+```
+###### v1.0: 64px
 ```css
 .gt_m--large {
   margin: #{themeSpacingLarge};
@@ -401,6 +599,57 @@ gt_ml--large
 ```html
 gt_mr--large
 ```
+##### Extra Large
+##### v2.0: 72px
+```css
+.gt_m2--extra-large {
+  margin: #{themeSpacingLarge};
+}
+.gt_mt2--extra-large {
+  margin-top: #{themeSpacingLarge};
+}
+.gt_mb2--extra-large {
+  margin-bottom: #{themeSpacingLarge};
+}
+.gt_ml2--extra-large {
+  margin-left: #{themeSpacingLarge};
+}
+.gt_mr2--extra-large {
+  margin-right: #{themeSpacingLarge};
+}
+.gt_mx2--extra-large {
+  margin-right: #{themeSpacingLarge};
+  margin-left: #{themeSpacingLarge};
+}
+.gt_my2--extra-large {
+  margin-top: #{themeSpacingLarge};
+  margin-bottom: #{themeSpacingLarge};
+}
+```
+Thường hay sử dụng cho khoảng cách giữa các section
+>[!note]
+>Đã tự động hỗ trợ responsive
+
+![themeSpacingExtraLarge](https://d3dfaj4bukarbm.cloudfront.net/staging/images/admin/fec19b73-daa4-49d4-bd11-af7369b8815e.png)
+
+Danh sách class:
+```html
+gt_m2--extra-large
+```
+```html
+gt_mt2--extra-large
+```
+```html
+gt_mb2--extra-large
+```
+```html
+gt_ml2--extra-large
+```
+```html
+gt_mr2--extra-large
+```
+
+##### v1.0: no exist
 #### Padding
 ##### None = 0px
 ```css
@@ -428,7 +677,55 @@ gt_mr--large
   padding-bottom: 0px;
 }
 ```
-##### Extra Small ~ 8px - v1.0
+##### Extra Small
+
+##### v2.0: 8px
+```css
+.gt_p2--extra-small {
+  padding: #{themeSpacingExtraSmall2};
+}
+.gt_pt2--extra-small {
+  padding-top: #{themeSpacingExtraSmall2};
+}
+.gt_pb2--extra-small {
+  padding-bottom: #{themeSpacingExtraSmall2};
+}
+.gt_pl2--extra-small {
+  padding-left: #{themeSpacingExtraSmall2};
+}
+.gt_pr2--extra-small {
+  padding-right: #{themeSpacingExtraSmall2};
+}
+.gt_px2--extra-small {
+  padding-right: #{themeSpacingExtraSmall2};
+  padding-left: #{themeSpacingExtraSmall2};
+}
+.gt_py2--extra-small {
+  padding-top: #{themeSpacingExtraSmall2};
+  padding-bottom: #{themeSpacingExtraSmall2};
+}
+```
+>[!note]
+>Đã tự động hỗ trợ responsive
+
+Danh sách class:
+```html
+gt_p2--extra-small
+```
+```html
+gt_pt2--extra-small
+```
+```html
+gt_pb2--extra-small
+```
+```html
+gt_pl2--extra-small
+```
+```html
+gt_pr2--extra-small
+```
+
+##### v1.0: 8px
 ```css
 .gt_p--extra-small {
   padding: #{themeSpacingExtraSmall};
@@ -473,7 +770,56 @@ gt_pl--extra-small
 ```html
 gt_pr--extra-small
 ```
-##### Small ~ 16px - v1.0
+##### Small
+
+##### v2.0: 16px
+
+```css
+.gt_p2--small {
+  padding: #{themeSpacingSmall2};
+}
+.gt_pt2--small {
+  padding-top: #{themeSpacingSmall2};
+}
+.gt_pb2--small {
+  padding-bottom: #{themeSpacingSmall2};
+}
+.gt_pl2--small {
+  padding-left: #{themeSpacingSmall2};
+}
+.gt_pr2--small {
+  padding-right: #{themeSpacingSmall2};
+}
+.gt_px2--small {
+  padding-right: #{themeSpacingSmall2};
+  padding-left: #{themeSpacingSmall2};
+}
+.gt_py2--small {
+  padding-top: #{themeSpacingSmall2};
+  padding-bottom: #{themeSpacingSmall2};
+}
+```
+>[!note]
+>Đã tự động hỗ trợ responsive
+
+Danh sách class:
+```html
+gt_p2--small
+```
+```html
+gt_pt2--small
+```
+```html
+gt_pb2--small
+```
+```html
+gt_pl2--small
+```
+```html
+gt_pr2--small
+```
+
+##### v1.0: 16px
 ```css
 .gt_p--small {
   padding: #{themeSpacingSmall};
@@ -518,7 +864,54 @@ gt_pl--small
 ```html
 gt_pr--small
 ```
-##### Medium ~ 32px - v1.0
+##### Medium
+
+##### v2.0: 32px
+```css
+.gt_p2--medium {
+  padding: #{themeSpacingMedium2};
+}
+.gt_pt2--medium {
+  padding-top: #{themeSpacingMedium2};
+}
+.gt_pb2--medium {
+  padding-bottom: #{themeSpacingMedium2};
+}
+.gt_pl2--medium {
+  padding-left: #{themeSpacingMedium2};
+}
+.gt_pr2--medium {
+  padding-right: #{themeSpacingMedium2};
+}
+.gt_px2--medium {
+  padding-right: #{themeSpacingMedium2};
+  padding-left: #{themeSpacingMedium2};
+}
+.gt_py2--medium {
+  padding-top: #{themeSpacingMedium2};
+  padding-bottom: #{themeSpacingMedium2};
+}
+```
+>[!note]
+>Đã tự động hỗ trợ responsive
+
+Danh sách class:
+```html
+gt_p2--medium
+```
+```html
+gt_pt2--medium
+```
+```html
+gt_pb2--medium
+```
+```html
+gt_pl2--medium
+```
+```html
+gt_pr2--medium
+```
+##### v1.0: 32px
 ```css
 .gt_p--medium {
   padding: #{themeSpacingMedium};
@@ -563,7 +956,56 @@ gt_pl--medium
 ```html
 gt_pr--medium
 ```
-##### Large ~ 64px - v1.0
+##### Large
+
+##### v2.0: 56px
+```css
+.gt_p2--large {
+  padding: #{themeSpacingLarge2};
+}
+.gt_pt2--large {
+  padding-top: #{themeSpacingLarge2};
+}
+.gt_pb2--large {
+  padding-bottom: #{themeSpacingLarge2};
+}
+.gt_pl2--large {
+  padding-left: #{themeSpacingLarge2};
+}
+.gt_pr2--large {
+  padding-right: #{themeSpacingLarge2};
+}
+.gt_px2--large {
+  padding-right: #{themeSpacingLarge2};
+  padding-left: #{themeSpacingLarge2};
+}
+.gt_py2--large {
+  padding-top: #{themeSpacingLarge2};
+  padding-bottom: #{themeSpacingLarge2};
+}
+```
+>[!note]
+>Đã tự động hỗ trợ responsive
+
+Danh sách class:
+```html
+gt_p2--large
+```
+```html
+gt_pt2--large
+```
+```html
+gt_pb2--large
+```
+```html
+gt_pl2--large
+```
+```html
+gt_pr2--large
+```
+
+##### v1.0: 64px
+
 ```css
 .gt_p--large {
   padding: #{themeSpacingLarge};
@@ -608,6 +1050,55 @@ gt_pl--large
 ```html
 gt_pr--large
 ```
+##### Extra Large
+
+##### v2.0: 72px
+```css
+.gt_p2--extra-large {
+  padding: #{themeSpacingExtraLarge2};
+}
+.gt_pt2--extra-large {
+  padding-top: #{themeSpacingExtraLarge2};
+}
+.gt_pb2--extra-large {
+  padding-bottom: #{themeSpacingExtraLarge2};
+}
+.gt_pl2--extra-large {
+  padding-left: #{themeSpacingExtraLarge2};
+}
+.gt_pr2--extra-large {
+  padding-right: #{themeSpacingExtraLarge2};
+}
+.gt_px2--extra-large {
+  padding-right: #{themeSpacingExtraLarge2};
+  padding-left: #{themeSpacingExtraLarge2};
+}
+.gt_py2--extra-large {
+  padding-top: #{themeSpacingExtraLarge2};
+  padding-bottom: #{themeSpacingExtraLarge2};
+}
+```
+>[!note]
+>Đã tự động hỗ trợ responsive
+
+Danh sách class:
+```html
+gt_p2--extra-large
+```
+```html
+gt_pt2--extra-large
+```
+```html
+gt_pb2--extra-large
+```
+```html
+gt_pl2--extra-large
+```
+```html
+gt_pr2--extra-large
+```
+##### v1.0: non exist
+
 ### **Button - v1.0**
 ```css
 .gt_button--small {

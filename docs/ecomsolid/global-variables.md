@@ -31,6 +31,13 @@ themeHeadingFontSize_md: 38px
 themeHeadingFontSize_sm: 33px
 themeHeadingFontSize_xs: 33px
 
+// v2.0
+themeHeadingSmallFontSize_lg: 28px
+themeHeadingSmallFontSize_md: 28px
+themeHeadingSmallFontSize_sm: 24px
+themeHeadingSmallFontSize_xs: 24px
+// end v2.0
+
 themeSubHeadingFontSize_lg: 21px
 themeSubHeadingFontSize_md: 21px
 themeSubHeadingFontSize_sm: 19px
@@ -50,6 +57,13 @@ themeMarginHeading_lg: 16.00
 themeMarginHeading_md: 16.00
 themeMarginHeading_sm: 16.00
 themeMarginHeading_xs: 8.00
+
+// v2.0
+themeMarginSubHeading_lg: 8.00
+themeMarginSubHeading_md: 8.00
+themeMarginSubHeading_sm: 7.00
+themeMarginSubHeading_xs: 7.00
+// end v2.0
 
 //======================= TEXT ================================//
 themeTextColor: #333333
@@ -159,6 +173,32 @@ themeSpacingLarge_lg: 64
 themeSpacingLarge_md: 64
 themeSpacingLarge_sm: 64
 themeSpacingLarge_xs: 32
+
+// v2.0
+themeSpacingExtraSmall2_lg: 8
+themeSpacingExtraSmall2_md: 8
+themeSpacingExtraSmall2_sm: 7
+themeSpacingExtraSmall2_xs: 7
+
+themeSpacingSmall2_lg: 16
+themeSpacingSmall2_md: 16
+themeSpacingSmall2_sm: 14
+themeSpacingSmall2_xs: 14
+
+themeSpacingMedium2_lg: 32
+themeSpacingMedium2_md: 32
+themeSpacingMedium2_sm: 28
+themeSpacingMedium2_xs: 28
+
+themeSpacingLarge2_lg: 56
+themeSpacingLarge2_md: 56
+themeSpacingLarge2_sm: 49
+themeSpacingLarge2_xs: 49
+
+themeSpacingExtraLarge2_lg: 72
+themeSpacingExtraLarge2_md: 72
+themeSpacingExtraLarge2_sm: 63
+themeSpacingExtraLarge2_xs: 63
 
 //======================= SITE ================================//
 themeSiteRadius: 3px
