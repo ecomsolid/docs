@@ -1156,7 +1156,7 @@ gt_text
 gt_subheading
 ```
 ```html
-gt_heading-small
+gt_heading--small
 
 ```
 ```html
