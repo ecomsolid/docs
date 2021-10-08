@@ -419,13 +419,13 @@ gt_mr--small
 .gt_mt2--medium {
   margin-top: #{themeSpacingMedium2};
 }
-.gt_mb--medium {
+.gt_mb2--medium {
   margin2-bottom: #{themeSpacingMedium2};
 }
-.gt_ml--medium {
+.gt_ml2--medium {
   margin2-left: #{themeSpacingMedium2};
 }
-.gt_mr--medium {
+.gt_mr2--medium {
   margin2-right: #{themeSpacingMedium2};
 }
 .gt_mx2--medium {
@@ -1123,21 +1123,26 @@ gt_button
 gt_button--large
 ```
 ### **Text - v1.0**
+>[!note]
+>Đối với base size Medium - 16px và đã tự động hỗ trợ responsive
 ```css
 .gt_text--small {
-
+  font-size: 12px;
 }
 .gt_text {
-
+  font-size: 16px;
 }
 .gt_subheading {
-
+  font-size: 21px;
+}
+.gt_heading--small {
+  font-size: 28px;
 }
 .gt_heading {
-
+  font-size: 38px;
 }
 .gt_heading--large {
-
+  font-size: 51px;
 }
 ```
 Danh sách class:
@@ -1149,6 +1154,10 @@ gt_text
 ```
 ```html
 gt_subheading
+```
+```html
+gt_heading--small
+
 ```
 ```html
 gt_heading
