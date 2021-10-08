@@ -1123,21 +1123,26 @@ gt_button
 gt_button--large
 ```
 ### **Text - v1.0**
+>[!note]
+>Đối với base size Medium - 16px và đã tự động hỗ trợ responsive
 ```css
 .gt_text--small {
-
+  font-size: 12px;
 }
 .gt_text {
-
+  font-size: 16px;
 }
 .gt_subheading {
-
+  font-size: 21px;
+}
+.gt_heading--small {
+  font-size: 28px;
 }
 .gt_heading {
-
+  font-size: 38px;
 }
 .gt_heading--large {
-
+  font-size: 51px;
 }
 ```
 Danh sách class:
@@ -1149,6 +1154,10 @@ gt_text
 ```
 ```html
 gt_subheading
+```
+```html
+gt_heading--small
+
 ```
 ```html
 gt_heading
