@@ -419,13 +419,13 @@ gt_mr--small
 .gt_mt2--medium {
   margin-top: #{themeSpacingMedium2};
 }
-.gt_mb--medium {
+.gt_mb2--medium {
   margin2-bottom: #{themeSpacingMedium2};
 }
-.gt_ml--medium {
+.gt_ml2--medium {
   margin2-left: #{themeSpacingMedium2};
 }
-.gt_mr--medium {
+.gt_mr2--medium {
   margin2-right: #{themeSpacingMedium2};
 }
 .gt_mx2--medium {
