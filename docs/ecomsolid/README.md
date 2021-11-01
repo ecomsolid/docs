@@ -107,14 +107,21 @@ https://nodejs.org/en/
 - Dùng package <a href="https://github.com/elliotchance/pie" target="_blank">pie</a> để đơn giản hóa thao tác với slice
 - Dùng .editorconfig file để đồng bộ indent
   ```yml
-  root = true
-
-  [*]
-  indent_style = space
-  indent_size = 4
-  charset = utf-8
-  trim_trailing_whitespace = true
-  insert_final_newline = true
+    root = true
+    
+    [*]
+    indent_style = space
+    indent_size = 4
+    end_of_line = lf
+    charset = utf-8
+    trim_trailing_whitespace = true
+    insert_final_newline = true
+    
+    [*.{yml,json}]
+    indent_size = 2
+    
+    [Makefile]
+    indent_style = tab
   ```
 
 #### Test API bằng Postman
