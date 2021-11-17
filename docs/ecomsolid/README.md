@@ -106,7 +106,7 @@ https://nodejs.org/en/
     ```
 - Dùng package <a href="https://github.com/elliotchance/pie" target="_blank">pie</a> để đơn giản hóa thao tác với slice
 - Dùng .editorconfig file để đồng bộ indent
-  ```yml
+    ```yml
     root = true
     
     [*]
@@ -122,7 +122,7 @@ https://nodejs.org/en/
     
     [Makefile]
     indent_style = tab
-  ```
+    ```
 
 #### Test API bằng Postman
 
