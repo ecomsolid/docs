@@ -1,7 +1,7 @@
 # Check list test theme/template
 *Thứ tự ưu tiên từ trên xuống dưới*  
 
-<input type="checkbox" id="1"><label for="2"> Làm global style (follow global style v2): ưu tiên cao hơn code chuẩn design</label>  
+<input type="checkbox" id="1"><label for="1"> Làm global style (follow global style v2): ưu tiên cao hơn code chuẩn design</label>  
 <input type="checkbox" id="2"> <label for="2">Test với global style của theme/template đó, Test với global style khác</label>  
 <input type="checkbox" id="3"> <label for="3"> Code chuẩn design: ưu tiên thấp hơn global style v2</label>
 
