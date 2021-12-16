@@ -168,14 +168,17 @@ var unsubscribeDestroy = store.subscribe("component-" + id + "-destroy", functio
 #### Public Functions Block (Optional)
 Public Block sẽ public ra các method để các script bên ngoài có thể gọi được.
 
-Các public function sẽ được gắn trong window.SOLID.public[type + "_" + id + "\_" + index]
+Các public function sẽ được gắn trong
+```js
+window.SOLID.public["atom" + "_" + id + "_" + indexEl]
+```
 - type: atom/widget/section
 - id : id của atom/widget/section
 - index: index của atom/widget/section
 ```js
 public() {
-  openSearchPopup,
-  closeSearchPopup
+	  openSearchPopup,
+	  closeSearchPopup
 },
 ```	
 
