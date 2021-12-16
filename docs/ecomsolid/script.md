@@ -165,6 +165,20 @@ var unsubscribeDestroy = store.subscribe("component-" + id + "-destroy", functio
 });
 ```
 
+#### Public Functions Block (Optional)
+Public Block sẽ public ra các method để các script bên ngoài có thể gọi được.
+
+Các public function sẽ được gắn trong window.SOLID.public[type + "_" + id + "\_" + index]
+- type: atom/widget/section
+- id : id của atom/widget/section
+- index: index của atom/widget/section
+```js
+public() {
+  openSearchPopup,
+  closeSearchPopup
+},
+```	
+
 ### Ví dụ
 - Script
 ```js
@@ -207,6 +221,10 @@ module.exports = {
     },
   },
   destroy() {},
+  public() {
+    openSearchPopup,
+    closeSearchPopup
+  },
 };
 ```
 - Compile Script
@@ -270,11 +288,17 @@ module.exports = {
         unsubscribeDestroy();
       }
     );
+    return {
+      openSearchPopup,
+      closeSearchPopup
+    }
   }
   /* run all script */
   for (var indexEl = 0; indexEl < $elements.length; indexEl++) {
     var $target = $elements[indexEl];
-    script($target);
+    var public = script($target);
+    window.SOLID.public = window.SOLID.public || {};
+    window.SOLID.public["atom" + "_" + id + "_" + indexEl] = public;
   }
 })();
 ```
