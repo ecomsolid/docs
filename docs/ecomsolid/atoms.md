@@ -616,3 +616,37 @@ Sử dụng để lấy lại Data Liquid Global của Section sử dụng data 
 </div>
 ```
 
+### Các attribute advanced
+
+#### Props
+
+> Props dùng để thêm setting khác value cho các attribute bên trong atom. 
+
+Ví dụ: 
+
+```json
+{
+  "atom": "ProductButtonAddToCart",
+  "attribute": "buttonAddToCart",
+  "title": "Button Add To Cart",
+  "value": "Buy 2 Items!",
+  "props": {
+    "customActionsActive": {
+      "hide": true
+    },
+    "linkButton": {
+      "hide": true
+    },
+    "openNewTab": {
+      "hide": true
+    },
+    "actions": {
+      "noRender": true
+    }
+  }
+}
+```
+
+Ở ví dụ trên: 
+- Các attribute `customActionsActive`, `linkButton`, `openNewTab` sẽ được hide
+- Attribute `actions` sẽ được noRender
