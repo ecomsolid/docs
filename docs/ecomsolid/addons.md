@@ -106,3 +106,7 @@ Cụ thể, hiện tại discounts data script sẽ đươc lưu vào 1 file ri�
 Bên trong `ecomsolid-discounts.liquid` lưu 1 đoạn js để push discount data vào `esDiscountsData` và discount data đã được format theo discount cũ để tính toán trong libs `gtCartDiscountV5` vào `discountsV2` trong `window.SOLID.store`
 
 Addon UQDV2 dùng data ở `esDiscountsData` trong store để render thay vì dùng value của snippets như ở bản cũ. Vì bây giờ control discount manager được xử lí global nên không thể lưu discount data vào value của từng addon (local) mà phải lưu ở global. Để chỉ cần update discount trong discount manager thì tất cả các addon khác sẽ được update theo vì dùng data global
+
+#### Lưu ý với presets của cart page và cart drawer
+
+Với preset cho cart page và cart drawer, để addon hoạt động được thì cần thêm class `gt_cart-item` hoặc `gt_items--content` vào tag (div) wrapper của từng cart item.
