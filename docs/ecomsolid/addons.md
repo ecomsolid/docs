@@ -109,4 +109,4 @@ Addon UQDV2 dùng data ở `esDiscountsData` trong store để render thay vì d
 
 #### Lưu ý với presets của cart page và cart drawer
 
-Với preset cho cart page và cart drawer, để addon hoạt động được thì cần thêm class `gt_cart-item` hoặc `gt_items--content` vào tag (div) wrapper của từng cart item.
+Với preset cho cart page và cart drawer, để addon hoạt động được thì cần thêm class `gt_cart-item` hoặc `gt_items--content` vào tag (div) wrapper của từng cart item. Đồng thời thêm các attribute: `data-product-id="{{ cart_item.product_id }}" data-product-handle="{{ cart_item.product.handle }}"` vào attribute của wrapper đó.
