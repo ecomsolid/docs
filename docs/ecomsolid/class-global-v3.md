@@ -2,6 +2,7 @@
 
 ### **Spacing**
 Size with font base 16px:
+
 | Name      | Desktop value | Mobile value     |
 | :---:        |    :----:   |          :---: |
 | xxs      | 2px       | 2px   |
@@ -68,7 +69,7 @@ Size with font base 16px:
 >Line height cua heading-1, heading-2, heading-3 = global line height * 0.8
 >Line height cua các thanh phan con lai = global line height
 
-| typoName      | Desktop value | Mobile value     |
+| TypoName      | Desktop value | Mobile value     |
 | :---       |    :----:   |          :---: |
 | heading-1      | 57px       | 50px   |
 | heading-2   | 48px        | 42px      |
