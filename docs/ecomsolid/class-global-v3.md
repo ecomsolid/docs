@@ -16,8 +16,8 @@ Size with font base 16px:
 | 4xl   | 80px        | 70px      |
 #### Margin
 >[!note]
->Cách gọi tên: className = **.gt_v3_{m|mt|mr|mb|ml|mx|my}--{size}}**
->Ex: gt_v3_mt--xxs, gt_v3_m--xxs...
+>- Cách gọi tên: className = **.gt_v3_{m|mt|mr|mb|ml|mx|my}--{size}}**
+>- Ex: gt_v3_mt--xxs, gt_v3_m--xxs...
 
 Chú thích:
 - m : margin
@@ -33,8 +33,8 @@ Chú thích:
 >Ex: md:gt_v3_mt--xxs
 #### Padding
 >[!note]
->Cách gọi tên: className = **.gt_v3_{p|pt|pr|pb|pl|px|py}--{size}}**
->Ex: gt_v3_mt--xxs, gt_v3_m--xxs...
+>- Cách gọi tên: className = **.gt_v3_{p|pt|pr|pb|pl|px|py}--{size}}**
+>- Ex: gt_v3_mt--xxs, gt_v3_m--xxs...
 
 Chú thích:
 - p : padding
@@ -52,6 +52,7 @@ Chú thích:
 ### **Typography**
 >[!note]
 >Cách gọi tên: className = **.gt_v3_{typoName}**
+
 Danh sách class:
 - gt_v3_heading-1
 - gt_v3_heading-2
@@ -65,9 +66,9 @@ Danh sách class:
 
 Size with font base 16px:
 >[!note]
->Công thức tinh size theo: Type scale 1.200 - Minor Third => https://type-scale.com/
->Line height cua heading-1, heading-2, heading-3 = global line height * 0.8
->Line height cua các thanh phan con lai = global line height
+> - Công thức tinh size theo: Type scale 1.200 - Minor Third => https://type-scale.com/
+> - Line height cua heading-1, heading-2, heading-3 = global line height * 0.8
+>- Line height cua các thanh phan con lai = global line height
 
 | TypoName      | Desktop value | Mobile value     |
 | :---       |    :----:   |          :---: |
