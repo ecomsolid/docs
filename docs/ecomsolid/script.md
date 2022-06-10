@@ -1,3 +1,12 @@
+## Editor Event
+- render-html-{atom.section/widget_parent_id}-{atom.attribute}
+  - Emit event khi atom render lại html
+  - Return: true/false
+- trigger-slider-{atomSliderId}
+  - Emit event khi active setting 1 atom trong slider widget
+  - Return: { 'sliderIndex': sliderIndex  }
+- optimal-{section/widget id}-{snippet.attribute}
+  - Emit event khi change setting của snippet có trigger js 
 ## Cấu trúc chuẩn
 
 ### Lưu ý
