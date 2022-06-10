@@ -6,7 +6,17 @@
   - Emit event khi active setting 1 atom trong slider widget
   - Return: { 'sliderIndex': sliderIndex  }
 - optimal-{section/widget id}-{snippet.attribute}
-  - Emit event khi change setting của snippet có trigger js 
+  - Emit event khi change setting của snippet có trigger js
+  - Return: Value setting của snippet
+- editor-section-refresh-html
+  - Emit event khi section/widget/element render Html
+  - Return: section/widget/element
+- editor-section-refresh-css
+  - Emit event khi section/widget/element render Css
+  - Return: section/widget/element
+- component-${id}-destroy
+  - Emit event khi section/widget hidden or remove
+  - Return: true
 ## Cấu trúc chuẩn
 
 ### Lưu ý
