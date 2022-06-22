@@ -3,21 +3,22 @@
 ### **Spacing**
 Size with font base 16px:
 
-| Name      | Desktop value | Mobile value     |
-| :---:        |    :----:   |          :---: |
-| xxs      | 2px       | 2px   |
-| xs   | 4px        | 3px      |
-| s   | 8px        | 7px      |
-| m   | 12px        | 10px      |
-| l   | 16px        | 14px      |
-| xl   | 24px        | 21px      |
-| 2xl   | 32px        | 28px      |
-| 3xl   | 48px        | 42px      |
-| 4xl   | 80px        | 70px      |
+| Name      | Size      | Desktop value | Mobile value     |
+| :---:        | :---:        |    :----:   |          :---: |
+| 2 | xxs      | 2px       | 2px   |
+| 4 | xs   | 4px        | 3px      |
+| 8 | s   | 8px        | 7px      |
+| 12 | m   | 12px        | 10px      |
+| 16 | l   | 16px        | 14px      |
+| 24 | xl   | 24px        | 21px      |
+| 32 | 2xl   | 32px        | 28px      |
+| 48 | 3xl   | 48px        | 42px      |
+| 80 | 4xl   | 80px        | 70px      |
+| none | none   | 0px        | 0px      |
 #### Margin
 >[!note]
->- Cách gọi tên: className = **.gt_v3_{m|mt|mr|mb|ml|mx|my}--{size}}**
->- Ex: gt_v3_mt--xxs, gt_v3_m--xxs...
+>- Cách gọi tên: className = **.gt_v3_{m|mt|mr|mb|ml|mx|my}--{name}}**
+>- Ex: gt_v3_mt--2, gt_v3_m--2...
 
 Chú thích:
 - m : margin
@@ -30,11 +31,11 @@ Chú thích:
 
 >[!warning]
 >Support Responsive {lg|md|sm|xs}:{className}
->Ex: md:gt_v3_mt--xxs
+>Ex: md:gt_v3_mt--2
 #### Padding
 >[!note]
->- Cách gọi tên: className = **.gt_v3_{p|pt|pr|pb|pl|px|py}--{size}}**
->- Ex: gt_v3_mt--xxs, gt_v3_m--xxs...
+>- Cách gọi tên: className = **.gt_v3_{p|pt|pr|pb|pl|px|py}--{name}}**
+>- Ex: gt_v3_mt--2, gt_v3_m--2...
 
 Chú thích:
 - p : padding
@@ -47,7 +48,7 @@ Chú thích:
 
 >[!warning]
 >Support Responsive {lg|md|sm|xs}:{className}
->Ex: md:gt_v3_pt--xxs
+>Ex: md:gt_v3_pt--2
 
 ### **Typography**
 >[!note]
