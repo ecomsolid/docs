@@ -2648,6 +2648,27 @@ Mặc định level tối đã là 3. Bạn có thể thêm setting để tăng 
 >[!warning]
 >Bạn cần định nghĩa `definedSettings` để menu có thể hoạt động tốt
 
+
+#### Open Mega Menu From Section
+
+Control giúp mở megamenuV2 trực tiếp từ section thay vì phải chọn atom trong layer tree
+
+Ảnh hiển thị:
+
+<img src="/images/ecomsolid/snippets/openMegaMenu.png">
+
+Snippet định nghĩa:
+
+```json
+{
+  "id": "openMegaMenu",
+  "attribute": "openMegaMenu",
+  "title": "Edit Menu",
+  "reference": [],
+  "type": "openMegaMenu",
+}
+```
+
 #### Select
 Ảnh hiển thị:
 
@@ -2836,6 +2857,7 @@ Snippet định nghĩa:
   }
 }
 ```
+
 #### Tabs
 Ảnh hiển thị:
 
